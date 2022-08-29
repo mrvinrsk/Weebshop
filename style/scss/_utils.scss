@@ -1,0 +1,24 @@
+$bp-tablet: 768px;
+$bp-desktop: 1200px;
+
+$col-primary: #0091dc;
+$col-secondary: #a46af1;
+$col-gray: #787878;
+
+$width: min(85%, 80rem);
+
+
+$colors: ('primary': $col-primary, 'secondary': $col-secondary, 'gray': $col-gray);
+@each $name, $hex in $colors {
+  .fc-#{$name} {
+    color: $hex;
+  }
+
+  .bg-#{$name} {
+    background-color: $hex;
+  }
+}
+
+@function pastellize($color, $amount) {
+  @return lighten($color, $amount);
+}
