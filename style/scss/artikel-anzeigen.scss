@@ -48,8 +48,16 @@
 
 #buying-options {
   background: linear-gradient(to bottom right, utils.pastellize(utils.$col-primary, 45), utils.pastellize(utils.$col-secondary, 20));
-  padding: 2rem;
+  padding: .75rem;
   border-radius: 15px;
+
+  @media screen and (min-width: utils.$bp-tablet) {
+    padding: 2rem;
+  }
+
+  @media screen and (min-width: utils.$bp-desktop) {
+    padding: 3rem;
+  }
 }
 
 .offers {
@@ -105,4 +113,145 @@
   @media screen and (min-width: utils.$bp-desktop) {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
+}
+
+.ratings-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @media screen and (min-width: calc(#{utils.$bp-tablet} - 100)) {
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+  }
+
+  @media screen and (min-width: utils.$bp-desktop) {
+    grid-template-columns: 350px 1fr;
+    gap: 3rem;
+  }
+
+  .all-time {
+    text-align: center;
+    background-color: #FFF;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: 0 5px 20px rgba(0 0 0 / 2.5%);
+
+    @media screen and (min-width: utils.$bp-tablet) {
+      padding: 2rem;
+    }
+
+    .heading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .icon {
+      display: flex;
+      font-size: 7.5rem !important;
+      color: utils.$col-secondary;
+    }
+
+    p {
+      font-size: 1.75rem;
+      font-weight: 800;
+    }
+
+    .info {
+      font-weight: 400;
+      font-size: .9rem;
+      text-align: left;
+      margin-top: 3.5%;
+
+      @media screen and (min-width: utils.$bp-tablet) {
+        margin-top: 2.5rem;
+      }
+    }
+  }
+
+  .ratings {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+
+    @media screen and (min-width: utils.$bp-tablet) {
+      gap: 1rem;
+    }
+
+    .rating {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background-color: #FFF;
+      border-radius: 5px;
+      padding: 1rem;
+      align-items: center;
+      text-align: center;
+
+      @media screen and (min-width: utils.$bp-tablet) {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      > * {
+        flex-basis: 100%;
+      }
+
+      .profile {
+        width: 100px;
+        height: 100px;
+        max-width: 100px;
+        max-height: 100px;
+        aspect-ratio: 1/1;
+        border-radius: 5px;
+        overflow: hidden;
+
+        @media screen and (min-width: utils.$bp-tablet) {
+          width: 150px;
+          height: 150px;
+          max-width: 150px;
+          max-height: 150px;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .heading {
+        font-size: 1.25rem;
+      }
+
+      .rating-count {
+        color: utils.$col-gray;
+        margin-left: .75rem;
+        font-size: 80%;
+      }
+    }
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+    font-size: .85rem;
+  }
+  50% {
+    transform: scale(2);
+    font-size: 1.25rem;
+  }
+  100% {
+    transform: scale(1);
+    font-size: .85rem;
+  }
+}
+
+.schulz {
+  color: red;
+  animation: bounce 250ms forwards infinite;
 }

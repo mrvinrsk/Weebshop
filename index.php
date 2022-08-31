@@ -122,7 +122,20 @@
 </main>
 
 
-<footer></footer>
+<footer>
+    <div>
+        <div>
+            <img src="./images/logo.png" alt="Logo">
+        </div>
+
+        <div>
+            <p>
+                Dieser Weebshop ist eine Dienstleistung von Marvin Roßkothen & Steven Lenz und dient einzig und allein zu Lern-Zwecken.
+                Die Idee des "Webshops" ist absolut und zu 100% eine eigen produzierte Idee, Ähnlichkeiten zu Aufgaben, von männlichen Lehrern am Berufskolleg Stadtmitte Kluse, wäre rein zufällig.
+            </p>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>

@@ -141,7 +141,7 @@ $priceReduced = number_format($priceNormal * ((100 - $percent) / 100), 2);
         <div class="offers">
             <div class="offer-card">
                 <span class="icon">shopping_bag</span>
-                <h2>Einmaliger Kauf</h2>
+                <h3>Einmaliger Kauf</h3>
                 <p>
                     Ein ganz normaler Einkauf ohne besondere Vorteile.
                 </p>
@@ -151,7 +151,7 @@ $priceReduced = number_format($priceNormal * ((100 - $percent) / 100), 2);
 
             <div class="offer-card">
                 <span class="icon">event_repeat</span>
-                <h2>Regelmäßiger Kauf</h2>
+                <h3>Regelmäßiger Kauf</h3>
                 <p>
                     Ein regelmäßiger Kauf kann dir einen ordentlichen Rabatt einheimsen, solltest du dieses Produkt also öfters benötigen, würde sich ein solches Angebot schnell rentieren.
                     Bei diesem Produkt würde die Ersparnis <b><?php echo $percent; ?>%</b> des eigentlichen Verkaufspreises betragen. Somit läge der Kaufpreis bei <span class="strike"><?php echo $priceNormal; ?>€</span> <b><?php echo $priceReduced; ?>€</b>
@@ -162,7 +162,7 @@ $priceReduced = number_format($priceNormal * ((100 - $percent) / 100), 2);
 
             <div class="offer-card">
                 <span class="icon">payments</span>
-                <h2>Ratenkauf</h2>
+                <h3>Ratenkauf</h3>
                 <p>
                     Zu teuer? Kein Problem! Wir bieten dir einen Ratenkauf zu guten Konditionen über einen Zeitraum von <b>3, 6, 12 oder 24 Monate</b> an. Dabei zahlst du allgemein etwas mehr, jedoch über mehrere Monate verteilt.
                 </p>
@@ -217,15 +217,58 @@ $priceReduced = number_format($priceNormal * ((100 - $percent) / 100), 2);
     <section id="ratings">
         <h2>Bewertungen</h2>
 
-        <div class="icon-text">
-            <span class="icon">star</span>
-            <span><?php echo number_format(random_float(1.0, 5.0), 2); ?></span>
+        <div class="ratings-container">
+            <div class="all-time">
+                <div class="heading">
+                    <span class="icon">star</span>
+                    <p><?php echo number_format(random_float(1.0, 5.0), 1); ?>/5</p>
+                </div>
+
+                <p class="info">Diese Bewertung basiert auf den Ergebnissen von <b><?php echo rand(3, 50) . " Bewertungen"; ?></b>. Bitte beachte, dass positive Bewertungen nicht die Funktionalität eines Produktes garantieren.</p>
+            </div>
+
+            <div class="ratings">
+
+                <?php for ($i = 0; $i < 3; $i++) { ?>
+
+                    <div class="rating">
+                        <div class="profile">
+                            <img src="https://fakeimg.pl/200/" alt="Profilbild"/>
+                        </div>
+
+                        <div>
+                            <p class="heading"><b data-placeholder="name"></b> <span class="rating-count"><?php echo number_format(random_float(0.1, 5.0), 1); ?>/5</span></p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti exercitationem libero odit sit ullam voluptate?</p>
+                        </div>
+                    </div>
+
+                <?php } ?>
+            </div>
         </div>
     </section>
 </main>
 
 
-<footer></footer>
+<footer>
+    <div>
+        <div>
+            <img src="./images/logo.png" alt="Logo">
+        </div>
+
+        <div>
+            <p>
+                Dieser Weebshop ist eine Dienstleistung von Marvin Roßkothen & Steven Lenz und dient einzig und allein zu Lern-Zwecken.
+                Die Idee des "Webshops" ist absolut und zu 100% eine eigen produzierte Idee, Ähnlichkeiten zu Aufgaben, von männlichen Lehrern am Berufskolleg Stadtmitte Kluse, wäre rein zufällig.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    $(function () {
+        loadPlaceholders();
+    });
+</script>
 
 </body>
 </html>
