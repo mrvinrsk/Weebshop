@@ -174,40 +174,40 @@ $priceReduced = number_format($priceNormal * ((100 - $percent) / 100), 2);
         <h2>Ähnliche Artikel</h2>
 
         <div class="similar-items">
-            <div class="grid-item">
-                <div class="grid-information">
+            <div class="grid-item ignore-animation">
+                <div class="grid-information ignore-animation">
                     <p>Lorem ipsum.</p>
                     <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
 
-                    <div class="grid-buttons">
-                        <a class="button" href="artikel-anzeigen.php">Artikel anzeigen</a>
+                    <div class="grid-buttons ignore-animation">
+                        <a class="button ignore-animation" href="artikel-anzeigen.php">Artikel anzeigen</a>
                     </div>
                 </div>
-                <img src="https://loremflickr.com/640/360" alt="Bild"/>
+                <img src="https://loremflickr.com/640/360" class="ignore-animation" alt="Bild"/>
             </div>
 
-            <div class="grid-item">
-                <div class="grid-information">
+            <div class="grid-item ignore-animation">
+                <div class="grid-information ignore-animation">
                     <p>Lorem ipsum.</p>
                     <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
 
-                    <div class="grid-buttons">
-                        <a class="button" href="artikel-anzeigen.php">Artikel anzeigen</a>
+                    <div class="grid-buttons ignore-animation">
+                        <a class="button ignore-animation" href="artikel-anzeigen.php">Artikel anzeigen</a>
                     </div>
                 </div>
-                <img src="https://loremflickr.com/640/360" alt="Bild"/>
+                <img src="https://loremflickr.com/640/360" class="ignore-animation" alt="Bild"/>
             </div>
 
-            <div class="grid-item">
-                <div class="grid-information">
+            <div class="grid-item ignore-animation">
+                <div class="grid-information ignore-animation">
                     <p>Lorem ipsum.</p>
                     <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
 
-                    <div class="grid-buttons">
-                        <a class="button" href="artikel-anzeigen.php">Artikel anzeigen</a>
+                    <div class="grid-buttons ignore-animation">
+                        <a class="button ignore-animation" href="artikel-anzeigen.php">Artikel anzeigen</a>
                     </div>
                 </div>
-                <img src="https://loremflickr.com/640/360" alt="Bild"/>
+                <img src="https://loremflickr.com/640/360" class="ignore-animation" alt="Bild"/>
             </div>
         </div>
     </section>
