@@ -11,11 +11,9 @@
     <link rel="stylesheet" href="style/css/navbar.min.css">
 
     <script src="js/jquery-3.6.1.min.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/anime.min.js"></script>
-    <script src="js/navbar.js"></script>
-    <script src="js/home.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
 

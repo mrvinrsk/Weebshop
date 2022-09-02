@@ -73,6 +73,13 @@
   box-sizing: border-box;
 }
 
+/* Animate */
+main {
+  div, ul, ol, li {
+    opacity: 0;
+  }
+}
+
 :root {
   font-family: 'Nunito', sans-serif;
 }
