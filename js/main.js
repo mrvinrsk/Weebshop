@@ -12,16 +12,16 @@ function loadPlaceholders(path_to_root = "./") {
             document.querySelectorAll('[data-placeholder]').forEach(element => {
                 let text = "";
 
-                function getGender(names, name) {
-                    if (names.first_names.male.includes(name)) return "male";
-                    if (names.first_names.female.includes(name)) return "female";
-                    return "ERR_NAME_NOT_FOUND";
-                }
-
                 switch (element.dataset.placeholder) {
                     case "name":
                         let names = json.names;
                         let nameList = names.first_names.male.concat(names.first_names.female);
+
+                    function getGender(names, name) {
+                        if (names.first_names.male.includes(name)) return "male";
+                        if (names.first_names.female.includes(name)) return "female";
+                        return "ERR_NAME_NOT_FOUND";
+                    }
 
                         let first_name = getRandomFromList(nameList);
                         let last_name = getRandomFromList(names.last_names);
@@ -30,8 +30,6 @@ function loadPlaceholders(path_to_root = "./") {
                         if (first_name === "Thomas" && last_name === "Schulz") {
                             element.classList.add("schulz");
                         }
-
-                        console.log(first_name + " is " + getGender(names, first_name));
                         break;
 
                     default:

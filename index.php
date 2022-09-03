@@ -1,3 +1,7 @@
+<?php
+include_once "php/methods.php";
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -99,18 +103,20 @@
         <h2>Neuste Artikel</h2>
 
         <div class="article-grid">
-            <?php for ($i = 0; $i < 6; $i++) { ?>
+            <?php for ($i = 0; $i < rand(12, 24); $i++) { ?>
 
-                <div class="grid-item">
-                    <div class="grid-information">
-                        <p>Lorem ipsum.</p>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+                <div class="article">
+                    <a href="artikel-anzeigen.php">
+                        <img src="https://loremflickr.com/175/175?random=<?php echo rand(1, 99999); ?>" alt="Bild"/>
 
-                        <div class="grid-buttons">
-                            <a class="button" href="artikel-anzeigen.php">Artikel anzeigen</a>
+                        <div class="article-information">
+                            <div class="text-group">
+                                <h3>Lorem ipsum.</h3>
+                                <span class="stars"><?php echo getStarString(random_float(1.0, 5.0), rand(1, 10000), true); ?></span>
+                            </div>
+                            <p class="price"><?php echo number_format(random_float(1.0, 10000), 2, ",", ".") . "€"; ?></p>
                         </div>
-                    </div>
-                    <img src="https://loremflickr.com/640/360?random=<?php echo rand(1, 9999); ?>" alt="Bild"/>
+                    </a>
                 </div>
 
             <?php } ?>

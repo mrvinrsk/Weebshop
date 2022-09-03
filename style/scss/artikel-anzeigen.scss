@@ -223,16 +223,23 @@
       }
 
       .heading {
-        font-size: 1.25rem;
+        font-size: 1.175rem;
+        display: flex;
+        flex-direction: row;
+        gap: .75rem;
+        align-items: center;
       }
 
       .rating-count {
-        color: utils.$col-gray;
-        margin-left: .75rem;
+        color: utils.$col-stars;
         font-size: 80%;
       }
     }
   }
+}
+
+.review-user {
+  color: utils.$col-primary;
 }
 
 @keyframes bounce {

@@ -169,43 +169,24 @@ $priceReduced = number_format(getPercentageAmount($priceNormal, $percent), 2, ",
     <section id="also-bought">
         <h2>Ähnliche Artikel</h2>
 
-        <div class="similar-items">
-            <div class="grid-item ignore-animation">
-                <div class="grid-information ignore-animation">
-                    <p>Lorem ipsum.</p>
-                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+        <div class="article-grid">
+            <?php for ($i = 0; $i < 4; $i++) { ?>
+                <div class="article">
+                    <a href="artikel-anzeigen.php">
+                        <img src="https://loremflickr.com/300/300?random=<?php echo rand(1, 99999); ?>" alt="Bild"/>
 
-                    <div class="grid-buttons ignore-animation">
-                        <a class="button ignore-animation" href="artikel-anzeigen.php">Artikel anzeigen</a>
-                    </div>
+                        <div class="article-information">
+                            <div class="text-group">
+                                <h3>Lorem ipsum.</h3>
+                                <span class="stars"><?php echo getStarString(random_float(1.0, 5.0), rand(1, 10000), true); ?></span>
+                            </div>
+                            <p class="price"><?php echo number_format(random_float(1.0, 10000), 2, ",", ".") . "€"; ?></p>
+                        </div>
+                    </a>
                 </div>
-                <img src="https://loremflickr.com/640/360" class="ignore-animation" alt="Bild"/>
-            </div>
-
-            <div class="grid-item ignore-animation">
-                <div class="grid-information ignore-animation">
-                    <p>Lorem ipsum.</p>
-                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
-
-                    <div class="grid-buttons ignore-animation">
-                        <a class="button ignore-animation" href="artikel-anzeigen.php">Artikel anzeigen</a>
-                    </div>
-                </div>
-                <img src="https://loremflickr.com/640/360" class="ignore-animation" alt="Bild"/>
-            </div>
-
-            <div class="grid-item ignore-animation">
-                <div class="grid-information ignore-animation">
-                    <p>Lorem ipsum.</p>
-                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
-
-                    <div class="grid-buttons ignore-animation">
-                        <a class="button ignore-animation" href="artikel-anzeigen.php">Artikel anzeigen</a>
-                    </div>
-                </div>
-                <img src="https://loremflickr.com/640/360" class="ignore-animation" alt="Bild"/>
-            </div>
+            <?php } ?>
         </div>
+
     </section>
 
     <section id="ratings">
@@ -231,12 +212,13 @@ $priceReduced = number_format(getPercentageAmount($priceNormal, $percent), 2, ",
                         </div>
 
                         <div>
-                            <p class="heading"><b data-placeholder="name"></b> <span class="rating-count"><?php echo number_format(random_float(0.1, 5.0), 1); ?>/5</span></p>
+                            <p class="heading"><span class="rating-count"><?php echo getStarString(random_float(1.0, 5.0), 1, false); ?></span><a class="review-user" href="nutzer-aktivitaet.html"><b data-placeholder="name"></b></a></p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti exercitationem libero odit sit ullam voluptate?</p>
                         </div>
                     </div>
 
                 <?php } ?>
+
             </div>
         </div>
     </section>
