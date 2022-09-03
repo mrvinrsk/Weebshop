@@ -1,26 +1,22 @@
 <?php
-function random_float($min, $max)
-{
-    return ($min + lcg_value() * (abs($max - $min)));
-}
+include_once "php/methods.php";
 
 $percent = rand(3, 20);
-$priceNormal = number_format(random_float(1.00, 200.00), 2);
-$priceReduced = number_format($priceNormal * ((100 - $percent) / 100), 2);
+$priceNormal = number_format(random_float(1.00, 20000.00), 2, ",", ".");
+$priceReduced = number_format(getPercentageAmount($priceNormal, $percent), 2, ",", ".");
 ?>
 
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>WeebShop</title>
 
     <link rel="stylesheet" href="style/css/global.min.css">
     <link rel="stylesheet" href="style/css/home.min.css">
     <link rel="stylesheet" href="style/css/artikel-anzeigen.min.css">
-    <link rel="stylesheet" href="style/css/navbar.min.css">
 
     <script src="js/jquery-3.6.1.min.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
@@ -124,7 +120,7 @@ $priceReduced = number_format($priceNormal * ((100 - $percent) / 100), 2);
                 <p class="article-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam architecto, consequuntur debitis eos explicabo harum illum molestias nisi, nobis nostrum praesentium provident ratione sunt tempore! Est eum ullam voluptas?</p>
 
                 <div class="article-actions">
-                    <p><?php echo $priceNormal ?>€</p>
+                    <p><?php echo $priceNormal; ?>€</p>
                     <a class="button">Kaufen</a>
                 </div>
 

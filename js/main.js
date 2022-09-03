@@ -35,7 +35,7 @@ function loadPlaceholders(path_to_root = "./") {
                         break;
 
                     default:
-                        text = "ERR_NO_MODE";
+                        text = "ERR_NO_PLACEHOLDER_MODE";
                         break;
                 }
 

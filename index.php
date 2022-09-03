@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>WeebShop</title>
 
     <link rel="stylesheet" href="style/css/global.min.css">
     <link rel="stylesheet" href="style/css/home.min.css">
-    <link rel="stylesheet" href="style/css/navbar.min.css">
 
     <script src="js/jquery-3.6.1.min.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
@@ -116,9 +115,45 @@
 
             <?php } ?>
         </div>
+
+        <div class="search">
+            <div class="section-heading">
+                <h2>Noch nicht das richtige dabei?</h2>
+                <p>Hat in letzter Zeit keinen Artikel online gestellt, der für dich relevant ist? Such hier einfach direkt was du brauchst!</p>
+            </div>
+            <form class="input-group" action="search.php" method="GET">
+                <input type="text" name="search" id="search" placeholder="Suchen..."/>
+                <button>Suchen</button>
+            </form>
+        </div>
+    </section>
+
+    <section>
+        <h2>Aktive Verkäufer</h2>
+
+        <div class="seller-grid">
+            <?php for ($i = 0; $i < 3; $i++) { ?>
+
+                <div class="grid-item">
+                    <div class="grid-information">
+                        <p data-placeholder="name"></p>
+                        <span>Verkauft <?php echo rand(50, 100); ?> Artikel.</span>
+
+                        <div class="grid-buttons">
+                            <a class="button" href="artikel-anzeigen.php">Artikel anzeigen</a>
+                        </div>
+                    </div>
+                    <img src="https://fakeimg.pl/250" alt="Bild"/>
+                </div>
+
+            <?php } ?>
+        </div>
     </section>
 </main>
 
+<script>
+    loadPlaceholders();
+</script>
 
 <footer>
     <div>

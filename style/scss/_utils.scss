@@ -3,7 +3,8 @@ $bp-desktop: 1200px;
 
 $col-primary: #0091dc;
 $col-secondary: #a46af1;
-$col-gray: #787878;
+$col-gray: #a4a4a4;
+$col-text: #4b4b4b;
 
 $width: min(90%, 75rem);
 
@@ -20,5 +21,5 @@ $colors: ('primary': $col-primary, 'secondary': $col-secondary, 'gray': $col-gra
 }
 
 @function pastellize($color, $amount) {
-  @return lighten($color, $amount);
+  @return desaturate(lighten($color, $amount), $amount/2);
 }
