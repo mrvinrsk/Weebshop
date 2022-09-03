@@ -76,10 +76,8 @@
 
 /* Animate */
 main, section {
-  > {
-    div, ul, ol, li, article, h1, h2, h3, h4, h5, h6 {
-      opacity: 0;
-    }
+  div, ul, ol, li, article, h1, h2, h3, h4, h5, h6 {
+    opacity: 0;
   }
 }
 

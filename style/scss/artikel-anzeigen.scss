@@ -225,14 +225,28 @@
       .heading {
         font-size: 1.175rem;
         display: flex;
-        flex-direction: row;
-        gap: .75rem;
+        flex-direction: column-reverse;
         align-items: center;
+        justify-content: center;
+
+        @media screen and (min-width: utils.$bp-tablet) {
+          justify-content: flex-start;
+          gap: .75rem;
+          flex-direction: row;
+        }
       }
 
       .rating-count {
         color: utils.$col-stars;
         font-size: 80%;
+      }
+
+      .rating-text {
+        margin-top: 1rem;
+
+        @media screen and (min-width: utils.$bp-tablet) {
+          margin: 0;
+        }
       }
     }
   }

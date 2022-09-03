@@ -213,7 +213,7 @@ $priceReduced = number_format(getPercentageAmount($priceNormal, $percent), 2, ",
 
                         <div>
                             <p class="heading"><span class="rating-count"><?php echo getStarString(random_float(1.0, 5.0), 1, false); ?></span><a class="review-user" href="nutzer-aktivitaet.html"><b data-placeholder="name"></b></a></p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti exercitationem libero odit sit ullam voluptate?</p>
+                            <p class="rating-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti exercitationem libero odit sit ullam voluptate?</p>
                         </div>
                     </div>
 
