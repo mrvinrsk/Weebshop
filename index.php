@@ -99,7 +99,7 @@
         <h2>Neuste Artikel</h2>
 
         <div class="article-grid">
-            <?php for ($i = 0; $i < 8; $i++) { ?>
+            <?php for ($i = 0; $i < 6; $i++) { ?>
 
                 <div class="grid-item">
                     <div class="grid-information">
@@ -110,7 +110,7 @@
                             <a class="button" href="artikel-anzeigen.php">Artikel anzeigen</a>
                         </div>
                     </div>
-                    <img src="https://loremflickr.com/640/360" alt="Bild"/>
+                    <img src="https://loremflickr.com/640/360?random=<?php echo rand(1, 9999); ?>" alt="Bild"/>
                 </div>
 
             <?php } ?>
