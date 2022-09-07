@@ -326,6 +326,10 @@ img {
   z-index: 3;
   transition-duration: .25s;
 
+  &.not-hovered {
+    filter: blur(2px);
+  }
+
   &::after {
     position: absolute;
     content: '';
@@ -341,8 +345,8 @@ img {
 
   @media screen and (hover: hover) {
     &:hover {
-      transform: scale(1.025) translateY(-5px) !important;
-      box-shadow: 0 5px 25px rgba(0 0 0 / 15%) !important;
+      transform: translateY(-10px) !important;
+      box-shadow: 0 10px 10px rgba(0 0 0 / 25%) !important;
 
       &::after {
         opacity: 1;

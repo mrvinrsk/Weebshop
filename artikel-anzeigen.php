@@ -2,8 +2,9 @@
 include_once "php/methods.php";
 
 $percent = rand(3, 20);
-$priceNormal = number_format(random_float(1.00, 20000.00), 2, ",", ".");
+$priceNormal = random_float(1.00, 20000.00);
 $priceReduced = number_format(getPercentageAmount($priceNormal, $percent), 2, ",", ".");
+$priceNormal = number_format($priceNormal, 2, ",", ".");
 ?>
 
 <!doctype html>

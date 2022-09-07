@@ -146,7 +146,7 @@ include_once "php/methods.php";
                         <span>Verkauft <?php echo rand(50, 100); ?> Artikel.</span>
 
                         <div class="grid-buttons">
-                            <a class="button" href="artikel-anzeigen.php">Artikel anzeigen</a>
+                            <a class="button" href="verkaeufer-anzeigen.php">Verkäufer anzeigen</a>
                         </div>
                     </div>
                     <img src="https://fakeimg.pl/250" alt="Bild"/>

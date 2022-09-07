@@ -1,6 +1,5 @@
 <?php
 include_once "php/methods.php";
-$results = number_format(rand(10, 10000), 0, ",", ".");
 ?>
 
 <!doctype html>
@@ -9,10 +8,10 @@ $results = number_format(rand(10, 10000), 0, ",", ".");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?php echo $results; ?> Ergebnisse für: <?php echo $_GET['search']; ?> | Weebshop</title>
+    <title>WeebShop</title>
 
     <link rel="stylesheet" href="style/css/global.min.css">
-    <link rel="stylesheet" href="style/css/search.min.css">
+    <link rel="stylesheet" href="style/css/home.min.css">
 
     <script src="js/jquery-3.6.1.min.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
@@ -100,24 +99,11 @@ $results = number_format(rand(10, 10000), 0, ",", ".");
 </nav>
 
 <main>
-    <section class="heading">
-        <form class="input-group" action="#" method="GET">
-            <input type="text" name="search" id="search" placeholder="Suchen..." value="<?php echo(isset($_GET['search']) ? $_GET['search'] : ''); ?>"/>
-            <button>Suchen</button>
-        </form>
-
-        <div class="search-info text-group">
-            <h1><?php echo "Du hast nach <span class='fc-secondary'>" . $_GET['search'] . "</span>"; ?> gesucht</h1>
-            <p>Diese Suche hat <b><?php echo $results; ?> Ergebnisse</b> erzielt.</p>
-        </div>
-    </section>
-
     <section>
-        <h2>Ergebnisse</h2>
+        <h2>Neuste Artikel</h2>
 
         <div class="article-grid">
-
-            <?php for ($i = 0; $i < 35; $i++) { ?>
+            <?php for ($i = 0; $i < rand(12, 24); $i++) { ?>
 
                 <div class="article">
                     <a href="artikel-anzeigen.php">
@@ -134,10 +120,39 @@ $results = number_format(rand(10, 10000), 0, ",", ".");
                 </div>
 
             <?php } ?>
+        </div>
 
+        <div class="search">
+            <div class="section-heading">
+                <h2>Noch nicht das richtige dabei?</h2>
+                <p>Hat in letzter Zeit keinen Artikel online gestellt, der für dich relevant ist? Such hier einfach direkt was du brauchst!</p>
+            </div>
+            <form class="input-group" action="search.php" method="GET">
+                <input type="text" name="search" id="search" placeholder="Suchen..."/>
+                <button>Suchen</button>
+            </form>
         </div>
     </section>
 </main>
+
+<script>
+    loadPlaceholders();
+</script>
+
+<footer>
+    <div>
+        <div>
+            <img src="./images/logo.png" alt="Logo">
+        </div>
+
+        <div>
+            <p>
+                Dieser Weebshop ist eine Dienstleistung von Marvin Roßkothen & Steven Lenz und dient einzig und allein zu Lern-Zwecken.
+                Die Idee des "Webshops" ist absolut und zu 100% eine eigen produzierte Idee, Ähnlichkeiten zu Aufgaben, von männlichen Lehrern am Berufskolleg Stadtmitte Kluse, wäre rein zufällig.
+            </p>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>

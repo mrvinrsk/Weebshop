@@ -175,4 +175,30 @@ $(function () {
             });
         });
     });
+
+    document.querySelectorAll('.article').forEach(article => {
+        article.addEventListener('mouseenter', () => {
+            let container = article.closest('.article-grid');
+
+            if (container !== null) {
+                container.querySelectorAll('.article').forEach(atc => {
+                    if(atc !== article) {
+                        atc.classList.add('not-hovered');
+                    }
+                });
+            }
+        });
+
+        article.addEventListener('mouseleave', () => {
+            let container = article.closest('.article-grid');
+
+            if (container !== null) {
+                container.querySelectorAll('.article').forEach(atc => {
+                    if(atc !== article) {
+                        atc.classList.remove('not-hovered');
+                    }
+                });
+            }
+        });
+    });
 });
