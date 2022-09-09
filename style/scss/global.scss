@@ -74,6 +74,19 @@
   box-sizing: border-box;
 }
 
+$boxShadows: (
+        'sm': 0 5px 10px rgba(0 0 0 / 5%),
+        'md': 0 7px 13px rgba(0 0 0 / 10%),
+        'lg': 0 10px 15px rgba(0 0 0 / 15%),
+        'xl': 0 15px 25px rgba(0 0 0 / 10%)
+);
+
+@each $name, $strength in $boxShadows {
+  .bs-#{$name} {
+    box-shadow: $strength;
+  }
+}
+
 /* Animate */
 main, section {
   div, ul, ol, li, article, h1, h2, h3, h4, h5, h6 {
@@ -326,12 +339,9 @@ img {
   z-index: 3;
   transition-duration: .25s;
 
-  &.not-hovered {
-    opacity: .65 !important;
-
-    @media screen and (min-width: utils.$bp-desktop) {
-      filter: blur(2px);
-      box-shadow: inset 0 0 5px 2px rgba(0 0 0 / 25%);
+  @media screen and (hover: hover) {
+    &.not-hovered {
+      opacity: .55 !important;
     }
   }
 
@@ -351,11 +361,11 @@ img {
   @media screen and (hover: hover) {
     &:hover {
       transform: translateY(-5px) !important;
-      box-shadow: 0 5px 5px rgba(0 0 0 / 25%) !important;
+      box-shadow: map-get($boxShadows, 'sm');
 
       @media screen and (min-width: utils.$bp-desktop) {
         transform: translateY(-10px) !important;
-        box-shadow: 0 10px 10px rgba(0 0 0 / 25%) !important;
+        box-shadow: map-get($boxShadows, 'lg') !important;
       }
 
       &::after {
