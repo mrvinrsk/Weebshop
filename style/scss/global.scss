@@ -146,21 +146,38 @@ img {
 }
 
 .button {
-  background-color: #e1e1e1;
+  position: relative;
+  z-index: 3;
+  background-color: #eaeaea;
   color: #343434;
-  border: 2px solid transparent;
+  border: none;
   text-decoration: none;
   border-radius: 5px;
   padding: .4em 1.5em;
+  overflow: hidden;
   display: inline-block;
+  transition-duration: .25s;
+
+  &::after {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: linear-gradient(to bottom right, utils.pastellize(utils.$col-primary, 20), utils.pastellize(utils.$col-secondary, 10));
+    transition-duration: .25s;
+  }
 
   &:hover {
-    /* background: linear-gradient(to bottom right, utils.pastellize(utils.$col-primary, 20), utils.pastellize(utils.$col-secondary, 10)); */
     cursor: pointer;
-    border-width: 2px;
-    border-image: linear-gradient(to bottom right, utils.pastellize(utils.$col-primary, 20), utils.pastellize(utils.$col-secondary, 10)) 1;
-    border-radius: 5px;
-    background-color: utils.pastellize(utils.$col-primary, 50);
+    color: #FFF;
+
+    &::after {
+      opacity: 1;
+    }
   }
 }
 
@@ -329,6 +346,14 @@ img {
   }
 }
 
+.stars {
+  color: utils.$col-stars;
+}
+
+.rating-count {
+  color: utils.pastellize(utils.$col-primary, 15);
+}
+
 .article {
   position: relative;
   color: utils.$col-text;
@@ -398,14 +423,6 @@ img {
     border-radius: 5px;
   }
 
-  .stars {
-    color: utils.$col-stars;
-  }
-
-  .rating-count {
-    color: utils.pastellize(utils.$col-primary, 15);
-  }
-
   .price {
     color: utils.$col-text;
   }
@@ -414,7 +431,7 @@ img {
 .section-heading {
   margin-bottom: 1rem;
 
-  h2 {
+  h1, h2, h3, h4, h5, h6 {
     margin: 0;
   }
 }
@@ -679,6 +696,19 @@ nav {
 #icons svg {
   width: 24px;
   height: auto;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: .75rem;
+  margin-top: .75rem;
+
+  @media screen and (min-width: utils.$bp-tablet) {
+    gap: 1.25rem;
+    margin-top: 3.5rem;
+  }
 }
 
 nav {
