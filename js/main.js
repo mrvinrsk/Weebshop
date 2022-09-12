@@ -12,16 +12,30 @@ function loadPlaceholders(path_to_root = "./") {
             document.querySelectorAll('[data-placeholder]').forEach(element => {
                 let text = "";
 
-                switch (element.dataset.placeholder) {
+                switch (element.dataset.placeholder.toLowerCase()) {
+                    case "firstname":
+                        let fnames = json.names.first_names.male.concat(json.names.first_names.female);
+                        text = getRandomFromList(fnames);
+                        break;
+
+                    case "female_firstname":
+                        let ffnames = json.names.first_names.female;
+                        text = getRandomFromList(ffnames);
+                        break;
+
+                    case "male_firstname":
+                        let mfnames = json.names.first_names.male;
+                        text = getRandomFromList(mfnames);
+                        break;
+
+                    case "lastname":
+                        let lnames = json.names.last_names;
+                        text = getRandomFromList(lnames);
+                        break;
+
                     case "name":
                         let names = json.names;
                         let nameList = names.first_names.male.concat(names.first_names.female);
-
-                    function getGender(names, name) {
-                        if (names.first_names.male.includes(name)) return "male";
-                        if (names.first_names.female.includes(name)) return "female";
-                        return "ERR_NAME_NOT_FOUND";
-                    }
 
                         let first_name = getRandomFromList(nameList);
                         let last_name = getRandomFromList(names.last_names);
@@ -30,6 +44,24 @@ function loadPlaceholders(path_to_root = "./") {
                         if (first_name === "Thomas" && last_name === "Schulz") {
                             element.classList.add("schulz");
                         }
+                        break;
+
+                    case "female_name":
+                        let fmnames = json.names;
+                        let fnameList = fmnames.first_names.female;
+
+                        let ffirst_name = getRandomFromList(fnameList);
+                        let flast_name = getRandomFromList(fmnames.last_names);
+                        text = ffirst_name + " " + flast_name;
+                        break;
+
+                    case "male_name":
+                        let mnames = json.names;
+                        let mnameList = mnames.first_names.male;
+
+                        let mfirst_name = getRandomFromList(mnameList);
+                        let mlast_name = getRandomFromList(mnames.last_names);
+                        text = mfirst_name + " " + mlast_name;
                         break;
 
                     default:
@@ -88,6 +120,14 @@ $(function () {
             offset: '115%'
         });
     });
+
+    let up = document.createElement('div');
+    up.classList.add("up");
+    up.innerHTML = "<span class='icon'>arrow_upward</span>";
+    document.body.appendChild(up);
+    up.addEventListener('click', () => {
+        $("html, body").animate({scrollTop: 0}, 500);
+    })
 });
 
 
@@ -107,8 +147,12 @@ $(function () {
     }
 
     window.addEventListener("scroll", () => {
+        let up = document.querySelector('.up');
         if (window.scrollY >= 200) {
             nav.classList.add("scrolled");
+            up.classList.add("show");
+        } else {
+            up.classList.remove("show");
         }
 
         /* Active link */
@@ -182,7 +226,7 @@ $(function () {
 
             if (container !== null) {
                 container.querySelectorAll('.article').forEach(atc => {
-                    if(atc !== article) {
+                    if (atc !== article) {
                         atc.classList.add('not-hovered');
                     }
                 });
@@ -194,7 +238,7 @@ $(function () {
 
             if (container !== null) {
                 container.querySelectorAll('.article').forEach(atc => {
-                    if(atc !== article) {
+                    if (atc !== article) {
                         atc.classList.remove('not-hovered');
                     }
                 });

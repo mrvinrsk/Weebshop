@@ -9,6 +9,8 @@ $col-text: #4b4b4b;
 $col-stars: #d79507;
 $col-stars-hovered: #ecbe0b;
 
+$gradient-primary-secondary: linear-gradient(to bottom right, pastellize($col-primary, 20), pastellize($col-secondary, 10));
+
 $width: min(90%, 75rem);
 
 

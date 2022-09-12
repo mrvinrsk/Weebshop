@@ -46,19 +46,7 @@
   }
 }
 
-#buying-options {
-  background: linear-gradient(to bottom right, utils.pastellize(utils.$col-primary, 45), utils.pastellize(utils.$col-secondary, 20));
-  padding: .75rem;
-  border-radius: 15px;
 
-  @media screen and (min-width: utils.$bp-tablet) {
-    padding: 2rem;
-  }
-
-  @media screen and (min-width: utils.$bp-desktop) {
-    padding: 3rem;
-  }
-}
 
 .offers {
   display: flex;
@@ -156,7 +144,7 @@
     .icon {
       display: flex;
       font-size: 7.5rem !important;
-      color: utils.$col-secondary;
+      color: utils.$col-stars;
     }
 
     .info {

@@ -420,11 +420,26 @@ img {
   }
 
   img {
-    border-radius: 5px;
+    border-radius: 10px;
+    background-color: #f3f3f3;
   }
 
   .price {
     color: utils.$col-text;
+  }
+}
+
+.gradient-section {
+  background: linear-gradient(to bottom right, transparentize(utils.pastellize(utils.$col-primary, 45), .5), transparentize(utils.pastellize(utils.$col-secondary, 20), .5));
+  padding: .75rem;
+  border-radius: 15px;
+
+  @media screen and (min-width: utils.$bp-tablet) {
+    padding: 2rem;
+  }
+
+  @media screen and (min-width: utils.$bp-desktop) {
+    padding: 3rem;
   }
 }
 
@@ -433,6 +448,25 @@ img {
 
   h1, h2, h3, h4, h5, h6 {
     margin: 0;
+  }
+}
+
+.up {
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  bottom: 1rem;
+  padding: .5em;
+  border-radius: 10px;
+  color: #FFF;
+  background: linear-gradient(to bottom right, utils.pastellize(utils.$col-primary, 20), utils.pastellize(utils.$col-secondary, 10));
+  box-shadow: 0 3px 10px rgba(0 0 0 / 10%);
+  cursor: pointer;
+  right: -90%;
+  transition-duration: .6s;
+
+  &.show {
+    right: 1rem;
   }
 }
 

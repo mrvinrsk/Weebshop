@@ -118,18 +118,18 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
             </div>
 
             <div class="article-main-text">
-                <h1 class="article-name" data-placeholder="name"></h1>
+                <h1 class="article-name" data-placeholder="firstname"></h1>
                 <p class="article-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam architecto, consequuntur debitis eos explicabo harum illum molestias nisi, nobis nostrum praesentium provident ratione sunt tempore! Est eum ullam voluptas?</p>
 
                 <div class="article-actions">
-                    <a class="button">Artikel</a>
-                    <a class="button">Bewertungen</a>
+                    <a class="button" href="#featured">Artikel</a>
+                    <a class="button" href="#ratings">Bewertungen</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="buying-options">
+    <section id="featured" class="gradient-section">
         <h2>Im Rampenlicht</h2>
 
         <div class="featured-offer">
@@ -151,7 +151,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
     </section>
 
     <section id="also-bought">
-        <h2>Ähnliche Artikel</h2>
+        <h2>Artikel von <span data-placeholder="firstname"></span></h2>
 
         <div class="article-grid">
             <?php for ($i = 0; $i < 4; $i++) { ?>

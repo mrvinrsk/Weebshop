@@ -130,7 +130,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
         </div>
     </section>
 
-    <section id="buying-options">
+    <section id="buying-options" class="gradient-section">
         <h2>Kauf-Optionen</h2>
 
         <div class="offers">
