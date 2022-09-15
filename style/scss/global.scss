@@ -430,7 +430,7 @@ img {
 }
 
 .gradient-section {
-  background: linear-gradient(to bottom right, transparentize(utils.pastellize(utils.$col-primary, 45), .5), transparentize(utils.pastellize(utils.$col-secondary, 20), .5));
+  background: linear-gradient(to bottom right, transparentize(utils.pastellize(utils.$col-primary, 35), .5), transparentize(utils.pastellize(utils.$col-secondary, 10), .5));
   padding: .75rem;
   border-radius: 15px;
 
