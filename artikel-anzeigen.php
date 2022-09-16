@@ -123,7 +123,12 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
 
                 <div class="article-actions">
                     <p><?php echo $priceNormal; ?>€</p>
-                    <a class="button">Kaufen</a>
+
+                    <div class="actions">
+                        <a class="button" onclick="buy('<?php echo rand(1, 10000); ?>');">Kaufen</a>
+                        <a class="button" href="cart.php">In den Warenkorb</a>
+                    </div>
+
                 </div>
 
                 <a href="#buying-options" style="display: inline-block; width: 100%; text-align: right; margin-top: .5rem;">Andere Optionen</a>

@@ -249,6 +249,7 @@
 }
 
 .comment-sub {
+  margin-top: .5rem;
   display: flex;
   flex-direction: row;
   gap: 2rem;
@@ -256,7 +257,12 @@
   align-items: center;
 
   .star-rating {
-    font-size: 2.25rem;
+    color: utils.$col-stars;
+    font-size: 1.35rem;
+
+    @media screen and (min-width: utils.$bp-tablet) {
+      font-size: 1.75rem;
+    }
   }
 }
 

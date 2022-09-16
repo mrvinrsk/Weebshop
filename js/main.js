@@ -246,3 +246,25 @@ $(function () {
         });
     });
 });
+
+function buy(article) {
+    $.ajax({
+        url: "buy.php",
+        type: "GET",
+        data: {
+            article: article
+        },
+        success: function (data) {
+            $('body').append(data);
+
+            document.querySelector('#buying-popup').addEventListener('click', (e) => {
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+            });
+
+            document.querySelector('#page-darker').addEventListener('click', () => {
+                document.querySelector('#page-darker').remove();
+            });
+        }
+    });
+}
