@@ -1,5 +1,5 @@
-import { AnyFunction, ShiftN } from '../../../types';
-import { slice } from '../../arrayLike';
+import {AnyFunction, ShiftN} from '../../../types';
+import {slice} from '../../arrayLike';
 
 
 /**
@@ -12,9 +12,9 @@ import { slice } from '../../arrayLike';
  * @return A function where arguments are bound.
  */
 export function apply<F extends AnyFunction, A extends any[] = any[]>(
-  func: F,
-  ...args: A
-): ( ...args: ShiftN<Parameters<F>, A["length"]> ) => ReturnType<F>;
+    func: F,
+    ...args: A
+): (...args: ShiftN<Parameters<F>, A["length"]>) => ReturnType<F>;
 
 /**
  * Create a function where provided arguments are bound.
@@ -22,7 +22,7 @@ export function apply<F extends AnyFunction, A extends any[] = any[]>(
  *
  * @param func - A function.
  */
-export function apply( func: AnyFunction ): any {
-  // eslint-disable-next-line prefer-rest-params, prefer-spread
-  return func.bind( null, ...slice( arguments, 1 ) );
+export function apply(func: AnyFunction): any {
+    // eslint-disable-next-line prefer-rest-params, prefer-spread
+    return func.bind(null, ...slice(arguments, 1));
 }

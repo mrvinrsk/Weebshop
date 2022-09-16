@@ -1,9 +1,9 @@
-import { matches } from './matches';
+import {matches} from './matches';
 
 
-describe( 'children', () => {
-  beforeEach( () => {
-    document.body.innerHTML = `
+describe('children', () => {
+    beforeEach(() => {
+        document.body.innerHTML = `
       <div id="container">
         <span id="span1" class="active"></span>
         <button id="button1" class="active"></button>
@@ -13,23 +13,23 @@ describe( 'children', () => {
         <button id="button3"></button>
       </div>
     `;
-  } );
+    });
 
-  test( 'can test if the selector matches the element or not.', () => {
-    const container = document.getElementById( 'container' );
+    test('can test if the selector matches the element or not.', () => {
+        const container = document.getElementById('container');
 
-    expect( matches( container, 'div' ) ).toBe( true );
-    expect( matches( container, '#container' ) ).toBe( true );
-    expect( matches( container, 'span' ) ).toBe( false );
+        expect(matches(container, 'div')).toBe(true);
+        expect(matches(container, '#container')).toBe(true);
+        expect(matches(container, 'span')).toBe(false);
 
-    const span = container.firstElementChild;
+        const span = container.firstElementChild;
 
-    expect( matches( span, 'span' ) ).toBe( true );
-    expect( matches( span, '#span1' ) ).toBe( true );
-    expect( matches( span, '.active' ) ).toBe( true );
-    expect( matches( span, '#container .active' ) ).toBe( true );
+        expect(matches(span, 'span')).toBe(true);
+        expect(matches(span, '#span1')).toBe(true);
+        expect(matches(span, '.active')).toBe(true);
+        expect(matches(span, '#container .active')).toBe(true);
 
-    expect( matches( span, '#container' ) ).toBe( false );
-    expect( matches( span, '#span2' ) ).toBe( false );
-  } );
-} );
+        expect(matches(span, '#container')).toBe(false);
+        expect(matches(span, '#span2')).toBe(false);
+    });
+});

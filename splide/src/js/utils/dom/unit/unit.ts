@@ -1,4 +1,4 @@
-import { isString } from '../../type/type';
+import {isString} from '../../type/type';
 
 
 /**
@@ -9,6 +9,6 @@ import { isString } from '../../type/type';
  *
  * @return A string with the CSS unit.
  */
-export function unit( value: number | string ): string {
-  return isString( value ) ? value : value ? `${ value }px` : '';
+export function unit(value: number | string): string {
+    return isString(value) ? value : value ? `${value}px` : '';
 }

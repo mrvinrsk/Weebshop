@@ -1,1 +1,1 @@
-export const { min, max, floor, ceil, abs } = Math;
+export const {min, max, floor, ceil, abs} = Math;

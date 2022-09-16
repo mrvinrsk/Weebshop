@@ -11,7 +11,7 @@ $arrow-left: 1em !default;
         right: $arrow-right;
 
         svg {
-          transform: scaleX( 1 );
+          transform: scaleX(1);
         }
       }
 
@@ -20,7 +20,7 @@ $arrow-left: 1em !default;
         right: auto;
 
         svg {
-          transform: scaleX( -1 );
+          transform: scaleX(-1);
         }
       }
     }

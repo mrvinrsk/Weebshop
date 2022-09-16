@@ -11,13 +11,13 @@ $pagination-dot-height: false !default;
   &__arrows--ttb {
     #{ $root }__arrow {
       left: 50%;
-      transform: translate( -50%, 0 );
+      transform: translate(-50%, 0);
 
       &--prev {
         top: $arrow-top;
 
         svg {
-          transform: rotateZ( -90deg );
+          transform: rotateZ(-90deg);
         }
       }
 
@@ -26,7 +26,7 @@ $pagination-dot-height: false !default;
         top: auto;
 
         svg {
-          transform: rotateZ( 90deg );
+          transform: rotateZ(90deg);
         }
       }
     }

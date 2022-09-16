@@ -1,4 +1,4 @@
-import { style } from '../style/style';
+import {style} from '../style/style';
 
 
 /**
@@ -7,6 +7,6 @@ import { style } from '../style/style';
  * @param elm     - An element to set a new value to.
  * @param display - A new `display` value.
  */
-export function display( elm: HTMLElement, display: string ): void {
-  style( elm, 'display', display );
+export function display(elm: HTMLElement, display: string): void {
+    style(elm, 'display', display);
 }

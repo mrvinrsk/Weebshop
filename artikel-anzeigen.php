@@ -23,6 +23,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/anime.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/rating.js"></script>
 </head>
 <body>
 
@@ -220,6 +221,22 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
 
                 <?php } ?>
 
+            </div>
+        </div>
+
+        <div class="write-comment">
+            <h3>Bewertung schreiben</h3>
+            <textarea class="textfield"></textarea>
+
+            <div class="comment-sub">
+                <div class="star-rating">
+                    <i class="bi rating-star" data-rating="1"></i>
+                    <i class="bi rating-star" data-rating="2"></i>
+                    <i class="bi rating-star" data-rating="3"></i>
+                    <i class="bi rating-star" data-rating="4"></i>
+                    <i class="bi rating-star" data-rating="5"></i>
+                </div>
+                <button>Kommentieren</button>
             </div>
         </div>
     </section>

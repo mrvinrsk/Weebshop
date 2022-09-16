@@ -10,4 +10,4 @@ export const PROJECT_CODE = 'splide';
  *
  * @since 3.0.0
  */
-export const DATA_ATTRIBUTE = `data-${ PROJECT_CODE }`;
+export const DATA_ATTRIBUTE = `data-${PROJECT_CODE}`;

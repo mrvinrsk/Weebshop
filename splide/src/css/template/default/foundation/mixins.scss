@@ -17,7 +17,7 @@ $outline-offset-inset: -3px !default;
 
 @mixin focus-outline-inset {
   @supports ( outline-offset: $outline-offset-inset ) {
-    @include focus-outline( $outline-offset-inset );
+    @include focus-outline($outline-offset-inset);
   }
 
   /* IE does not support outline-offset */

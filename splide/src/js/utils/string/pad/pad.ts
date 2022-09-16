@@ -5,6 +5,6 @@
  *
  * @return string - Padded number.
  */
-export function pad( number: number ): string {
-  return number < 10 ? `0${ number }` : `${ number }`;
+export function pad(number: number): string {
+    return number < 10 ? `0${number}` : `${number}`;
 }

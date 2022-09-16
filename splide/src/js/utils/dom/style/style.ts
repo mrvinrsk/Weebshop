@@ -1,20 +1,20 @@
-import { isNull, isUndefined } from '../../type/type';
+import {isNull, isUndefined} from '../../type/type';
 
 
 export function style<K extends keyof CSSStyleDeclaration>(
-  elm: HTMLElement,
-  prop: K,
+    elm: HTMLElement,
+    prop: K,
 ): CSSStyleDeclaration[ K ];
 
 export function style(
-  elm: HTMLElement,
-  prop: string,
+    elm: HTMLElement,
+    prop: string,
 ): string;
 
 export function style(
-  elm: HTMLElement,
-  prop: string,
-  value: string | number
+    elm: HTMLElement,
+    prop: string,
+    value: string | number
 ): void;
 
 
@@ -26,15 +26,15 @@ export function style(
  * @param value - A value to set.
  */
 export function style(
-  elm: HTMLElement,
-  prop: string,
-  value?: string | number
+    elm: HTMLElement,
+    prop: string,
+    value?: string | number
 ): string | void {
-  if ( isUndefined( value ) ) {
-    return getComputedStyle( elm )[ prop ];
-  }
+    if (isUndefined(value)) {
+        return getComputedStyle(elm)[prop];
+    }
 
-  if ( ! isNull( value ) ) {
-    elm.style[ prop ] = `${ value }`;
-  }
+    if (!isNull(value)) {
+        elm.style[prop] = `${value}`;
+    }
 }

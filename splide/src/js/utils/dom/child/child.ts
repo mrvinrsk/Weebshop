@@ -1,4 +1,4 @@
-import { children } from '../children/children';
+import {children} from '../children/children';
 
 
 /**
@@ -9,6 +9,6 @@ import { children } from '../children/children';
  *
  * @return A matched child element if available, or otherwise `undefined`.
  */
-export function child<E extends HTMLElement>( parent: HTMLElement, selector?: string ): E | undefined {
-  return selector ? children<E>( parent, selector )[ 0 ] : parent.firstElementChild as E;
+export function child<E extends HTMLElement>(parent: HTMLElement, selector?: string): E | undefined {
+    return selector ? children<E>(parent, selector)[0] : parent.firstElementChild as E;
 }

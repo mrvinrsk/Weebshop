@@ -1,7 +1,7 @@
-import { isString } from '../../type/type';
-import { create } from '../create/create';
-import { rect } from '../rect/rect';
-import { remove } from '../remove/remove';
+import {isString} from '../../type/type';
+import {create} from '../create/create';
+import {rect} from '../rect/rect';
+import {remove} from '../remove/remove';
 
 
 /**
@@ -12,12 +12,12 @@ import { remove } from '../remove/remove';
  *
  * @return A converted value in pixel. Unhandled values will become 0.
  */
-export function measure( parent: HTMLElement, value: number | string ): number {
-  if ( isString( value ) ) {
-    const div = create( 'div', { style: `width: ${ value }; position: absolute;` }, parent );
-    value = rect( div ).width;
-    remove( div );
-  }
+export function measure(parent: HTMLElement, value: number | string): number {
+    if (isString(value)) {
+        const div = create('div', {style: `width: ${value}; position: absolute;`}, parent);
+        value = rect(div).width;
+        remove(div);
+    }
 
-  return value;
+    return value;
 }

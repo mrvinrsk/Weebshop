@@ -1,4 +1,4 @@
-import { max, min } from '../math/math';
+import {max, min} from '../math/math';
 
 
 /**
@@ -8,8 +8,8 @@ import { max, min } from '../math/math';
  * @param x      - A min or max number.
  * @param y      - A min or max number.
  */
-export function clamp( number: number, x: number, y: number ): number {
-  const minimum = min( x, y );
-  const maximum = max( x, y );
-  return min( max( minimum, number ), maximum );
+export function clamp(number: number, x: number, y: number): number {
+    const minimum = min(x, y);
+    const maximum = max(x, y);
+    return min(max(minimum, number), maximum);
 }

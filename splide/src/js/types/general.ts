@@ -1,6 +1,6 @@
-import { Splide } from '../core/Splide/Splide';
-import { Components } from './components';
-import { Options } from './options';
+import {Splide} from '../core/Splide/Splide';
+import {Components} from './components';
+import {Options} from './options';
 
 
 /**
@@ -8,14 +8,14 @@ import { Options } from './options';
  *
  * @since 3.0.0
  */
-export type AnyFunction = ( ...args: any[] ) => any;
+export type AnyFunction = (...args: any[]) => any;
 
 /**
  * The type for a component.
  *
  * @since 3.0.0
  */
-export type ComponentConstructor = ( Splide: Splide, Components: Components, options: Options ) => BaseComponent;
+export type ComponentConstructor = (Splide: Splide, Components: Components, options: Options) => BaseComponent;
 
 /**
  * The interface for any component.
@@ -23,9 +23,11 @@ export type ComponentConstructor = ( Splide: Splide, Components: Components, opt
  * @since 3.0.0
  */
 export interface BaseComponent {
-  setup?(): void;
-  mount?(): void;
-  destroy?( completely?: boolean ): void;
+    setup?(): void;
+
+    mount?(): void;
+
+    destroy?(completely?: boolean): void;
 }
 
 /**
@@ -34,8 +36,9 @@ export interface BaseComponent {
  * @since 3.0.0
  */
 export interface TransitionComponent extends BaseComponent {
-  start( index: number, done: () => void ): void;
-  cancel(): void;
+    start(index: number, done: () => void): void;
+
+    cancel(): void;
 }
 
 /**
@@ -44,6 +47,6 @@ export interface TransitionComponent extends BaseComponent {
  * @since 3.2.8
  */
 export interface SyncTarget {
-  splide: Splide;
-  isParent?: boolean;
+    splide: Splide;
+    isParent?: boolean;
 }

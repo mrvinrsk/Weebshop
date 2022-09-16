@@ -4,11 +4,11 @@
  * @param e               - An Event object.
  * @param stopPropagation - Optional. Whether to stop the event propagation or not.
  */
-export function prevent( e: Event, stopPropagation?: boolean ): void {
-  e.preventDefault();
+export function prevent(e: Event, stopPropagation?: boolean): void {
+    e.preventDefault();
 
-  if ( stopPropagation ) {
-    e.stopPropagation();
-    e.stopImmediatePropagation();
-  }
+    if (stopPropagation) {
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+    }
 }

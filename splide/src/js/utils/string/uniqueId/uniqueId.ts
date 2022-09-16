@@ -1,4 +1,4 @@
-import { pad } from '../pad/pad';
+import {pad} from '../pad/pad';
 
 
 /**
@@ -13,6 +13,6 @@ const ids: Record<string, number> = {};
  *
  * @param prefix - A prefix for the ID.
  */
-export function uniqueId( prefix: string ): string {
-  return `${ prefix }${ pad( ( ids[ prefix ] = ( ids[ prefix ] || 0 ) + 1 ) ) }`;
+export function uniqueId(prefix: string): string {
+    return `${prefix}${pad((ids[prefix] = (ids[prefix] || 0) + 1))}`;
 }

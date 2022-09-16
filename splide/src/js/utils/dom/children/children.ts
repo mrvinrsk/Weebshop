@@ -1,5 +1,5 @@
-import { slice } from '../../arrayLike';
-import { matches } from '../matches/matches';
+import {slice} from '../../arrayLike';
+import {matches} from '../matches/matches';
 
 
 /**
@@ -10,7 +10,7 @@ import { matches } from '../matches/matches';
  *
  * @return An array with filtered children.
  */
-export function children<E extends HTMLElement>( parent: HTMLElement, selector?: string ): E[] {
-  const children = parent ? slice( parent.children ) as E[] : [];
-  return selector ? children.filter( child => matches( child, selector ) ) : children;
+export function children<E extends HTMLElement>(parent: HTMLElement, selector?: string): E[] {
+    const children = parent ? slice(parent.children) as E[] : [];
+    return selector ? children.filter(child => matches(child, selector)) : children;
 }

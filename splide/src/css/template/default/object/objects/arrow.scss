@@ -28,7 +28,7 @@ $right: 1em !default;
     padding: $button-padding;
     position: absolute;
     top: 50%;
-    transform: translateY( -50% );
+    transform: translateY(-50%);
     z-index: 1;
 
     @if $opacity {
@@ -88,7 +88,7 @@ $right: 1em !default;
       left: $left;
 
       svg {
-        transform: scaleX( -1 );
+        transform: scaleX(-1);
       }
     }
 

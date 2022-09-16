@@ -1,4 +1,4 @@
-import { forEach } from '../../array';
+import {forEach} from '../../array';
 
 
 /**
@@ -8,12 +8,12 @@ import { forEach } from '../../array';
  * @param classes - A class or class names.
  * @param add     - Whether to add or remove a class.
  */
-export function toggleClass( elm: Element, classes: string | string[], add: boolean ): void {
-  if ( elm ) {
-    forEach( classes, name => {
-      if ( name ) {
-        elm.classList[ add ? 'add' : 'remove' ]( name );
-      }
-    } );
-  }
+export function toggleClass(elm: Element, classes: string | string[], add: boolean): void {
+    if (elm) {
+        forEach(classes, name => {
+            if (name) {
+                elm.classList[add ? 'add' : 'remove'](name);
+            }
+        });
+    }
 }

@@ -1,4 +1,4 @@
-import { toArray } from '../toArray/toArray';
+import {toArray} from '../toArray/toArray';
 
 
 /**
@@ -9,7 +9,7 @@ import { toArray } from '../toArray/toArray';
  *
  * @return A provided array itself.
  */
-export function push<T>( array: T[], items: T | T[] ): T[] {
-  array.push( ...toArray( items ) );
-  return array;
+export function push<T>(array: T[], items: T | T[]): T[] {
+    array.push(...toArray(items));
+    return array;
 }

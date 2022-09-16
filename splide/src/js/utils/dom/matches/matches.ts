@@ -1,4 +1,4 @@
-import { isHTMLElement } from '../../type/type';
+import {isHTMLElement} from '../../type/type';
 
 
 /**
@@ -9,6 +9,6 @@ import { isHTMLElement } from '../../type/type';
  *
  * @return `true` if the selector matches the element, or otherwise `false`.
  */
-export function matches( elm: Element | EventTarget, selector: string ): boolean {
-  return isHTMLElement( elm ) && ( elm[ 'msMatchesSelector' ] || elm.matches ).call( elm, selector );
+export function matches(elm: Element | EventTarget, selector: string): boolean {
+    return isHTMLElement(elm) && (elm['msMatchesSelector'] || elm.matches).call(elm, selector);
 }

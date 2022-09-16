@@ -1,4 +1,4 @@
-import { toggleClass } from '../toggleClass/toggleClass';
+import {toggleClass} from '../toggleClass/toggleClass';
 
 
 /**
@@ -7,6 +7,6 @@ import { toggleClass } from '../toggleClass/toggleClass';
  * @param elm     - An element to remove classes from.
  * @param classes - Classes to remove.
  */
-export function removeClass( elm: Element, classes: string | string[] ): void {
-  toggleClass( elm, classes, false );
+export function removeClass(elm: Element, classes: string | string[]): void {
+    toggleClass(elm, classes, false);
 }

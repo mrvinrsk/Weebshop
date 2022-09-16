@@ -1,5 +1,5 @@
-import { isFunction } from '../../type/type';
-import { matches } from '../matches/matches';
+import {isFunction} from '../../type/type';
+import {matches} from '../matches/matches';
 
 
 /**
@@ -10,20 +10,20 @@ import { matches } from '../matches/matches';
  *
  * @return The found element if available, or `null`.
  */
-export function closest( from: HTMLElement, selector: string ): HTMLElement | null {
-  if ( isFunction( from.closest ) ) {
-    return from.closest( selector );
-  }
-
-  let elm: HTMLElement | null = from;
-
-  while ( elm && elm.nodeType === 1 ) {
-    if ( matches( elm, selector ) ) {
-      break;
+export function closest(from: HTMLElement, selector: string): HTMLElement | null {
+    if (isFunction(from.closest)) {
+        return from.closest(selector);
     }
 
-    elm = elm.parentElement;
-  }
+    let elm: HTMLElement | null = from;
 
-  return elm;
+    while (elm && elm.nodeType === 1) {
+        if (matches(elm, selector)) {
+            break;
+        }
+
+        elm = elm.parentElement;
+    }
+
+    return elm;
 }

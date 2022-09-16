@@ -39,11 +39,11 @@ export const DESTROYED = 7;
  * @since 3.0.0
  */
 export const STATES = {
-  CREATED,
-  MOUNTED,
-  IDLE,
-  MOVING,
-  SCROLLING,
-  DRAGGING,
-  DESTROYED,
+    CREATED,
+    MOUNTED,
+    IDLE,
+    MOVING,
+    SCROLLING,
+    DRAGGING,
+    DESTROYED,
 };

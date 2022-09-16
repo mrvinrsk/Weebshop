@@ -1,5 +1,5 @@
 $main: #00bfff !default;
-$main-light: lighten( $main, 20% ) !default;
+$main-light: lighten($main, 20%) !default;
 
 @use '../../template/default/foundation/colors' with (
   $main: $main,

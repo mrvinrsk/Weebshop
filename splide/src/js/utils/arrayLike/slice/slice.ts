@@ -7,6 +7,6 @@
  *
  * @return An array with sliced elements.
  */
-export function slice<T>( arrayLike: ArrayLike<T>, start?: number, end?: number ): T[] {
-  return Array.prototype.slice.call( arrayLike, start, end );
+export function slice<T>(arrayLike: ArrayLike<T>, start?: number, end?: number): T[] {
+    return Array.prototype.slice.call(arrayLike, start, end);
 }

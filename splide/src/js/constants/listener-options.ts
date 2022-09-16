@@ -3,4 +3,4 @@
  *
  * @since 3.4.1
  */
-export const SCROLL_LISTENER_OPTIONS = { passive: false, capture: true };
+export const SCROLL_LISTENER_OPTIONS = {passive: false, capture: true};

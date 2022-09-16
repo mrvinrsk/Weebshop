@@ -1,5 +1,5 @@
-import { AnyFunction } from '../../types';
-import { apply } from '../function';
+import {AnyFunction} from '../../types';
+import {apply} from '../function';
 
 
 /**
@@ -10,8 +10,8 @@ import { apply } from '../function';
  *
  * @return `true` if the subject is the specified type.
  */
-function typeOf( type: string, subject: unknown ): boolean {
-  return typeof subject === type;
+function typeOf(type: string, subject: unknown): boolean {
+    return typeof subject === type;
 }
 
 /**
@@ -21,8 +21,8 @@ function typeOf( type: string, subject: unknown ): boolean {
  *
  * @return `true` if the subject is an object, or otherwise `false`.
  */
-export function isObject( subject: unknown ): subject is object {
-  return ! isNull( subject ) && typeOf( 'object', subject );
+export function isObject(subject: unknown): subject is object {
+    return !isNull(subject) && typeOf('object', subject);
 }
 
 /**
@@ -32,7 +32,7 @@ export function isObject( subject: unknown ): subject is object {
  *
  * @return `true` if the subject is an array, or otherwise `false`.
  */
-export const isArray: <T>( subject: unknown ) => subject is T[] = Array.isArray;
+export const isArray: <T>(subject: unknown) => subject is T[] = Array.isArray;
 
 /**
  * Checks if the given subject is a function or not.
@@ -41,7 +41,7 @@ export const isArray: <T>( subject: unknown ) => subject is T[] = Array.isArray;
  *
  * @return `true` if the subject is a function, or otherwise `false`.
  */
-export const isFunction = <( subject: unknown ) => subject is AnyFunction>apply( typeOf, 'function' );
+export const isFunction = <(subject: unknown) => subject is AnyFunction>apply(typeOf, 'function');
 
 /**
  * Checks if the given subject is a string or not.
@@ -50,7 +50,7 @@ export const isFunction = <( subject: unknown ) => subject is AnyFunction>apply(
  *
  * @return `true` if the subject is a string, or otherwise `false`.
  */
-export const isString = <( subject: unknown ) => subject is string>apply( typeOf, 'string' );
+export const isString = <(subject: unknown) => subject is string>apply(typeOf, 'string');
 
 /**
  * Checks if the given subject is `undefined` or not.
@@ -59,7 +59,7 @@ export const isString = <( subject: unknown ) => subject is string>apply( typeOf
  *
  * @return `true` if the subject is `undefined`, or otherwise `false`.
  */
-export const isUndefined = <( subject: unknown ) => subject is undefined>apply( typeOf, 'undefined' );
+export const isUndefined = <(subject: unknown) => subject is undefined>apply(typeOf, 'undefined');
 
 /**
  * Checks if the given subject is `null` or not.
@@ -68,8 +68,8 @@ export const isUndefined = <( subject: unknown ) => subject is undefined>apply( 
  *
  * @return `true` if the subject is `null`, or otherwise `false`.
  */
-export function isNull( subject: unknown ): subject is null {
-  return subject === null;
+export function isNull(subject: unknown): subject is null {
+    return subject === null;
 }
 
 /**
@@ -79,8 +79,8 @@ export function isNull( subject: unknown ): subject is null {
  *
  * @return `true` if the subject is an HTMLElement instance, or otherwise `false`.
  */
-export function isHTMLElement( subject: unknown ): subject is HTMLElement {
-  return subject instanceof HTMLElement;
+export function isHTMLElement(subject: unknown): subject is HTMLElement {
+    return subject instanceof HTMLElement;
 }
 
 /**
@@ -90,6 +90,6 @@ export function isHTMLElement( subject: unknown ): subject is HTMLElement {
  *
  * @return `true` if the subject is an HTMLButtonElement, or otherwise `false`.
  */
-export function isHTMLButtonElement( subject: unknown ): subject is HTMLButtonElement {
-  return subject instanceof HTMLButtonElement;
+export function isHTMLButtonElement(subject: unknown): subject is HTMLButtonElement {
+    return subject instanceof HTMLButtonElement;
 }

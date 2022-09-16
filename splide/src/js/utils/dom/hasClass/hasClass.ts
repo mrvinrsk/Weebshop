@@ -6,6 +6,6 @@
  *
  * @return `true` if the element contains the class, or otherwise `false`.
  */
-export function hasClass( elm: Element, className: string ): boolean {
-  return elm && elm.classList.contains( className );
+export function hasClass(elm: Element, className: string): boolean {
+    return elm && elm.classList.contains(className);
 }

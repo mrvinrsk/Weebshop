@@ -5,7 +5,7 @@
       <webServer id="05cc5f91-153b-47d9-8bed-147601620805" name="mrvinrsk" url="http://mrvinrsk.de">
         <fileTransfer rootFolder="/var/www/html" accessType="SFTP" host="mrvinrsk.de" port="22" sshConfigId="98087551-7377-4b13-8281-dfa7052d8474" sshConfig="root@mrvinrsk.de:22 password">
           <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
         </fileTransfer>
       </webServer>

@@ -1,4 +1,4 @@
-import { child } from '../child/child';
+import {child} from '../child/child';
 
 
 /**
@@ -8,6 +8,6 @@ import { child } from '../child/child';
  *
  * @return An Element on success, or otherwise `undefined`.
  */
-export function parseHtml<E extends HTMLElement>( html: string ): E | undefined {
-  return child<E>( new DOMParser().parseFromString( html, 'text/html' ).body );
+export function parseHtml<E extends HTMLElement>(html: string): E | undefined {
+    return child<E>(new DOMParser().parseFromString(html, 'text/html').body);
 }

@@ -46,8 +46,6 @@
   }
 }
 
-
-
 .offers {
   display: flex;
   flex-direction: column;
@@ -237,6 +235,28 @@
         }
       }
     }
+  }
+}
+
+.write-comment {
+  margin-top: .75rem;
+  margin-bottom: .5rem;
+
+  @media screen and (min-width: utils.$bp-tablet) {
+    margin-top: 1.25rem;
+    margin-bottom: .75rem;
+  }
+}
+
+.comment-sub {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+
+  .star-rating {
+    font-size: 2.25rem;
   }
 }
 

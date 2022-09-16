@@ -1,4 +1,4 @@
-import { DATA_ATTRIBUTE } from '../../constants/project';
+import {DATA_ATTRIBUTE} from '../../constants/project';
 
 
 /**
@@ -6,4 +6,4 @@ import { DATA_ATTRIBUTE } from '../../constants/project';
  *
  * @since 3.5.0
  */
-export const INTERVAL_DATA_ATTRIBUTE = `${ DATA_ATTRIBUTE }-interval`;
+export const INTERVAL_DATA_ATTRIBUTE = `${DATA_ATTRIBUTE}-interval`;

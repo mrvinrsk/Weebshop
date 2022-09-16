@@ -6,6 +6,6 @@
  *
  * @return A found element or `null`.
  */
-export function query<E extends Element = Element>( parent: Element | Document, selector: string ): E | null {
-  return parent && parent.querySelector( selector );
+export function query<E extends Element = Element>(parent: Element | Document, selector: string): E | null {
+    return parent && parent.querySelector(selector);
 }

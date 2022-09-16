@@ -1,4 +1,4 @@
-import { forEach } from '../../array';
+import {forEach} from '../../array';
 
 
 /**
@@ -6,10 +6,10 @@ import { forEach } from '../../array';
  *
  * @param nodes - A node or nodes to remove.
  */
-export function remove( nodes: Node | Node[] ): void {
-  forEach( nodes, node => {
-    if ( node && node.parentNode ) {
-      node.parentNode.removeChild( node );
-    }
-  } );
+export function remove(nodes: Node | Node[]): void {
+    forEach(nodes, node => {
+        if (node && node.parentNode) {
+            node.parentNode.removeChild(node);
+        }
+    });
 }

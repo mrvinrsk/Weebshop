@@ -72,7 +72,8 @@ No dependencies, no Lighthouse errors.
 
 ## Support Splide
 
-Please support the project if you like it! 
+Please support the project if you like it!
+
 - [GitHub Sponsors](https://github.com/sponsors/NaotoshiFujita)
 
 ## Features
@@ -99,7 +100,6 @@ Please support the project if you like it!
 - Live Region
 - Internet Explorer 10
 
-
 ## No Lighthouse Errors
 
 Here is the mobile version result of the [Splide front page](https://splidejs.com):
@@ -107,7 +107,6 @@ Here is the mobile version result of the [Splide front page](https://splidejs.co
 <img alt="Lighthouse result of the Splide frontpage" src="./images/lighthouse-mobile.png" width="500">
 
 The Splide slider does not degrade Accessibility, Best Practices and SEO 🎉
-
 
 ## License
 

@@ -1,1 +1,1 @@
-export { SplideRenderer as default } from '../renderer/SplideRenderer/SplideRenderer';
+export {SplideRenderer as default} from '../renderer/SplideRenderer/SplideRenderer';

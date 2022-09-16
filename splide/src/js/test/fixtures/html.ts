@@ -1,20 +1,20 @@
-import { INTERVAL_DATA_ATTRIBUTE } from '../../components/Autoplay/constants';
-import { SRC_DATA_ATTRIBUTE, SRCSET_DATA_ATTRIBUTE } from '../../components/LazyLoad/constants';
-import { URL } from './constants';
+import {INTERVAL_DATA_ATTRIBUTE} from '../../components/Autoplay/constants';
+import {SRC_DATA_ATTRIBUTE, SRCSET_DATA_ATTRIBUTE} from '../../components/LazyLoad/constants';
+import {URL} from './constants';
 
 
 export interface BuildHtmlArgs {
-  tag?: string;
-  id?: string;
-  length?: number;
-  arrows?: boolean;
-  progress?: boolean;
-  autoplay?: boolean;
-  src?: boolean | string;
-  dataSrc?: boolean | string;
-  dataSrcset?: boolean | string;
-  dataInterval?: number[];
-  json?: string;
+    tag?: string;
+    id?: string;
+    length?: number;
+    arrows?: boolean;
+    progress?: boolean;
+    autoplay?: boolean;
+    src?: boolean | string;
+    dataSrc?: boolean | string;
+    dataSrcset?: boolean | string;
+    dataInterval?: number[];
+    json?: string;
 }
 
 /**
@@ -24,33 +24,33 @@ export interface BuildHtmlArgs {
  *
  * @return A built HTML.
  */
-export function buildHtml( args: BuildHtmlArgs = {} ): string {
-  const {
-    tag = 'div',
-    id,
-    length = 10,
-    arrows,
-    progress,
-    autoplay,
-    src = true,
-    dataSrc,
-    dataSrcset,
-    dataInterval,
-    json,
-  } = args;
+export function buildHtml(args: BuildHtmlArgs = {}): string {
+    const {
+        tag = 'div',
+        id,
+        length = 10,
+        arrows,
+        progress,
+        autoplay,
+        src = true,
+        dataSrc,
+        dataSrcset,
+        dataInterval,
+        json,
+    } = args;
 
-  return `
-<${ tag } class="splide"${ id ? ` id=${ id }` : '' }${ json ? ` data-splide='${ json }'` : '' }>
+    return `
+<${tag} class="splide"${id ? ` id=${id}` : ''}${json ? ` data-splide='${json}'` : ''}>
   <div class="splide__track">
     <ul class="splide__list">
-      ${ generateSlides( length, src, dataSrc, dataSrcset, dataInterval ) }
+      ${generateSlides(length, src, dataSrc, dataSrcset, dataInterval)}
     </ul>
   </div>
 
-  ${ arrows ? HTML_ARROWS : '' }
-  ${ progress ? HTML_PROGRESS : '' }
-  ${ autoplay ? HTML_AUTOPLAY : '' }
-</${ tag }>
+  ${arrows ? HTML_ARROWS : ''}
+  ${progress ? HTML_PROGRESS : ''}
+  ${autoplay ? HTML_AUTOPLAY : ''}
+</${tag}>
 `;
 }
 
@@ -66,45 +66,45 @@ export function buildHtml( args: BuildHtmlArgs = {} ): string {
  * @return A built HTML.
  */
 export function generateSlides(
-  length: number,
-  src?: boolean | string,
-  dataSrc?: boolean | string,
-  dataSrcset?: boolean | string,
-  dataInterval: number[] = []
+    length: number,
+    src?: boolean | string,
+    dataSrc?: boolean | string,
+    dataSrcset?: boolean | string,
+    dataInterval: number[] = []
 ): string {
-  return Array.from<string>( { length } ).reduce( ( html, item, index ) => {
-    const attrs: string[] = [];
+    return Array.from<string>({length}).reduce((html, item, index) => {
+        const attrs: string[] = [];
 
-    if ( dataInterval ) {
-      const interval = dataInterval[ index ];
+        if (dataInterval) {
+            const interval = dataInterval[index];
 
-      if ( interval ) {
-        attrs.push( `${ INTERVAL_DATA_ATTRIBUTE }="${ interval }"` );
-      }
-    }
+            if (interval) {
+                attrs.push(`${INTERVAL_DATA_ATTRIBUTE}="${interval}"`);
+            }
+        }
 
-    html += `<li class="splide__slide" ${ attrs.join( ' ' ) }>`;
+        html += `<li class="splide__slide" ${attrs.join(' ')}>`;
 
-    const imgAttrs = [ `alt="${ index }"` ];
+        const imgAttrs = [`alt="${index}"`];
 
-    if ( src ) {
-      imgAttrs.push( `src="${ URL }/${ typeof src === 'string' ? src + '-' : '' }${ index }.jpg"` );
-    }
+        if (src) {
+            imgAttrs.push(`src="${URL}/${typeof src === 'string' ? src + '-' : ''}${index}.jpg"`);
+        }
 
-    if ( dataSrc ) {
-      imgAttrs.push( `${ SRC_DATA_ATTRIBUTE }="${ URL }/${ typeof dataSrc === 'string' ? dataSrc + '-' : '' }${ index }.jpg"` );
-    }
+        if (dataSrc) {
+            imgAttrs.push(`${SRC_DATA_ATTRIBUTE}="${URL}/${typeof dataSrc === 'string' ? dataSrc + '-' : ''}${index}.jpg"`);
+        }
 
-    if ( dataSrcset ) {
-      imgAttrs.push(
-        `${ SRCSET_DATA_ATTRIBUTE }="${ URL }/${ typeof dataSrcset === 'string' ? dataSrcset + '-' : '' }${ index }.jpg 320w"`
-      );
-    }
+        if (dataSrcset) {
+            imgAttrs.push(
+                `${SRCSET_DATA_ATTRIBUTE}="${URL}/${typeof dataSrcset === 'string' ? dataSrcset + '-' : ''}${index}.jpg 320w"`
+            );
+        }
 
-    html += `<img ${ imgAttrs.join( ' ' ) }>`;
-    html += `</li>`;
-    return html;
-  }, '' );
+        html += `<img ${imgAttrs.join(' ')}>`;
+        html += `</li>`;
+        return html;
+    }, '');
 }
 
 export const HTML_ARROWS = `

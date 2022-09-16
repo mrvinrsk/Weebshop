@@ -3,6 +3,6 @@
  *
  * @param target - An element.
  */
-export function rect( target: Element ): DOMRect {
-  return target.getBoundingClientRect();
+export function rect(target: Element): DOMRect {
+    return target.getBoundingClientRect();
 }

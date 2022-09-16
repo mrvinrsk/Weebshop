@@ -1,4 +1,4 @@
-import { forEach } from '../../array';
+import {forEach} from '../../array';
 
 
 /**
@@ -7,12 +7,12 @@ import { forEach } from '../../array';
  * @param nodes - A node or nodes to insert.
  * @param ref   - A reference node.
  */
-export function before( nodes: Node | Node[], ref: Node | null ): void {
-  forEach( nodes, node => {
-    const parent = ( ref || node ).parentNode;
+export function before(nodes: Node | Node[], ref: Node | null): void {
+    forEach(nodes, node => {
+        const parent = (ref || node).parentNode;
 
-    if ( parent ) {
-      parent.insertBefore( node, ref );
-    }
-  } );
+        if (parent) {
+            parent.insertBefore(node, ref);
+        }
+    });
 }

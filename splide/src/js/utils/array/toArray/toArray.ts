@@ -1,4 +1,4 @@
-import { isArray } from '../../type/type';
+import {isArray} from '../../type/type';
 
 
 /**
@@ -8,6 +8,6 @@ import { isArray } from '../../type/type';
  *
  * @return An array containing the value, or the value itself if it is already an array.
  */
-export function toArray<T>( value: T | T[] ): T[] {
-  return isArray( value ) ? value : [ value ];
+export function toArray<T>(value: T | T[]): T[] {
+    return isArray(value) ? value : [value];
 }

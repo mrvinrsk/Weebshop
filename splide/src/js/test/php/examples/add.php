@@ -8,13 +8,13 @@ $settings = get_settings();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Add / Remove</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Add / Remove</title>
 
-  <link rel="stylesheet" href="../../../../../dist/css/themes/splide-<?php echo $settings['theme'] ?>.min.css">
-  <link rel="stylesheet" href="../../assets/css/styles.css">
-  <script src="../../../../../dist/js/splide.js"></script>
+    <link rel="stylesheet" href="../../../../../dist/css/themes/splide-<?php echo $settings['theme'] ?>.min.css">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../../../../dist/js/splide.js"></script>
 </head>
 <body>
 
@@ -24,27 +24,27 @@ $settings = get_settings();
 <button id="remove">Remove</button>
 
 <script>
-  var splide = new Splide( '#splide01', {
-    type   : 'loop',
-    perPage: 3,
-    gap    : '1rem',
-  } );
+    var splide = new Splide('#splide01', {
+        type: 'loop',
+        perPage: 3,
+        gap: '1rem',
+    });
 
-  splide.mount();
+    splide.mount();
 
-  var add    = document.getElementById( 'add' );
-  var remove = document.getElementById( 'remove' );
+    var add = document.getElementById('add');
+    var remove = document.getElementById('remove');
 
-  add.addEventListener( 'click', function() {
-    splide.add( [
-      '<img src="../../assets/images/pics/slide15.jpg">',
-      '<img src="../../assets/images/pics/slide16.jpg">',
-    ] );
-  } );
+    add.addEventListener('click', function () {
+        splide.add([
+            '<img src="../../assets/images/pics/slide15.jpg">',
+            '<img src="../../assets/images/pics/slide16.jpg">',
+        ]);
+    });
 
-  remove.addEventListener( 'click', function() {
-    splide.remove( splide.length - 1 );
-  } );
+    remove.addEventListener('click', function () {
+        splide.remove(splide.length - 1);
+    });
 </script>
 
 </body>

@@ -1,5 +1,5 @@
-import { AnyFunction } from '../../types';
-import { RequestInterval, RequestIntervalInterface } from '../RequestInterval/RequestInterval';
+import {AnyFunction} from '../../types';
+import {RequestInterval, RequestIntervalInterface} from '../RequestInterval/RequestInterval';
 
 
 /**
@@ -8,7 +8,7 @@ import { RequestInterval, RequestIntervalInterface } from '../RequestInterval/Re
  * @since 3.0.0
  */
 export interface ThrottleInstance<F extends AnyFunction> extends Function {
-  ( ...args: Parameters<F> ): void;
+    (...args: Parameters<F>): void;
 }
 
 /**
@@ -20,21 +20,21 @@ export interface ThrottleInstance<F extends AnyFunction> extends Function {
  * @return A throttled function.
  */
 export function Throttle<F extends AnyFunction>(
-  func: F,
-  duration?: number
+    func: F,
+    duration?: number
 ): ThrottleInstance<F> {
-  let interval: RequestIntervalInterface;
+    let interval: RequestIntervalInterface;
 
-  function throttled(): void {
-    if ( ! interval ) {
-      interval = RequestInterval( duration || 0, () => {
-        func();
-        interval = null;
-      }, null, 1 );
+    function throttled(): void {
+        if (!interval) {
+            interval = RequestInterval(duration || 0, () => {
+                func();
+                interval = null;
+            }, null, 1);
 
-      interval.start();
+            interval.start();
+        }
     }
-  }
 
-  return throttled;
+    return throttled;
 }

@@ -1,19 +1,19 @@
-import { isString } from '../../type/type';
-import { addClass } from '../addClass/addClass';
-import { append } from '../append/append';
-import { setAttribute } from '../setAttribute/setAttribute';
+import {isString} from '../../type/type';
+import {addClass} from '../addClass/addClass';
+import {append} from '../append/append';
+import {setAttribute} from '../setAttribute/setAttribute';
 
 
 export function create<K extends keyof HTMLElementTagNameMap>(
-  tag: K,
-  attrs?: Record<string, string | number | boolean> | string,
-  parent?: HTMLElement
+    tag: K,
+    attrs?: Record<string, string | number | boolean> | string,
+    parent?: HTMLElement
 ): HTMLElementTagNameMap[ K ];
 
 export function create(
-  tag: string,
-  attrs?: Record<string, string | number | boolean> | string,
-  parent?: HTMLElement
+    tag: string,
+    attrs?: Record<string, string | number | boolean> | string,
+    parent?: HTMLElement
 ): HTMLElement;
 
 /**
@@ -24,17 +24,17 @@ export function create(
  * @param parent - Optional. A parent element where the created element is appended.
  */
 export function create<K extends keyof HTMLElementTagNameMap>(
-  tag: K,
-  attrs?: Record<string, string | number | boolean> | string,
-  parent?: HTMLElement
+    tag: K,
+    attrs?: Record<string, string | number | boolean> | string,
+    parent?: HTMLElement
 ): HTMLElementTagNameMap[ K ] {
-  const elm = document.createElement( tag );
+    const elm = document.createElement(tag);
 
-  if ( attrs ) {
-    isString( attrs ) ? addClass( elm, attrs ) : setAttribute( elm, attrs );
-  }
+    if (attrs) {
+        isString(attrs) ? addClass(elm, attrs) : setAttribute(elm, attrs);
+    }
 
-  parent && append( parent, elm );
+    parent && append(parent, elm);
 
-  return elm;
+    return elm;
 }

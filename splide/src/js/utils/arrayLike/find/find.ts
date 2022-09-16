@@ -1,4 +1,4 @@
-import { slice } from '../slice/slice';
+import {slice} from '../slice/slice';
 
 
 /**
@@ -11,8 +11,8 @@ import { slice } from '../slice/slice';
  * @return A found value if available, or otherwise `undefined`.
  */
 export function find<T>(
-  arrayLike: ArrayLike<T>,
-  predicate: ( value: T, index: number, array: T[] ) => any
+    arrayLike: ArrayLike<T>,
+    predicate: (value: T, index: number, array: T[]) => any
 ): T | undefined {
-  return slice( arrayLike ).filter( predicate )[ 0 ];
+    return slice(arrayLike).filter(predicate)[0];
 }

@@ -106,7 +106,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
 </nav>
 
 <main>
-    <section id="offer">
+    <section id="seller">
         <a href="./index.php" class="icon-text large fc-primary no-underline hoverable">
             <span class="icon">chevron_left</span>
             <span>Zurück</span>
@@ -121,7 +121,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
                 <h1 class="article-name" data-placeholder="firstname"></h1>
                 <p class="article-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam architecto, consequuntur debitis eos explicabo harum illum molestias nisi, nobis nostrum praesentium provident ratione sunt tempore! Est eum ullam voluptas?</p>
 
-                <div class="article-actions">
+                <div class="actions">
                     <a class="button" href="#featured">Artikel</a>
                     <a class="button" href="#ratings">Bewertungen</a>
                 </div>

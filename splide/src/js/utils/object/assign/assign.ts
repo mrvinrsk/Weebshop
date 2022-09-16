@@ -1,6 +1,6 @@
-import { Cast, Head, Push, Resolve, Shift } from '../../../types';
-import { slice } from '../../arrayLike';
-import { forOwn } from '../forOwn/forOwn';
+import {Cast, Head, Push, Resolve, Shift} from '../../../types';
+import {slice} from '../../arrayLike';
+import {forOwn} from '../forOwn/forOwn';
 
 
 /**
@@ -22,15 +22,15 @@ export type Assign<T, U> = Omit<T, keyof U> & U;
  * @return An assigned object type.
  */
 export type Assigned<T extends object, U extends object[], N extends number, C extends any[] = []> = {
-  0: T,
-  1: Assigned<Assign<T, Head<U>>, Shift<U>, N, Push<C>>,
+    0: T,
+    1: Assigned<Assign<T, Head<U>>, Shift<U>, N, Push<C>>,
 }[ C['length'] extends N ? 0 : 1 ] extends infer A ? Cast<A, any> : never;
 
-export function assign<T extends object>( object: T ): T;
+export function assign<T extends object>(object: T): T;
 
 export function assign<T extends object, U extends object[]>(
-  object: T,
-  ...sources: U
+    object: T,
+    ...sources: U
 ): Resolve<Assigned<T, U, U['length']>>
 
 /**
@@ -41,13 +41,13 @@ export function assign<T extends object, U extends object[]>(
  *
  * @return An object assigned properties of the sources to.
  */
-export function assign<T extends object>( object: T ): any {
-  // eslint-disable-next-line prefer-rest-params, prefer-spread
-  slice( arguments, 1 ).forEach( source => {
-    forOwn( source, ( value, key ) => {
-      object[ key ] = source[ key ];
-    } );
-  } );
+export function assign<T extends object>(object: T): any {
+    // eslint-disable-next-line prefer-rest-params, prefer-spread
+    slice(arguments, 1).forEach(source => {
+        forOwn(source, (value, key) => {
+            object[key] = source[key];
+        });
+    });
 
-  return object;
+    return object;
 }

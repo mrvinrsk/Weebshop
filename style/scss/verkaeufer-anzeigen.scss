@@ -35,4 +35,17 @@
   .price {
     font-weight: 800;
   }
+
+  #seller .actions {
+    gap: .5rem !important;
+  }
+
+  .actions {
+    margin-top: 1.5rem;
+    justify-content: space-between;
+
+    @media screen and (min-width: utils.$bp-tablet) {
+      justify-content: flex-end;
+    }
+  }
 }

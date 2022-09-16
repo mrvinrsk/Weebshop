@@ -1,4 +1,4 @@
-import { includes, toArray } from '../../utils';
+import {includes, toArray} from '../../utils';
 
 
 /**
@@ -7,8 +7,9 @@ import { includes, toArray } from '../../utils';
  * @since 3.0.0
  */
 export interface StateObject {
-  set( state: number ): void;
-  is( states: number | number[] ): boolean;
+    set(state: number): void;
+
+    is(states: number | number[]): boolean;
 }
 
 /**
@@ -16,31 +17,31 @@ export interface StateObject {
  *
  * @param initialState - Specifies the initial state.
  */
-export function State( initialState: number ): StateObject {
-  /**
-   * The current state.
-   */
-  let state = initialState;
+export function State(initialState: number): StateObject {
+    /**
+     * The current state.
+     */
+    let state = initialState;
 
-  /**
-   * Sets a new state.
-   *
-   * @param value - A new state value.
-   */
-  function set( value: number ): void {
-    state = value;
-  }
+    /**
+     * Sets a new state.
+     *
+     * @param value - A new state value.
+     */
+    function set(value: number): void {
+        state = value;
+    }
 
-  /**
-   * Checks if the current state matches the provided one.
-   *
-   * @param states - A state to check.
-   *
-   * @return `true` if the current state is the provided one.
-   */
-  function is( states: number | number[] ): boolean {
-    return includes( toArray( states ), state );
-  }
+    /**
+     * Checks if the current state matches the provided one.
+     *
+     * @param states - A state to check.
+     *
+     * @return `true` if the current state is the provided one.
+     */
+    function is(states: number | number[]): boolean {
+        return includes(toArray(states), state);
+    }
 
-  return { set, is };
+    return {set, is};
 }

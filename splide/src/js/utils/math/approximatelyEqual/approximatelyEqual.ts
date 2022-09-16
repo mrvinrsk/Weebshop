@@ -1,4 +1,4 @@
-import { abs } from '../math/math';
+import {abs} from '../math/math';
 
 
 /**
@@ -10,6 +10,6 @@ import { abs } from '../math/math';
  *
  * @return `true` if 2 numbers are considered to be equal, or otherwise `false`.
  */
-export function approximatelyEqual( x: number, y: number, epsilon: number ): boolean {
-  return abs( x - y ) < epsilon;
+export function approximatelyEqual(x: number, y: number, epsilon: number): boolean {
+    return abs(x - y) < epsilon;
 }

@@ -1,4 +1,4 @@
-import { forEach } from '../../array';
+import {forEach} from '../../array';
 
 
 /**
@@ -9,10 +9,10 @@ import { forEach } from '../../array';
  *
  * @return A formatted string.
  */
-export function format( string: string, replacements: string | number | Array<string | number> ): string {
-  forEach( replacements, replacement => {
-    string = string.replace( '%s', `${ replacement }` );
-  } );
+export function format(string: string, replacements: string | number | Array<string | number>): string {
+    forEach(replacements, replacement => {
+        string = string.replace('%s', `${replacement}`);
+    });
 
-  return string;
+    return string;
 }
