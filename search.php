@@ -26,7 +26,7 @@ $results = number_format(rand(10, 10000), 0, ",", ".");
         <p id="mobile-close">X</p>
 
         <ul>
-            <li id="mobile-logo-li"><img src="images/logo.png" alt="Logo"/></li>
+            <li id="mobile-logo-li"><img loading="lazy" src="images/logo.png" alt="Logo"/></li>
             <!-- Don't add links here, the links are automatically generated from the desktop navigation using js -->
         </ul>
     </div>
@@ -87,7 +87,7 @@ $results = number_format(rand(10, 10000), 0, ",", ".");
         <ul>
             <li><a href="#">Link #1</a></li>
             <li><a href="#">Link #2</a></li>
-            <li id="logo-li"><a href="#header"><img src="images/logo.png" alt="Logo"/></a></li>
+            <li id="logo-li"><a href="#header"><img loading="lazy" src="images/logo.png" alt="Logo"/></a></li>
             <li><a href="#">Link #3</a></li>
             <li><a href="#">Link #4</a></li>
             <li id="hamburger">
@@ -121,7 +121,7 @@ $results = number_format(rand(10, 10000), 0, ",", ".");
 
                 <div class="article">
                     <a href="artikel-anzeigen.php">
-                        <img src="https://loremflickr.com/175/175?random=<?php echo rand(1, 99999); ?>" alt="Bild"/>
+                        <img loading="lazy" src="https://loremflickr.com/175/175?random=<?php echo rand(1, 99999); ?>" alt="Bild"/>
 
                         <div class="article-information">
                             <div class="text-group">

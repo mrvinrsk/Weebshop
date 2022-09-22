@@ -99,62 +99,25 @@ include_once "php/methods.php";
 </nav>
 
 <main>
-    <section>
-        <h2>Neuste Artikel</h2>
+    <h1>Warenkorb</h1>
 
-        <div class="article-grid">
-            <?php for ($i = 0; $i < rand(12, 24); $i++) { ?>
+    <div class="cart-items">
 
-                <div class="article">
-                    <a href="artikel-anzeigen.php">
-                        <img loading="lazy" src="https://loremflickr.com/175/175?random=<?php echo rand(1, 99999); ?>" alt="Bild"/>
+        <?php for ($i = 0; $i < rand(2, 6); $i++) { ?>
 
-                        <div class="article-information">
-                            <div class="text-group">
-                                <h3>Lorem ipsum.</h3>
-                                <span class="stars"><?php echo getStarString(random_float(1.0, 5.0), rand(1, 10000), true); ?></span>
-                            </div>
-                            <p class="price"><?php echo number_format(random_float(1.0, 10000), 2, ",", ".") . "€"; ?></p>
-                        </div>
-                    </a>
-                </div>
-
-            <?php } ?>
-        </div>
-
-        <div class="search">
-            <div class="section-heading">
-                <h2>Noch nicht das richtige dabei?</h2>
-                <p>Hat in letzter Zeit keinen Artikel online gestellt, der für dich relevant ist? Such hier einfach direkt was du brauchst!</p>
-            </div>
-            <form class="input-group" action="search.php" method="GET">
-                <input type="text" name="search" id="search" placeholder="Suchen..."/>
-                <button>Suchen</button>
-            </form>
-        </div>
-    </section>
-
-    <section>
-        <h2>Aktive Verkäufer</h2>
-
-        <div class="seller-grid">
-            <?php for ($i = 0; $i < 3; $i++) { ?>
-
-                <div class="grid-item">
-                    <div class="grid-information">
-                        <p data-placeholder="name"></p>
-                        <span>Verkauft <?php echo rand(50, 100); ?> Artikel.</span>
-
-                        <div class="grid-buttons">
-                            <a class="button" href="verkaeufer-anzeigen.php">Verkäufer anzeigen</a>
-                        </div>
+            <div class="cart-item">
+                <div class="article-information">
+                    <img loading="lazy" src="https://via.placeholder.com/250">
+                    <div class="article-text">
+                        <h2>Artikelname</h2>
+                        <p>Hinzugefügt am <span class="add-date">22.09.2022</span></p>
                     </div>
-                    <img loading="lazy" src="https://fakeimg.pl/250" alt="Bild"/>
                 </div>
+            </div>
 
-            <?php } ?>
-        </div>
-    </section>
+        <?php } ?>
+
+    </div>
 </main>
 
 <script>

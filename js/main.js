@@ -127,7 +127,7 @@ $(function () {
     document.body.appendChild(up);
     up.addEventListener('click', () => {
         $("html, body").animate({scrollTop: 0}, 500);
-    })
+    });
 });
 
 

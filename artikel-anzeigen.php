@@ -32,7 +32,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
         <p id="mobile-close">X</p>
 
         <ul>
-            <li id="mobile-logo-li"><img src="images/logo.png" alt="Logo"/></li>
+            <li id="mobile-logo-li"><img loading="lazy" src="images/logo.png" alt="Logo"/></li>
             <!-- Don't add links here, the links are automatically generated from the desktop navigation using js -->
         </ul>
     </div>
@@ -93,7 +93,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
         <ul>
             <li><a href="#">Link #1</a></li>
             <li><a href="#">Link #2</a></li>
-            <li id="logo-li"><a href="#header"><img src="images/logo.png" alt="Logo"/></a></li>
+            <li id="logo-li"><a href="#header"><img loading="lazy" src="images/logo.png" alt="Logo"/></a></li>
             <li><a href="#">Link #3</a></li>
             <li><a href="#">Link #4</a></li>
             <li id="hamburger">
@@ -114,19 +114,19 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
 
         <div class="article-head">
             <div class="article-main-image">
-                <img src="https://loremflickr.com/640/360" alt="Bild"/>
+                <img loading="lazy" src="https://loremflickr.com/640/360" alt="Bild"/>
             </div>
 
             <div class="article-main-text">
                 <div class="row article-title">
-                    <h1 class="article-name">Toller Artikel</h1>
-                    <p class="price"><?php echo $priceNormal; ?>€</p>
+                    <h1 class="article-name">Ein ganz toller Artikel</h1>
+                    <p class="price special-heading"><?php echo $priceNormal; ?>€</p>
                 </div>
 
                 <p class="article-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam architecto, consequuntur debitis eos explicabo harum illum molestias nisi, nobis nostrum praesentium provident ratione sunt tempore! Est eum ullam voluptas?</p>
 
                 <div class="actions">
-                    <a class="button" href="cart.php">In den Warenkorb</a>
+                    <a id="btn-cart" class="button" href="cart.php">In den Warenkorb</a>
                 </div>
 
                 <a id="other-options" href="#buying-options" style="display: inline-block; width: 100%; text-align: right;" class="button-tertiary">Andere Optionen</a>
@@ -145,7 +145,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
                     Ein ganz normaler Einkauf ohne besondere Vorteile.
                 </p>
 
-                <a class="button">Auswählen</a>
+                <a class="button-secondary">Auswählen</a>
             </div>
 
             <div class="offer-card">
@@ -156,7 +156,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
                     Bei diesem Produkt würde die Ersparnis <b><?php echo $percent; ?>%</b> des eigentlichen Verkaufspreises betragen. Somit läge der Kaufpreis bei <span class="strike"><?php echo $priceNormal; ?>€</span> <b><?php echo $priceReduced; ?>€</b>
                 </p>
 
-                <a class="button">Auswählen</a>
+                <a class="button-secondary">Auswählen</a>
             </div>
 
             <div class="offer-card">
@@ -166,7 +166,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
                     Zu teuer? Kein Problem! Wir bieten dir einen Ratenkauf zu guten Konditionen über einen Zeitraum von <b>3, 6, 12 oder 24 Monate</b> an. Dabei zahlst du allgemein etwas mehr, jedoch über mehrere Monate verteilt.
                 </p>
 
-                <a class="button">Auswählen</a>
+                <a class="button-secondary">Auswählen</a>
             </div>
         </div>
     </section>
@@ -178,7 +178,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
             <?php for ($i = 0; $i < 4; $i++) { ?>
                 <div class="article">
                     <a href="artikel-anzeigen.php">
-                        <img src="https://loremflickr.com/300/300?random=<?php echo rand(1, 99999); ?>" alt="Bild"/>
+                        <img loading="lazy" src="https://loremflickr.com/300/300?random=<?php echo rand(1, 99999); ?>" alt="Bild"/>
 
                         <div class="article-information">
                             <div class="text-group">
@@ -213,7 +213,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
 
                     <div class="rating">
                         <div class="profile">
-                            <img src="https://fakeimg.pl/200/" alt="Profilbild"/>
+                            <img loading="lazy" src="https://fakeimg.pl/200/" alt="Profilbild"/>
                         </div>
 
                         <div>
@@ -224,6 +224,8 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
 
                 <?php } ?>
 
+                <a class="button-tertiary">Alle Kommentare</a>
+
             </div>
         </div>
 
@@ -232,34 +234,18 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
             <textarea class="textfield"></textarea>
 
             <div class="comment-sub">
-                <div class="star-rating">
-                    <i class="bi rating-star" data-rating="1"></i>
-                    <i class="bi rating-star" data-rating="2"></i>
-                    <i class="bi rating-star" data-rating="3"></i>
-                    <i class="bi rating-star" data-rating="4"></i>
-                    <i class="bi rating-star" data-rating="5"></i>
+                <div class="thumb-rating">
+                    <i class="bi bi-hand-thumbs-up thumb thumb-up" data-rating="1"></i>
+                    <i class="bi bi-hand-thumbs-down thumb thumb-down" data-rating="-1"></i>
                 </div>
-                <button>Kommentieren</button>
+                <a class="button">Kommentieren</a>
             </div>
         </div>
     </section>
 </main>
 
 
-<footer>
-    <div>
-        <div>
-            <img src="./images/logo.png" alt="Logo">
-        </div>
-
-        <div>
-            <p>
-                Dieser Weebshop ist eine Dienstleistung von Marvin Roßkothen & Steven Lenz und dient einzig und allein zu Lern-Zwecken.
-                Die Idee des "Webshops" ist absolut und zu 100% eine eigen produzierte Idee, Ähnlichkeiten zu Aufgaben, von männlichen Lehrern am Berufskolleg Stadtmitte Kluse, wäre rein zufällig.
-            </p>
-        </div>
-    </div>
-</footer>
+<?php include_once("./elements/footer.php"); ?>
 
 <script>
     $(function () {

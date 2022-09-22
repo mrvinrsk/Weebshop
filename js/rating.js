@@ -1,31 +1,36 @@
-const filled = "bi-star-fill";
-const empty = "bi-star";
+let unselectedClasses = ['bi-hand-thumbs-up', 'bi-hand-thumbs-down'];
+let selectedClasses = ['bi-hand-thumbs-up-fill', 'bi-hand-thumbs-down-fill'];
 
 $(function () {
-    document.querySelectorAll('.rating-star').forEach(star => {
-        const parent = star.parentElement;
-        const rating = parent.dataset.rating;
+    document.querySelectorAll('.thumb').forEach(thumb => {
+        let parent = thumb.parentElement;
 
-        star.classList.add(empty);
-        console.log("Loaded rating stars");
+        thumb.addEventListener('click', function () {
+            parent.querySelectorAll('.thumb').forEach(parThum => {
+                selectedClasses.forEach(selectedClass => {
+                    if (parThum.classList.contains(selectedClass)) {
+                        parThum.classList.remove(selectedClass);
+                    }
 
-        star.addEventListener('mouseover', () => {
-            console.log("Mouse over", star, "of", parent);
+                    if(parThum.classList.contains('thumb-up')) {
+                        parThum.classList.add(unselectedClasses[0]);
+                    } else {
+                        parThum.classList.add(unselectedClasses[1]);
+                    }
 
-            parent.querySelectorAll('.rating-star').forEach(x => {
-                x.classList.remove(filled);
-                x.classList.add(empty);
-
-                // add filled class to all stars before the hovered star and the hovered star
-                if (x.dataset.value <= star.dataset.value) {
-                    x.classList.remove(empty);
-                    x.classList.add(filled);
-                }
+                    parThum.classList.remove('selected');
+                });
             });
-        });
 
-        star.addEventListener('mouseleave', () => {
-            console.log("Mouse leave", star, "of", parent);
+            if(thumb.classList.contains('thumb-up')) {
+                thumb.classList.remove(unselectedClasses[0]);
+                thumb.classList.add(selectedClasses[0]);
+            }else {
+                thumb.classList.remove(unselectedClasses[1]);
+                thumb.classList.add(selectedClasses[1]);
+            }
+
+            thumb.classList.add('selected');
         });
     });
 });

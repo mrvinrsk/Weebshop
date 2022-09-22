@@ -1,0 +1,30 @@
+@use "utils";
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+
+  @media screen and (min-width: utils.$bp-tablet) {
+    gap: 1.5rem;
+  }
+
+  @media screen and (min-width: utils.$bp-desktop) {
+    gap: 2.25rem;
+  }
+
+  .cart-item {
+    border-radius: 15px;
+    box-shadow: 0 5px 5px rgba(0 0 0 / 15%);
+    background: #FFF;
+    padding: 1.25rem;
+
+    @media screen and (min-width: utils.$bp-tablet) {
+      padding: 1.75rem;
+    }
+
+    @media screen and (min-width: utils.$bp-desktop) {
+      padding: 2.5rem;
+    }
+  }
+}

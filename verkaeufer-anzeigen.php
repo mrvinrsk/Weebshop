@@ -32,7 +32,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
         <p id="mobile-close">X</p>
 
         <ul>
-            <li id="mobile-logo-li"><img src="images/logo.png" alt="Logo"/></li>
+            <li id="mobile-logo-li"><img loading="lazy" src="images/logo.png" alt="Logo"/></li>
             <!-- Don't add links here, the links are automatically generated from the desktop navigation using js -->
         </ul>
     </div>
@@ -93,7 +93,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
         <ul>
             <li><a href="#">Link #1</a></li>
             <li><a href="#">Link #2</a></li>
-            <li id="logo-li"><a href="#header"><img src="images/logo.png" alt="Logo"/></a></li>
+            <li id="logo-li"><a href="#header"><img loading="lazy" src="images/logo.png" alt="Logo"/></a></li>
             <li><a href="#">Link #3</a></li>
             <li><a href="#">Link #4</a></li>
             <li id="hamburger">
@@ -114,7 +114,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
 
         <div class="article-head">
             <div class="article-main-image">
-                <img src="https://loremflickr.com/640/360" alt="Bild"/>
+                <img loading="lazy" src="https://loremflickr.com/640/360" alt="Bild"/>
             </div>
 
             <div class="article-main-text">
@@ -133,7 +133,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
         <h2>Im Rampenlicht</h2>
 
         <div class="featured-offer">
-            <img src="https://loremflickr.com/700/700?random=<?php echo rand(1, 99999); ?>" alt="Hervorgehobener Artikel: Bild"/>
+            <img loading="lazy" src="https://loremflickr.com/700/700?random=<?php echo rand(1, 99999); ?>" alt="Hervorgehobener Artikel: Bild"/>
 
             <div class="information">
                 <div class="section-heading">
@@ -157,7 +157,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
             <?php for ($i = 0; $i < 4; $i++) { ?>
                 <div class="article">
                     <a href="artikel-anzeigen.php">
-                        <img src="https://loremflickr.com/300/300?random=<?php echo rand(1, 99999); ?>" alt="Bild"/>
+                        <img loading="lazy" src="https://loremflickr.com/300/300?random=<?php echo rand(1, 99999); ?>" alt="Bild"/>
 
                         <div class="article-information">
                             <div class="text-group">
@@ -192,7 +192,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
 
                     <div class="rating">
                         <div class="profile">
-                            <img src="https://fakeimg.pl/200/" alt="Profilbild"/>
+                            <img loading="lazy" src="https://fakeimg.pl/200/" alt="Profilbild"/>
                         </div>
 
                         <div>
@@ -209,20 +209,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
 </main>
 
 
-<footer>
-    <div>
-        <div>
-            <img src="./images/logo.png" alt="Logo">
-        </div>
-
-        <div>
-            <p>
-                Dieser Weebshop ist eine Dienstleistung von Marvin Roßkothen & Steven Lenz und dient einzig und allein zu Lern-Zwecken.
-                Die Idee des "Webshops" ist absolut und zu 100% eine eigen produzierte Idee, Ähnlichkeiten zu Aufgaben, von männlichen Lehrern am Berufskolleg Stadtmitte Kluse, wäre rein zufällig.
-            </p>
-        </div>
-    </div>
-</footer>
+<?php include_once("./elements/footer.php"); ?>
 
 <script>
     $(function () {

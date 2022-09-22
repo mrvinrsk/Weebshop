@@ -101,7 +101,7 @@ main, section {
 }
 
 body {
-  background-color: #f3f3f3;
+  background-color: #f1f1f1;
 }
 
 main {
@@ -136,6 +136,22 @@ h1, h2, h3, h4, h5, h6 {
   color: utils.$col-primary;
 }
 
+.special-heading {
+  position: relative;
+  z-index: 3;
+
+  &::after {
+    position: absolute;
+    content: '';
+    width: 95%;
+    height: 80%;
+    top: 27.5%;
+    left: 9.25%;
+    z-index: -1;
+    background: transparentize(utils.$col-primary, .7);
+  }
+}
+
 .row {
   display: flex;
   flex-direction: row;
@@ -160,13 +176,15 @@ img {
 
 @mixin button() {
   position: relative;
-  border-radius: 10px;
-  padding: .5em 1.65em;
+  border-radius: 7px;
+  padding: .625em 1.55em;
   border: none;
   text-decoration: none;
   z-index: 3;
   overflow: hidden;
   display: inline-block;
+  text-align: center;
+  cursor: pointer;
   transition-duration: .25s;
 }
 
@@ -177,8 +195,8 @@ img {
 
   &:hover {
     cursor: pointer;
-    color: #FFF;
-    box-shadow: 0 5px 10px rgba(0 0 0 / 10%);
+    color: #EEE;
+    box-shadow: 0 5px 15px rgba(0 0 0 / 10%);
 
     &::after {
       opacity: 1;
@@ -190,6 +208,12 @@ img {
   @include button();
   background-color: transparent;
   border: 1px solid utils.$col-primary;
+  color: utils.$col-primary;
+
+  &:hover {
+    border: 1px solid utils.pastellize(utils.$col-primary, 20);
+    color: utils.pastellize(utils.$col-primary, 20);
+  }
 }
 
 .button-tertiary {
@@ -198,6 +222,8 @@ img {
   background-color: transparent;
   color: utils.$col-primary;
   text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
 
   &::after {
     font-family: bootstrap-icons;
@@ -256,6 +282,7 @@ img {
 
 textarea {
   resize: vertical;
+  max-height: 35vh;
   width: 100%;
 }
 
@@ -314,7 +341,7 @@ textarea {
 input, button {
   font-size: 1.1rem;
   padding: 1em 1.25em;
-  background-color: #FFF;
+  background-color: #EEE;
   outline: none;
   transition-duration: .25s;
 
@@ -342,7 +369,7 @@ button {
 
   @media screen and (hover: hover) {
     &:hover {
-      color: #FFF;
+      color: #EEE;
     }
   }
 
@@ -394,11 +421,11 @@ textarea {
 
 .article-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: .65rem;
 
   @media screen and (min-width: utils.$bp-tablet) {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
   }
 }
@@ -414,8 +441,8 @@ textarea {
 .article {
   position: relative;
   color: utils.$col-text;
-  background: #FFF;
-  padding: 1rem;
+  background: #EEE;
+  padding: 1.5rem;
   border-radius: 5px;
   overflow: hidden;
   z-index: 3;
@@ -467,7 +494,7 @@ textarea {
       }
 
       p {
-        color: #FFF;
+        color: #EEE;
       }
     }
   }
@@ -515,7 +542,7 @@ textarea {
   bottom: 1rem;
   padding: .5em;
   border-radius: 10px;
-  color: #FFF;
+  color: #EEE;
   background: linear-gradient(to bottom right, utils.pastellize(utils.$col-primary, 20), utils.pastellize(utils.$col-secondary, 10));
   box-shadow: 0 3px 10px rgba(0 0 0 / 10%);
   cursor: pointer;
@@ -528,10 +555,10 @@ textarea {
 }
 
 footer {
-  width: utils.$width;
-  margin-inline: auto;
   margin-top: 3.75rem;
-  margin-bottom: 3.25rem;
+  padding-top: 2.25rem;
+  padding-bottom: 3.5rem;
+  background: #e5e5e5;
 
   @media screen and (min-width: utils.$bp-tablet) {
     margin-top: 5rem;
@@ -542,11 +569,14 @@ footer {
   }
 
   > div {
+    width: utils.$width;
+    margin-inline: auto;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 2rem;
-    color: utils.$col-gray;
+    color: utils.$col-gray-darkest;
 
     @media screen and (min-width: utils.$bp-tablet) {
       flex-direction: row;
@@ -566,6 +596,15 @@ footer {
         width: 100%;
       }
     }
+
+    .maintext {
+      margin-bottom: .7rem;
+    }
+
+    ul {
+      list-style-type: none;
+      margin-top: .9em;
+    }
   }
 }
 
@@ -582,7 +621,7 @@ footer {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: #EEE;
   z-index: 600;
   padding-top: 5rem;
   right: -100%;
@@ -609,7 +648,7 @@ nav img {
     width: 100%;
     height: 100%;
     background-color: utils.$col-secondary;
-    color: #FFF;
+    color: #EEE;
     z-index: 600;
     padding-top: 5rem;
     right: -100%;
@@ -739,7 +778,7 @@ nav {
 
       #logo-li {
         img {
-          height: 75px;
+          height: 65px;
           width: auto;
         }
       }
@@ -815,10 +854,10 @@ nav {
   }
 
   &.scrolled #links ul #logo-li img {
-    height: 55px;
+    height: 50px;
 
     @media only screen and (min-width: utils.$bp-tablet) {
-      height: 75px;
+      height: 65px;
     }
   }
 
@@ -859,7 +898,7 @@ nav {
 
         #logo-li {
           img {
-            height: 150px;
+            height: 95px;
             width: auto;
           }
         }
@@ -913,7 +952,7 @@ nav {
 #buying-popup {
   position: relative;
   padding: 1rem;
-  background-color: #FFF;
+  background-color: #EEE;
   border-radius: 15px;
   width: min(85%, 55rem);
 
