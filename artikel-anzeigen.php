@@ -118,20 +118,18 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
             </div>
 
             <div class="article-main-text">
-                <h1 class="article-name">Toller Artikel</h1>
-                <p class="article-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam architecto, consequuntur debitis eos explicabo harum illum molestias nisi, nobis nostrum praesentium provident ratione sunt tempore! Est eum ullam voluptas?</p>
-
-                <div class="article-actions">
-                    <p><?php echo $priceNormal; ?>€</p>
-
-                    <div class="actions">
-                        <a class="button" onclick="buy('<?php echo rand(1, 10000); ?>');">Kaufen</a>
-                        <a class="button" href="cart.php">In den Warenkorb</a>
-                    </div>
-
+                <div class="row article-title">
+                    <h1 class="article-name">Toller Artikel</h1>
+                    <p class="price"><?php echo $priceNormal; ?>€</p>
                 </div>
 
-                <a href="#buying-options" style="display: inline-block; width: 100%; text-align: right; margin-top: .5rem;">Andere Optionen</a>
+                <p class="article-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam architecto, consequuntur debitis eos explicabo harum illum molestias nisi, nobis nostrum praesentium provident ratione sunt tempore! Est eum ullam voluptas?</p>
+
+                <div class="actions">
+                    <a class="button" href="cart.php">In den Warenkorb</a>
+                </div>
+
+                <a id="other-options" href="#buying-options" style="display: inline-block; width: 100%; text-align: right;" class="button-tertiary">Andere Optionen</a>
             </div>
         </div>
     </section>

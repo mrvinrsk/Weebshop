@@ -43,34 +43,6 @@
   url('../../fonts/nunito-v25-latin-800.svg#Nunito') format('svg'); /* Legacy iOS */
 }
 
-/* playfair-display-regular - latin */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../../fonts/playfair-display-v30-latin-regular.eot'); /* IE9 Compat Modes */
-  src: local(''),
-  url('../../fonts/playfair-display-v30-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('../../fonts/playfair-display-v30-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-  url('../../fonts/playfair-display-v30-latin-regular.woff') format('woff'), /* Modern Browsers */
-  url('../../fonts/playfair-display-v30-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-  url('../../fonts/playfair-display-v30-latin-regular.svg#PlayfairDisplay') format('svg'); /* Legacy iOS */
-}
-
-/* playfair-display-800 - latin */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 800;
-  src: url('../../fonts/playfair-display-v30-latin-800.eot'); /* IE9 Compat Modes */
-  src: local(''),
-  url('../../fonts/playfair-display-v30-latin-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('../../fonts/playfair-display-v30-latin-800.woff2') format('woff2'), /* Super Modern Browsers */
-  url('../../fonts/playfair-display-v30-latin-800.woff') format('woff'), /* Modern Browsers */
-  url('../../fonts/playfair-display-v30-latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
-  url('../../fonts/playfair-display-v30-latin-800.svg#PlayfairDisplay') format('svg'); /* Legacy iOS */
-}
-
 
 /* fallback */
 @font-face {
@@ -124,7 +96,7 @@ main, section {
 }
 
 :root {
-  font-family: 'Playfair Display', sans-serif;
+  font-family: 'Nunito', sans-serif;
   color: utils.$col-text;
 }
 
@@ -162,7 +134,18 @@ main {
 
 h1, h2, h3, h4, h5, h6 {
   color: utils.$col-primary;
-  font-family: 'Nunito', sans-serif;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+
+  > * {
+    margin: 0;
+  }
 }
 
 section {
@@ -175,39 +158,51 @@ img {
   width: 100%;
 }
 
-.button {
+@mixin button() {
   position: relative;
-  z-index: 3;
-  background-color: #eaeaea;
-  color: #343434;
+  border-radius: 10px;
+  padding: .5em 1.65em;
   border: none;
   text-decoration: none;
-  border-radius: 5px;
-  padding: .4em 1.5em;
+  z-index: 3;
   overflow: hidden;
   display: inline-block;
   transition-duration: .25s;
+}
 
-  &::after {
-    position: absolute;
-    z-index: -1;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    background: linear-gradient(to bottom right, utils.pastellize(utils.$col-primary, 20), utils.pastellize(utils.$col-secondary, 10));
-    transition-duration: .25s;
-  }
+.button {
+  @include button();
+  background: linear-gradient(to bottom right, utils.pastellize(utils.$col-primary, 20), utils.pastellize(utils.$col-secondary, 10));
+  color: #343434;
 
   &:hover {
     cursor: pointer;
     color: #FFF;
+    box-shadow: 0 5px 10px rgba(0 0 0 / 10%);
 
     &::after {
       opacity: 1;
     }
+  }
+}
+
+.button-secondary {
+  @include button();
+  background-color: transparent;
+  border: 1px solid utils.$col-primary;
+}
+
+.button-tertiary {
+  display: flex !important;
+  align-items: center;
+  background-color: transparent;
+  color: utils.$col-primary;
+  text-decoration: none;
+
+  &::after {
+    font-family: bootstrap-icons;
+    margin-left: .25em;
+    content: '\F138';
   }
 }
 
