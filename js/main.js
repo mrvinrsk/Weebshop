@@ -268,3 +268,9 @@ function buy(article) {
         }
     });
 }
+
+$(function () {
+    document.querySelectorAll('.icon, .material-symbols-outlined').forEach(icon => {
+        icon.ariaHidden = 'true';
+    });
+});

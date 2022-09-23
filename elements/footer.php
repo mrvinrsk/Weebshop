@@ -14,7 +14,7 @@
             <p><strong>Umsetzung:</strong> Marvin Roßkothen & Steven Lenz</p>
 
             <ul>
-                <li><a href="https://github.com/mrvinrsk/Weebshop/" class="button-tertiary">GitHub Repository</a></li>
+                <li><a href="https://github.com/mrvinrsk/Weebshop/" target="_blank" class="button-tertiary">GitHub Repository</a></li>
             </ul>
         </div>
     </div>

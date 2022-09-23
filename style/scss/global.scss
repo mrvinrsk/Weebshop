@@ -193,6 +193,11 @@ img {
   background: linear-gradient(to bottom right, utils.pastellize(utils.$col-primary, 20), utils.pastellize(utils.$col-secondary, 10));
   color: #343434;
 
+  &.danger {
+    background: #c51c1c;
+    color: #b4b4b4;
+  }
+
   &:hover {
     cursor: pointer;
     color: #EEE;
@@ -422,11 +427,11 @@ textarea {
 .article-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: .65rem;
+  gap: .85rem;
 
   @media screen and (min-width: utils.$bp-tablet) {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
+    gap: 1.25rem;
   }
 }
 
@@ -441,7 +446,7 @@ textarea {
 .article {
   position: relative;
   color: utils.$col-text;
-  background: #EEE;
+  background: utils.$col-white;
   padding: 1.5rem;
   border-radius: 5px;
   overflow: hidden;
@@ -515,7 +520,7 @@ textarea {
 
 .gradient-section {
   background: linear-gradient(to bottom right, transparentize(utils.pastellize(utils.$col-primary, 35), .5), transparentize(utils.pastellize(utils.$col-secondary, 10), .5));
-  padding: .85rem 1.25rem;
+  padding: 1.5rem;
   border-radius: 15px;
 
   @media screen and (min-width: utils.$bp-tablet) {
@@ -850,7 +855,7 @@ nav {
   #links {
     padding-block: 1.25rem;
     display: block;
-    background-color: white;
+    background-color: utils.$col-white;
   }
 
   &.scrolled #links ul #logo-li img {

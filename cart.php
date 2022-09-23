@@ -11,12 +11,13 @@ include_once "php/methods.php";
     <title>WeebShop</title>
 
     <link rel="stylesheet" href="style/css/global.min.css">
-    <link rel="stylesheet" href="style/css/home.min.css">
+    <link rel="stylesheet" href="style/css/cart.min.css">
 
     <script src="js/jquery-3.6.1.min.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/anime.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
 </head>
 <body>
 
@@ -99,25 +100,36 @@ include_once "php/methods.php";
 </nav>
 
 <main>
-    <h1>Warenkorb</h1>
+    <section id="cart-section">
+        <h1>Warenkorb</h1>
 
-    <div class="cart-items">
-
-        <?php for ($i = 0; $i < rand(2, 6); $i++) { ?>
-
-            <div class="cart-item">
-                <div class="article-information">
-                    <img loading="lazy" src="https://via.placeholder.com/250">
-                    <div class="article-text">
-                        <h2>Artikelname</h2>
-                        <p>Hinzugefügt am <span class="add-date">22.09.2022</span></p>
-                    </div>
-                </div>
+        <div class="cart-items">
+            <div class="no-items">
+                <span class="icon">remove_shopping_cart</span>
+                <h2>Nichts im Warenkorb</h2>
+                <p>Schau' dich doch erstmal im Shop um und packe ein paar Artikel in deinen Warenkorb, bezahlen kannst du später immernoch.</p>
             </div>
 
-        <?php } ?>
+            <?php for ($i = 0; $i < rand(0, 2); $i++) { ?>
 
-    </div>
+                <div class="cart-item cart-<?php echo $i; ?>">
+                    <div class="article-information">
+                        <img loading="lazy" src="https://via.placeholder.com/250">
+                        <div class="article-text">
+                            <h2><a href="./artikel-anzeigen.php" class="button-tertiary">Artikel von <?php echo uniqid(); ?></a></h2>
+                            <p>Hinzugefügt am <span class="add-date">22.09.2022</span></p>
+                        </div>
+                    </div>
+
+                    <div class="cart-item-actions">
+                        <a class="button danger" onclick="remove_article(<?php echo $i; ?>);">Entfernen</a>
+                    </div>
+                </div>
+
+            <?php } ?>
+
+        </div>
+    </section>
 </main>
 
 <script>

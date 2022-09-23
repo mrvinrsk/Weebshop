@@ -140,9 +140,9 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
         <div class="offers">
             <div class="offer-card">
                 <span class="icon">shopping_bag</span>
-                <h3>Einmaliger Kauf</h3>
+                <h3>Direktkauf</h3>
                 <p>
-                    Ein ganz normaler Einkauf ohne besondere Vorteile.
+                    Kaufe diesen Artikel ohne weitere Umwege über den Warenkorb.
                 </p>
 
                 <a class="button-secondary">Auswählen</a>
@@ -152,8 +152,8 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
                 <span class="icon">event_repeat</span>
                 <h3>Regelmäßiger Kauf</h3>
                 <p>
-                    Ein regelmäßiger Kauf kann dir einen ordentlichen Rabatt einheimsen, solltest du dieses Produkt also öfters benötigen, würde sich ein solches Angebot schnell rentieren.
-                    Bei diesem Produkt würde die Ersparnis <b><?php echo $percent; ?>%</b> des eigentlichen Verkaufspreises betragen. Somit läge der Kaufpreis bei <span class="strike"><?php echo $priceNormal; ?>€</span> <b><?php echo $priceReduced; ?>€</b>
+                    Ein regelmäßiger Kauf kann dir einen ordentlichen Rabatt einheimsen.
+                    Bei diesem Produkt würde die Ersparnis <b><?php echo $percent; ?>%</b> des Verkaufspreises betragen. Somit läge der reduzierte Monats-Preis bei <strong><?php echo $priceReduced; ?>€</strong>.
                 </p>
 
                 <a class="button-secondary">Auswählen</a>
@@ -163,7 +163,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
                 <span class="icon">payments</span>
                 <h3>Ratenkauf</h3>
                 <p>
-                    Zu teuer? Kein Problem! Wir bieten dir einen Ratenkauf zu guten Konditionen über einen Zeitraum von <b>3, 6, 12 oder 24 Monate</b> an. Dabei zahlst du allgemein etwas mehr, jedoch über mehrere Monate verteilt.
+                    Zu teuer? Kein Problem! Wir bieten dir einen Ratenkauf zu guten Konditionen über einen Zeitraum von <b>3, 6, 12 oder 24 Monate</b> an.
                 </p>
 
                 <a class="button-secondary">Auswählen</a>
