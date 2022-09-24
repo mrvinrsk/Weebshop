@@ -273,4 +273,6 @@ $(function () {
     document.querySelectorAll('.icon, .material-symbols-outlined').forEach(icon => {
         icon.ariaHidden = 'true';
     });
+
+    // document.querySelector('section').innerHTML = '<a class="icon-text large fc-primary no-underline hoverable" onclick="window.history.back();" style="cursor: pointer;"><span class="icon">chevron_left</span><span>Zurück</span></a>' + document.querySelector('section').innerHTML;
 });

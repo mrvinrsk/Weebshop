@@ -652,7 +652,7 @@ nav img {
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: utils.$col-secondary;
+    background-color: utils.$col-primary;
     color: #EEE;
     z-index: 600;
     padding-top: 5rem;
@@ -798,7 +798,7 @@ nav {
   }
 
   #header-banner {
-    background-color: utils.$col-secondary;
+    background-color: utils.$col-primary;
     padding-block: 0.75rem;
 
     > div {
