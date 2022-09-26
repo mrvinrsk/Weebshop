@@ -1,5 +1,6 @@
 <?php
 include_once "php/methods.php";
+$sum = number_format(random_float(1.00, 20000.00), 2, ",", ".");
 ?>
 
 <!doctype html>
@@ -11,14 +12,15 @@ include_once "php/methods.php";
     <title>WeebShop</title>
 
     <link rel="stylesheet" href="style/css/global.min.css">
-    <link rel="stylesheet" href="style/css/home.min.css">
+    <link rel="stylesheet" href="style/css/buy-success.min.css">
 
     <script src="js/jquery-3.6.1.min.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
     <script src="js/anime.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/confetti_buttons.js"></script>
+    <script src="js/rating.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
 </head>
 <body>
 
@@ -100,70 +102,53 @@ include_once "php/methods.php";
     </div>
 </nav>
 
-<main>
-    <section>
-        <h2>Neuste Artikel</h2>
-
-        <div class="article-grid">
-            <?php for ($i = 0; $i < rand(12, 24); $i++) { ?>
-
-                <div class="article">
-                    <a href="artikel-anzeigen.php">
-                        <img loading="lazy" src="https://loremflickr.com/175/175?random=<?php echo rand(1, 99999); ?>" alt="Bild"/>
-
-                        <div class="article-information">
-                            <div class="text-group">
-                                <h3>Lorem ipsum.</h3>
-                                <span class="stars"><?php echo getStarString(random_float(1.0, 5.0), rand(1, 10000), true); ?></span>
-                            </div>
-                            <p class="price"><?php echo number_format(random_float(1.0, 10000), 2, ",", ".") . "€"; ?></p>
-                        </div>
-                    </a>
-                </div>
-
-            <?php } ?>
-        </div>
-
-        <div class="search">
-            <div class="section-heading">
-                <h2>Noch nicht das richtige dabei?</h2>
-                <p>Hat in letzter Zeit keinen Artikel online gestellt, der für dich relevant ist? Such hier einfach direkt was du brauchst!</p>
-            </div>
-            <form class="input-group" action="search.php" method="GET">
-                <input type="text" name="search" id="search" placeholder="Suchen..."/>
-                <button>Suchen</button>
-            </form>
-        </div>
+<main class="small-space ignore-animation">
+    <section id="head">
+        <a href="./index.php" class="icon-text large fc-primary no-underline hoverable">
+            <span class="icon">chevron_left</span>
+            <span>Zur Startseite</span>
+        </a>
+        <img class="head-illustration" loading="lazy" src="./images/undraw_order.svg" alt="Bestellung erfolgreich"/>
     </section>
 
-    <section>
-        <h2>Aktive Verkäufer</h2>
+    <section class="gradient-section ignore-animation">
+        <h1>Vielen Dank für deine Bestellung</h1>
+        <p>Die durchschnittliche Lieferzeit für deine Region beträgt <strong>3–5 Werktage</strong>, solltest du deine Bestellung nach <strong>14 Tagen</strong> noch nicht erhalten haben, wende dich bitte an unseren <a href="support.html" target="_blank" class="button-tertiary inline">Support</a></p>
+    </section>
 
-        <div class="seller-grid">
-            <?php for ($i = 0; $i < 3; $i++) { ?>
+    <section class="ignore-animation">
+        <h2>Bestellinformationen</h2>
 
-                <div class="grid-item">
-                    <div class="grid-information">
-                        <p data-placeholder="name"></p>
-                        <span>Verkauft <?php echo rand(50, 100); ?> Artikel.</span>
+        <div class="table">
+            <table>
+                <tr>
+                    <td>Bestellnummer</td>
+                    <td><a href="bestellung.php"><?php echo uniqid(); ?></a></td>
+                </tr>
 
-                        <div class="grid-buttons">
-                            <a class="button" href="verkaeufer-anzeigen.php">Verkäufer anzeigen</a>
-                        </div>
-                    </div>
-                    <img loading="lazy" src="https://fakeimg.pl/250" alt="Bild"/>
-                </div>
+                <tr>
+                    <td>Datum</td>
+                    <td><?php echo date("d.m.Y"); ?></td>
+                </tr>
 
-            <?php } ?>
+                <tr>
+                    <td>Summe</td>
+                    <td><?php echo $sum . "€"; ?></td>
+                </tr>
+            </table>
         </div>
     </section>
 </main>
 
-<script>
-    loadPlaceholders();
-</script>
 
 <?php include_once("./elements/footer.php"); ?>
+
+<script>
+    $(function () {
+        loadPlaceholders();
+        confetti();
+    });
+</script>
 
 </body>
 </html>

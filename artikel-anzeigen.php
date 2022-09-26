@@ -24,6 +24,9 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
     <script src="js/anime.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/rating.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+    <script src="js/confetti_buttons.js"></script>
 </head>
 <body>
 

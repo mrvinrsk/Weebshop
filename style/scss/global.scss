@@ -89,9 +89,11 @@ $boxShadows: (
 }
 
 /* Animate */
-main, section {
+main:not(.ignore-animation), section:not(.ignore-animation) {
   div, ul, ol, li, article, h1, h2, h3, h4, h5, h6 {
-    opacity: 0;
+    &:not(.ignore-animation) {
+      opacity: 0;
+    }
   }
 }
 
@@ -128,6 +130,18 @@ main {
 
     @media screen and (min-width: utils.$bp-desktop) {
       gap: 7.5rem;
+    }
+
+    &.small-space {
+      gap: 2rem;
+
+      @media screen and (min-width: utils.$bp-tablet) {
+        gap: 3rem;
+      }
+
+      @media screen and (min-width: utils.$bp-desktop) {
+        gap: 4.5rem;
+      }
     }
   }
 }
@@ -234,6 +248,10 @@ img {
     font-family: bootstrap-icons;
     margin-left: .25em;
     content: '\F138';
+  }
+
+  &.inline {
+    display: inline-flex !important;
   }
 }
 
@@ -988,5 +1006,39 @@ html body input.lkke {
 
   &[type=text], &[type=email], &[type=password] {
     width: 100%;
+  }
+}
+
+.table {
+  width: 100%;
+  overflow-x: auto;
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+
+    tr, td {
+      padding: .5em 1.25em;
+    }
+
+    tr {
+      border-radius: 5px;
+
+      &:nth-child(even) {
+        background-color: lighten(utils.$col-gray, 15%);
+      }
+
+      td {
+        text-align: center;
+
+        &:first-child {
+          text-align: left;
+        }
+
+        &:last-child {
+          text-align: right;
+        }
+      }
+    }
   }
 }

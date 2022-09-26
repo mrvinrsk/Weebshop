@@ -104,18 +104,29 @@ $(function () {
     let els = ['div', 'ul', 'ol', 'li', 'article', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
     els.forEach(tag => {
         $('main ' + tag + ':not(.ignore-animation)').waypoint(function () {
-            let animation = anime({
-                targets: this.element,
-                keyframes: [
-                    {translateY: 35, opacity: 0},
-                    {translateY: 0, opacity: 1}
-                ],
-                duration: 925,
-                easing: 'easeOutElastic(2, .8)'
+            let animate = true;
+
+            // loop through all parents
+            $(this.element).parents().each(function () {
+                if ($(this).hasClass('ignore-animation')) {
+                    animate = false;
+                }
             });
 
-            // animate only on first enter of viewport
-            this.destroy();
+            if (animate) {
+                let animation = anime({
+                    targets: this.element,
+                    keyframes: [
+                        {translateY: 35, opacity: 0},
+                        {translateY: 0, opacity: 1}
+                    ],
+                    duration: 925,
+                    easing: 'easeOutElastic(2, .8)'
+                });
+
+                // animate only on first enter of viewport
+                this.destroy();
+            }
         }, {
             offset: '115%'
         });
@@ -246,6 +257,37 @@ $(function () {
         });
     });
 });
+
+function confetti(element = document.querySelector('main')) {
+    if (typeof party === 'undefined') {
+        console.log("party.js wurde nicht eingebunden!");
+        return false;
+    }
+
+    if (element === null) {
+        console.log("Element konnte nicht gefunden werden!");
+        return false;
+    }
+
+    let count = element.clientWidth / 25;
+    if (count > 50) count = 50;
+    if (count < 15) count = 15;
+
+    party.confetti(element, {
+        count: count,
+        spread: party.variation.range(30, 50),
+        color: () =>
+            party.random.pick([
+                party.Color.fromHex("#0091dc"),
+                party.Color.fromHex("#a46af1"),
+                party.Color.fromHex("#9d9d9d")
+            ]),
+        speed: party.variation.range(250, 500),
+        size: party.variation.skew(1.35, 0.8),
+        rotation: () => party.random.randomUnitVector().scale(180),
+        shapes: ["square", "rectangle"]
+    });
+}
 
 function buy(article) {
     $.ajax({

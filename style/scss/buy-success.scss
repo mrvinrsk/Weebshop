@@ -1,0 +1,12 @@
+@use "utils";
+
+.head-illustration {
+  width: min(45%, 15rem);
+  display: flex;
+  margin-inline: auto;
+  margin-top: 7.5%;
+
+  @media screen and (min-width: utils.$bp-tablet) {
+    margin-top: 3.5rem;
+  }
+}
