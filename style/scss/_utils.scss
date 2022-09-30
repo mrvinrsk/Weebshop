@@ -3,6 +3,8 @@ $bp-desktop: 1080px;
 
 $col-primary: #0091dc;
 $col-secondary: #a46af1;
+$col-gray-lightest: #e3e3e3;
+$col-gray-lighter: #d0d0d0;
 $col-gray: #bbbbbb;
 $col-gray-darker: #9d9d9d;
 $col-gray-darkest: #818181;
@@ -30,4 +32,12 @@ $colors: ('primary': $col-primary, 'secondary': $col-secondary, 'gray': $col-gra
 
 @function pastellize($color, $amount) {
   @return desaturate(lighten($color, $amount), $amount/2);
+}
+
+@mixin hover() {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
 }

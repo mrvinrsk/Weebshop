@@ -10,3 +10,21 @@
     margin-top: 3.5rem;
   }
 }
+
+.bestellinformationen {
+  display: flex;
+  flex-direction: column;
+
+  > div {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: space-between;
+    padding: .5em 1em;
+    border-radius: 10px;
+
+    &:nth-child(odd) {
+      background-color: utils.$col-gray-lightest;
+    }
+  }
+}

@@ -119,23 +119,21 @@ $sum = number_format(random_float(1.00, 20000.00), 2, ",", ".");
     <section class="ignore-animation">
         <h2>Bestellinformationen</h2>
 
-        <div class="table">
-            <table>
-                <tr>
-                    <td>Bestellnummer</td>
-                    <td><a href="bestellung.php"><?php echo uniqid(); ?></a></td>
-                </tr>
+        <div class="bestellinformationen">
+            <div>
+                <p>Bestellnummer</p>
+                <a href="bestellung.php"><?php echo uniqid(); ?></a>
+            </div>
 
-                <tr>
-                    <td>Datum</td>
-                    <td><?php echo date("d.m.Y"); ?></td>
-                </tr>
+            <div>
+                <p>Datum</p>
+                <p><?php echo date("d.m.Y"); ?></p>
+            </div>
 
-                <tr>
-                    <td>Summe</td>
-                    <td><?php echo $sum . "€"; ?></td>
-                </tr>
-            </table>
+            <div>
+                <p>Summe</p>
+                <p><?php echo $sum . '€'; ?></p>
+            </div>
         </div>
     </section>
 </main>

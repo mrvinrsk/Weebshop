@@ -102,7 +102,7 @@ $(function () {
 
     // Animate these elements
     let els = ['div', 'ul', 'ol', 'li', 'article', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
-    els.forEach(tag => {
+    /*els.forEach(tag => {
         $('main ' + tag + ':not(.ignore-animation)').waypoint(function () {
             let animate = true;
 
@@ -130,7 +130,7 @@ $(function () {
         }, {
             offset: '115%'
         });
-    });
+    });*/
 
     let up = document.createElement('div');
     up.classList.add("up");

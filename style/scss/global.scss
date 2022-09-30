@@ -89,13 +89,13 @@ $boxShadows: (
 }
 
 /* Animate */
-main:not(.ignore-animation), section:not(.ignore-animation) {
+/*main:not(.ignore-animation), section:not(.ignore-animation) {
   div, ul, ol, li, article, h1, h2, h3, h4, h5, h6 {
     &:not(.ignore-animation) {
       opacity: 0;
-    }
+    }:
   }
-}
+}*/
 
 :root {
   font-family: 'Nunito', sans-serif;
@@ -212,7 +212,7 @@ img {
     color: #b4b4b4;
   }
 
-  &:hover {
+  @include utils.hover() {
     cursor: pointer;
     color: #EEE;
     box-shadow: 0 5px 15px rgba(0 0 0 / 10%);
@@ -229,7 +229,7 @@ img {
   border: 1px solid utils.$col-primary;
   color: utils.$col-primary;
 
-  &:hover {
+  @include utils.hover() {
     border: 1px solid utils.pastellize(utils.$col-primary, 20);
     color: utils.pastellize(utils.$col-primary, 20);
   }
@@ -280,8 +280,10 @@ img {
     }
   }
 
-  &.hoverable:hover {
-    border-bottom: 1px solid utils.$col-primary;
+  &.hoverable {
+    @include utils.hover() {
+      border-bottom: 1px solid utils.$col-primary;
+    }
   }
 }
 
@@ -323,6 +325,10 @@ textarea {
     }
   }
 
+  > * {
+    border-radius: 0;
+  }
+
   > *:first-child {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -354,10 +360,9 @@ textarea {
     }
   }
 
-  @media screen and (min-width: utils.$bp-tablet) {
-    button {
-      width: 20%;
-    }
+  button {
+    flex-shrink: 0;
+    flex-grow: 0;
   }
 }
 
@@ -390,10 +395,8 @@ button {
   font-weight: 800;
   overflow: hidden;
 
-  @media screen and (hover: hover) {
-    &:hover {
-      color: #EEE;
-    }
+  @include utils.hover() {
+    color: #EEE;
   }
 
   @media screen and (min-width: utils.$bp-tablet) {
