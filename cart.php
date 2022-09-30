@@ -26,7 +26,7 @@ include_once "php/methods.php";
         <p id="mobile-close">X</p>
 
         <ul>
-            <li id="mobile-logo-li"><img loading="lazy" src="images/logo.png" alt="Logo"/></li>
+            <li id="mobile-logo-li"><img loading="lazy" src="images/logo.svg" alt="Logo"/></li>
             <!-- Don't add links here, the links are automatically generated from the desktop navigation using js -->
         </ul>
     </div>
@@ -87,7 +87,7 @@ include_once "php/methods.php";
         <ul>
             <li><a href="#">Link #1</a></li>
             <li><a href="#">Link #2</a></li>
-            <li id="logo-li"><a href="#header"><img loading="lazy" src="images/logo.png" alt="Logo"/></a></li>
+            <li id="logo-li"><a href="#header"><img loading="lazy" src="images/logo.svg" alt="Logo"/></a></li>
             <li><a href="#">Link #3</a></li>
             <li><a href="#">Link #4</a></li>
             <li id="hamburger">

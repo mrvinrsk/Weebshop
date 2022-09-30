@@ -74,14 +74,60 @@
   }
 }
 
-.search {
-  margin-top: 1.5rem;
+.searchbar {
+  box-shadow: map-get(utils.$boxShadows, 'xl');
+}
+
+.stats {
+  margin-top: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .5rem;
 
   @media screen and (min-width: utils.$bp-tablet) {
-    margin-top: 2.5rem;
+    grid-template-columns: repeat(auto-fit, 250px);
+    gap: 1.5rem;
+    margin-top: 2.75rem;
   }
 
-  @media screen and (min-width: utils.$bp-desktop) {
-    margin-top: 3.75rem;
+  .stat {
+    position: relative;
+    background-color: utils.$col-gray-lightest;
+    padding: 1rem;
+    border-radius: 15px;
+    overflow: hidden;
+
+    @media screen and (min-width: utils.$bp-tablet) {
+      padding: 1.5rem;
+      max-width: 300px;
+    }
+
+    .description {
+      font-size: 1.2rem;
+      margin-bottom: .5rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 0;
+    }
+
+    .icon {
+      position: absolute;
+      color: utils.pastellize(utils.$col-primary, 15%);
+      font-size: 5rem;
+      bottom: -1rem;
+      right: -1.25rem;
+      transition-duration: .25s;
+    }
+
+    @include utils.hover() {
+      .icon {
+        bottom: -.5rem;
+        right: -.5rem;
+        transform: scale(.65);
+      }
+    }
   }
 }

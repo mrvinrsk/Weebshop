@@ -1,10 +1,10 @@
 $bp-tablet: 620px;
 $bp-desktop: 1080px;
 
-$col-primary: #0091dc;
-$col-secondary: #a46af1;
-$col-gray-lightest: #e3e3e3;
-$col-gray-lighter: #d0d0d0;
+$col-primary: #e84412;
+$col-secondary: #ea830f;
+$col-gray-lightest: #e8e8e8;
+$col-gray-lighter: #e1e1e1;
 $col-gray: #bbbbbb;
 $col-gray-darker: #9d9d9d;
 $col-gray-darkest: #818181;
@@ -14,9 +14,22 @@ $col-white: #fdfdfd;
 $col-stars: #d79507;
 $col-stars-hovered: #ecbe0b;
 
-$gradient-primary-secondary: linear-gradient(to bottom right, pastellize($col-primary, 20), pastellize($col-secondary, 10));
+$gradient-primary-secondary: linear-gradient(to bottom right, pastellize($col-primary, 5), pastellize($col-secondary, 5));
 
-$width: min(90%, 75rem);
+$width: min(90%, 65rem);
+
+$boxShadows: (
+        'sm': 0 3px 5px rgba(0 0 0 / 5%),
+        'md': 0 5px 10px rgba(0 0 0 / 10%),
+        'lg': 0 10px 15px rgba(0 0 0 / 10%),
+        'xl': 0 15px 25px rgba(0 0 0 / 8%)
+);
+
+@each $name, $strength in $boxShadows {
+  .bs-#{$name} {
+    box-shadow: $strength;
+  }
+}
 
 
 $colors: ('primary': $col-primary, 'secondary': $col-secondary, 'gray': $col-gray);

@@ -35,7 +35,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
         <p id="mobile-close">X</p>
 
         <ul>
-            <li id="mobile-logo-li"><img loading="lazy" src="images/logo.png" alt="Logo"/></li>
+            <li id="mobile-logo-li"><img loading="lazy" src="images/logo.svg" alt="Logo"/></li>
             <!-- Don't add links here, the links are automatically generated from the desktop navigation using js -->
         </ul>
     </div>
@@ -96,7 +96,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
         <ul>
             <li><a href="#">Link #1</a></li>
             <li><a href="#">Link #2</a></li>
-            <li id="logo-li"><a href="#header"><img loading="lazy" src="images/logo.png" alt="Logo"/></a></li>
+            <li id="logo-li"><a href="#header"><img loading="lazy" src="images/logo.svg" alt="Logo"/></a></li>
             <li><a href="#">Link #3</a></li>
             <li><a href="#">Link #4</a></li>
             <li id="hamburger">
@@ -117,7 +117,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
 
         <div class="article-head">
             <div class="article-main-image">
-                <img loading="lazy" src="https://loremflickr.com/640/360" alt="Bild"/>
+                <img src="https://loremflickr.com/640/360" alt="Bild"/>
             </div>
 
             <div class="article-main-text">
@@ -178,7 +178,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
         <h2>Ähnliche Artikel</h2>
 
         <div class="article-grid">
-            <?php for ($i = 0; $i < 4; $i++) { ?>
+            <?php for ($i = 0; $i < 3; $i++) { ?>
                 <div class="article">
                     <a href="artikel-anzeigen.php">
                         <img loading="lazy" src="https://loremflickr.com/300/300?random=<?php echo rand(1, 99999); ?>" alt="Bild"/>

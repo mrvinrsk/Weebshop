@@ -3,10 +3,22 @@
 .heading {
 
   form {
-    margin-bottom: 1rem;
+    margin-bottom: .75rem;
 
     @media screen and (min-width: utils.$bp-tablet) {
-      margin-bottom: 2.5rem;
+      margin-bottom: 1.25rem;
     }
+  }
+}
+
+.term {
+  word-break: break-all;
+}
+
+.article-grid {
+  margin-top: 1.25rem;
+
+  @media screen and (min-width: utils.$bp-tablet) {
+    margin-top: 2.5rem;
   }
 }

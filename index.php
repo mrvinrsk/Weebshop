@@ -27,7 +27,7 @@ include_once "php/methods.php";
         <p id="mobile-close">X</p>
 
         <ul>
-            <li id="mobile-logo-li"><img loading="lazy" src="images/logo.png" alt="Logo"/></li>
+            <li id="mobile-logo-li"><img loading="lazy" src="images/logo.svg" alt="Logo"/></li>
             <!-- Don't add links here, the links are automatically generated from the desktop navigation using js -->
         </ul>
     </div>
@@ -88,7 +88,7 @@ include_once "php/methods.php";
         <ul>
             <li><a href="#">Link #1</a></li>
             <li><a href="#">Link #2</a></li>
-            <li id="logo-li"><a href="#header"><img loading="lazy" src="images/logo.png" alt="Logo"/></a></li>
+            <li id="logo-li"><a href="#header"><img loading="lazy" src="images/logo.svg" alt="Logo"/></a></li>
             <li><a href="#">Link #3</a></li>
             <li><a href="#">Link #4</a></li>
             <li id="hamburger">
@@ -102,37 +102,55 @@ include_once "php/methods.php";
 
 <main>
     <section>
+        <form class="input-group searchbar" action="search.php" method="GET">
+            <input type="text" name="search" id="search" placeholder="Suchen..."/>
+            <button>Suchen</button>
+        </form>
+
+        <div class="stats">
+            <div class="stat">
+                <span class="description">Artikel</span>
+                <p><?php echo number_format(rand(100, 10000), 0, ',', '.'); ?></p>
+                <span class="icon">shopping_bag</span>
+            </div>
+
+            <div class="stat">
+                <span class="description">Aktive Nutzer</span>
+                <p><?php echo number_format(rand(50, 7500), 0, ',', '.'); ?></p>
+                <span class="icon">group</span>
+            </div>
+
+            <div class="stat">
+                <span class="description">Bestellungen</span>
+                <p><?php echo number_format(rand(100, 1500), 0, ',', '.'); ?></p>
+                <span class="icon">payments</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
         <h2>Neuste Artikel</h2>
 
         <div class="article-grid">
-            <?php for ($i = 0; $i < rand(12, 24); $i++) { ?>
+            <?php for ($i = 0; $i < 3; $i++) { ?>
 
                 <div class="article">
                     <a href="artikel-anzeigen.php">
-                        <img loading="lazy" src="https://loremflickr.com/175/175?random=<?php echo rand(1, 99999); ?>" alt="Bild"/>
+                        <img src="https://loremflickr.com/175/175?random=<?php echo rand(1, 99999); ?>" alt="Bild"/>
 
                         <div class="article-information">
                             <div class="text-group">
-                                <h3>Lorem ipsum.</h3>
+                                <div class="title-price text-group">
+                                    <h3>Lorem ipsum.</h3>
+                                    <p class="price"><?php echo number_format(random_float(1.0, 10000), 2, ",", ".") . "€"; ?></p>
+                                </div>
                                 <span class="stars"><?php echo getStarString(random_float(1.0, 5.0), rand(1, 10000), true); ?></span>
                             </div>
-                            <p class="price"><?php echo number_format(random_float(1.0, 10000), 2, ",", ".") . "€"; ?></p>
                         </div>
                     </a>
                 </div>
 
             <?php } ?>
-        </div>
-
-        <div class="search">
-            <div class="section-heading">
-                <h2>Noch nicht das richtige dabei?</h2>
-                <p>Hat in letzter Zeit keinen Artikel online gestellt, der für dich relevant ist? Such hier einfach direkt was du brauchst!</p>
-            </div>
-            <form class="input-group" action="search.php" method="GET">
-                <input type="text" name="search" id="search" placeholder="Suchen..."/>
-                <button>Suchen</button>
-            </form>
         </div>
     </section>
 

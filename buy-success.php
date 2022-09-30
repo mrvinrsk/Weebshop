@@ -29,7 +29,7 @@ $sum = number_format(random_float(1.00, 20000.00), 2, ",", ".");
         <p id="mobile-close">X</p>
 
         <ul>
-            <li id="mobile-logo-li"><img loading="lazy" src="images/logo.png" alt="Logo"/></li>
+            <li id="mobile-logo-li"><img loading="lazy" src="images/logo.svg" alt="Logo"/></li>
             <!-- Don't add links here, the links are automatically generated from the desktop navigation using js -->
         </ul>
     </div>
@@ -90,7 +90,7 @@ $sum = number_format(random_float(1.00, 20000.00), 2, ",", ".");
         <ul>
             <li><a href="#">Link #1</a></li>
             <li><a href="#">Link #2</a></li>
-            <li id="logo-li"><a href="#header"><img loading="lazy" src="images/logo.png" alt="Logo"/></a></li>
+            <li id="logo-li"><a href="#header"><img loading="lazy" src="images/logo.svg" alt="Logo"/></a></li>
             <li><a href="#">Link #3</a></li>
             <li><a href="#">Link #4</a></li>
             <li id="hamburger">
@@ -104,11 +104,11 @@ $sum = number_format(random_float(1.00, 20000.00), 2, ",", ".");
 
 <main class="small-space ignore-animation">
     <section id="head">
-        <a href="./index.php" class="icon-text large fc-primary no-underline hoverable">
+        <a href="./index.php" class="head-link icon-text large fc-primary no-underline hoverable">
             <span class="icon">chevron_left</span>
             <span>Zur Startseite</span>
         </a>
-        <img class="head-illustration" loading="lazy" src="./images/undraw_order.svg" alt="Bestellung erfolgreich"/>
+        <img class="head-illustration" src="./images/undraw-delivery.svg" alt="Bestellung erfolgreich"/>
     </section>
 
     <section class="gradient-section ignore-animation">
@@ -144,7 +144,7 @@ $sum = number_format(random_float(1.00, 20000.00), 2, ",", ".");
 <script>
     $(function () {
         loadPlaceholders();
-        confetti();
+        confetti(document.querySelector('.head-illustration'));
     });
 </script>
 

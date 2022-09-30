@@ -269,17 +269,17 @@ function confetti(element = document.querySelector('main')) {
         return false;
     }
 
-    let count = element.clientWidth / 25;
-    if (count > 50) count = 50;
-    if (count < 15) count = 15;
+    let count = element.clientWidth / 20;
+    if (count > 60) count = 60;
+    if (count < 25) count = 25;
 
     party.confetti(element, {
         count: count,
         spread: party.variation.range(30, 50),
         color: () =>
             party.random.pick([
-                party.Color.fromHex("#0091dc"),
-                party.Color.fromHex("#a46af1"),
+                party.Color.fromHex("#e84412"),
+                party.Color.fromHex("#ea830f"),
                 party.Color.fromHex("#9d9d9d")
             ]),
         speed: party.variation.range(250, 500),

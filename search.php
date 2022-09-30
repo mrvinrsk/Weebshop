@@ -26,7 +26,7 @@ $results = number_format(rand(10, 10000), 0, ",", ".");
         <p id="mobile-close">X</p>
 
         <ul>
-            <li id="mobile-logo-li"><img loading="lazy" src="images/logo.png" alt="Logo"/></li>
+            <li id="mobile-logo-li"><img loading="lazy" src="images/logo.svg" alt="Logo"/></li>
             <!-- Don't add links here, the links are automatically generated from the desktop navigation using js -->
         </ul>
     </div>
@@ -87,7 +87,7 @@ $results = number_format(rand(10, 10000), 0, ",", ".");
         <ul>
             <li><a href="#">Link #1</a></li>
             <li><a href="#">Link #2</a></li>
-            <li id="logo-li"><a href="#header"><img loading="lazy" src="images/logo.png" alt="Logo"/></a></li>
+            <li id="logo-li"><a href="#header"><img loading="lazy" src="images/logo.svg" alt="Logo"/></a></li>
             <li><a href="#">Link #3</a></li>
             <li><a href="#">Link #4</a></li>
             <li id="hamburger">
@@ -101,19 +101,21 @@ $results = number_format(rand(10, 10000), 0, ",", ".");
 
 <main>
     <section class="heading">
+        <a href="./index.php" class="head-link icon-text large fc-primary no-underline hoverable">
+            <span class="icon">chevron_left</span>
+            <span>Zurück</span>
+        </a>
+
         <form class="input-group" action="#" method="GET">
             <input type="text" name="search" id="search" placeholder="Suchen..." value="<?php echo(isset($_GET['search']) ? $_GET['search'] : ''); ?>"/>
             <button>Suchen</button>
         </form>
 
         <div class="search-info text-group">
-            <h1><?php echo "Du hast nach <span class='fc-secondary'>" . $_GET['search'] . "</span>"; ?> gesucht</h1>
+            <h1><?php echo "Du hast nach <span class='fc-secondary term'>" . $_GET['search'] . "</span>"; ?> gesucht</h1>
             <p>Diese Suche hat <b><?php echo $results; ?> Ergebnisse</b> erzielt.</p>
         </div>
-    </section>
 
-    <section>
-        <h2>Ergebnisse</h2>
 
         <div class="article-grid">
 

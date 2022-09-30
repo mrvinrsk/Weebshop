@@ -75,19 +75,6 @@
   box-sizing: border-box;
 }
 
-$boxShadows: (
-        'sm': 0 5px 10px rgba(0 0 0 / 5%),
-        'md': 0 7px 13px rgba(0 0 0 / 10%),
-        'lg': 0 10px 15px rgba(0 0 0 / 15%),
-        'xl': 0 15px 25px rgba(0 0 0 / 10%)
-);
-
-@each $name, $strength in $boxShadows {
-  .bs-#{$name} {
-    box-shadow: $strength;
-  }
-}
-
 /* Animate */
 /*main:not(.ignore-animation), section:not(.ignore-animation) {
   div, ul, ol, li, article, h1, h2, h3, h4, h5, h6 {
@@ -122,21 +109,21 @@ main {
   &:not(.ignore-flex) {
     display: flex;
     flex-direction: column;
-    gap: 3.5rem;
+    gap: 3rem;
 
     @media screen and (min-width: utils.$bp-tablet) {
-      gap: 5rem;
+      gap: 4.5rem;
     }
 
     @media screen and (min-width: utils.$bp-desktop) {
-      gap: 7.5rem;
+      gap: 5.75rem;
     }
 
     &.small-space {
-      gap: 2rem;
+      gap: 2.5rem;
 
       @media screen and (min-width: utils.$bp-tablet) {
-        gap: 3rem;
+        gap: 3.5rem;
       }
 
       @media screen and (min-width: utils.$bp-desktop) {
@@ -311,11 +298,11 @@ textarea {
   width: 100%;
 }
 
+$inputGroupRadius: 10px;
 .input-group {
   display: flex;
   flex-direction: row;
   width: 100%;
-  box-shadow: 0 3px 20px rgba(0 0 0 / 10%);
 
   > input {
     width: 100%;
@@ -330,39 +317,52 @@ textarea {
   }
 
   > *:first-child {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-top-left-radius: $inputGroupRadius;
+    border-bottom-left-radius: $inputGroupRadius;
   }
 
   > *:last-child {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-top-right-radius: $inputGroupRadius;
+    border-bottom-right-radius: $inputGroupRadius;
   }
 
   > input {
-    border-color: transparent;
+    border-color: utils.$col-primary;
     border-style: solid;
     border-right: none;
     transition-duration: .25s;
 
-    border-top-width: 2px;
-    border-bottom-width: 2px;
-    border-left-width: 2px;
-
-    @media screen and (min-width: utils.$bp-tablet) {
-      border-top-width: 3px;
-      border-bottom-width: 3px;
-      border-left-width: 3px;
-    }
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
 
     &:focus {
-      border-color: utils.pastellize(utils.$col-primary, 25);
+      border-color: utils.$col-primary;
+      border-top-width: 2px;
+      border-bottom-width: 2px;
+      border-left-width: 2px;
+
+      @media screen and (min-width: utils.$bp-tablet) {
+        border-top-width: 3px;
+        border-bottom-width: 3px;
+        border-left-width: 3px;
+      }
     }
   }
 
   button {
     flex-shrink: 0;
     flex-grow: 0;
+    background: utils.$col-primary;
+    color: utils.$col-white;
+  }
+}
+
+.head-link {
+  margin-bottom: .75rem;
+
+  @media screen and (min-width: utils.$bp-desktop) {
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -448,11 +448,15 @@ textarea {
 .article-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: .85rem;
+  gap: .5rem;
 
   @media screen and (min-width: utils.$bp-tablet) {
+    gap: 1rem;
+  }
+
+  @media screen and (min-width: utils.$bp-desktop) {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.25rem;
+    gap: 1.5rem;
   }
 }
 
@@ -468,11 +472,21 @@ textarea {
   position: relative;
   color: utils.$col-text;
   background: utils.$col-white;
-  padding: 1.5rem;
-  border-radius: 5px;
+  padding: .75rem;
+  border-radius: 20px;
   overflow: hidden;
   z-index: 3;
+
   transition-duration: .25s;
+
+  @media screen and (min-width: utils.$bp-tablet) {
+    padding: 1.25rem;
+  }
+
+  @media screen and (min-width: utils.$bp-desktop) {
+    padding: 1.75rem;
+  }
+
 
   @media screen and (hover: hover) {
     &.not-hovered {
@@ -496,11 +510,11 @@ textarea {
   @media screen and (hover: hover) {
     &:hover {
       transform: translateY(-5px) !important;
-      box-shadow: map-get($boxShadows, 'sm');
+      box-shadow: map-get(utils.$boxShadows, 'sm');
 
       @media screen and (min-width: utils.$bp-desktop) {
         transform: translateY(-10px) !important;
-        box-shadow: map-get($boxShadows, 'lg') !important;
+        box-shadow: map-get(utils.$boxShadows, 'lg') !important;
       }
 
       &::after {
@@ -523,10 +537,39 @@ textarea {
         color: #EEE;
       }
     }
+
+    .title-price {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
   }
 
   a {
     text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    gap: 1.25rem;
+
+    img {
+      max-width: 100px;
+      max-height: 100px;
+
+      @media screen and (min-width: utils.$bp-tablet) {
+        max-width: unset;
+        max-height: unset;
+      }
+    }
+
+    @media screen and (min-width: utils.$bp-tablet) {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    > div {
+      flex-shrink: 0;
+    }
   }
 
   img {
@@ -534,8 +577,17 @@ textarea {
     background-color: #f3f3f3;
   }
 
+  h3 {
+    font-size: 1.25rem;
+  }
+
   .price {
+    display: none;
     color: utils.$col-text;
+
+    @media screen and (min-width: utils.$bp-tablet) {
+      display: block;
+    }
   }
 }
 
@@ -614,12 +666,17 @@ footer {
     }
 
     img {
-      width: 50%;
+      width: 35%;
       display: flex;
       margin-inline: auto;
+      transition-duration: .25s;
 
       @media screen and (min-width: utils.$bp-tablet) {
-        width: 100%;
+        width: 125px;
+      }
+
+      @media screen and (min-width: utils.$bp-desktop) {
+        width: 175px;
       }
     }
 
@@ -673,8 +730,9 @@ nav img {
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: utils.$col-primary;
+    background-color: utils.pastellize(utils.$col-primary, 20);
     color: #EEE;
+    font-size: 1.25rem;
     z-index: 600;
     padding-top: 5rem;
     right: -100%;
@@ -689,7 +747,8 @@ nav img {
       position: absolute;
       right: 0;
       top: 0;
-      font-size: 20px;
+      font-size: 30px;
+      color: utils.$col-primary;
       font-weight: 600;
       cursor: pointer;
     }
@@ -714,8 +773,8 @@ nav img {
         }
 
         #mobile-logo-li img {
-          height: 125px;
-          margin-bottom: 2rem;
+          width: 80px;
+          margin-bottom: 3rem;
         }
       }
     }

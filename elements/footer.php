@@ -6,8 +6,8 @@
 
         <div>
             <p class="maintext">
-                <strong>Achtung:</strong> Dieser Webshop dient lediglich als Übung, keine der angeschilderten Artikel steht tatsächlich zum Verkauf.
-                Keine der ggf. angegebenen Zahlungsinformationen werden belastet oder überprüft
+                <strong>Achtung:</strong> Dieser Webshop ("Brrrrrr-Shop") dient lediglich als Übung, keine der ausgeschilderten Artikel stehen tatsächlich zum Verkauf.
+                Außerdem werden keine der ggf. angegebenen Zahlungsinformationen belastet oder überprüft. Sämtliche Angaben sind freiwillig.
             </p>
 
             <p><strong>UI/UX:</strong> Marvin Roßkothen</p>
