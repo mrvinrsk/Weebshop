@@ -23,6 +23,8 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/anime.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/toast.js"></script>
+    <script src="js/cart.js"></script>
     <script src="js/rating.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
@@ -129,7 +131,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
                 <p class="article-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam architecto, consequuntur debitis eos explicabo harum illum molestias nisi, nobis nostrum praesentium provident ratione sunt tempore! Est eum ullam voluptas?</p>
 
                 <div class="actions">
-                    <a id="btn-cart" class="button" href="cart.php">In den Warenkorb</a>
+                    <a id="btn-cart" class="button" onclick="add_article(<?php echo rand(1, 10000); ?>);">In den Warenkorb</a>
                 </div>
 
                 <a id="other-options" href="#buying-options" style="display: inline-block; width: 100%; text-align: right;" class="button-tertiary">Andere Optionen</a>

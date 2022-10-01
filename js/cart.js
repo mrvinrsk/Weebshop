@@ -16,18 +16,17 @@ $(function () {
 function add_article(id) {
     toast({
         title: 'Zum Korb hinzugefügt',
-        message: 'Artikel wurde zum Korb hinzugefügt',
+        content: 'Artikel wurde zum Korb hinzugefügt',
         buttons: [
             {
-                text: 'Warenkorb',
+                text: 'Zum Warenkorb',
                 onClick: function () {
                     window.location.href = 'cart.php';
                 }
             }
         ],
         autoClose: {
-            enabled: true,
-            delay: 5000,
+            delay: 5000
         }
     });
 }

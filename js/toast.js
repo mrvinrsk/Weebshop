@@ -27,16 +27,7 @@ const toast_defaults = {
     id: null,
     title: 'Toast',
     content: 'This is a toast',
-    buttons: [
-        {
-            text: 'OK',
-            onClick: null
-        },
-        {
-            text: 'Cancel',
-            onClick: null
-        }
-    ],
+    buttons: [],
     onClose: null,
     onMouseEnter: null,
     onMouseLeave: null,
