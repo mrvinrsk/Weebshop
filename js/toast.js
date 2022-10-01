@@ -109,7 +109,7 @@ function toast(options = toast_defaults) {
     // create the toast content element
     const content = document.createElement('div');
     content.classList.add('toast-content');
-    content.innerText = options.content;
+    content.innerHTML = options.content;
 
     // create the toast buttons element
     const buttons = document.createElement('div');
