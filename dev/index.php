@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="../style/css/global.min.css">
 
-    <script src="toast.js"></script>
+    <script src="../js/toast.js"></script>
 </head>
 <body>
 

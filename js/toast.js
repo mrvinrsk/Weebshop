@@ -30,12 +30,10 @@ const toast_defaults = {
     buttons: [
         {
             text: 'OK',
-            class: null,
             onClick: null
         },
         {
             text: 'Cancel',
-            class: null,
             onClick: null
         }
     ],
@@ -121,9 +119,6 @@ function toast(options = toast_defaults) {
     options.buttons.forEach(button => {
         const btn = document.createElement('button');
         btn.classList.add('toast-button');
-        if (button.class) {
-            btn.classList = button.class;
-        }
         btn.innerText = button.text;
         if (button.onClick) {
             btn.addEventListener('click', button.onClick);

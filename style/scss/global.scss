@@ -1160,12 +1160,12 @@ html body .toast-wrapper {
       flex-direction: row;
       justify-content: flex-end;
       gap: .5rem;
-      margin-top: .5rem;
+      margin-top: 1rem;
 
-      .toast-button:not([class]) {
-        padding: .25em .75em !important;
+      .toast-button {
+        padding: .5em 1em !important;
         border: none !important;
-        border-radius: 10px !important;
+        border-radius: 5px !important;
         background-color: utils.$col-primary !important;
         color: utils.$col-white !important;
         font-weight: 600 !important;
