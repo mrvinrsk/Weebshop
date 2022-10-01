@@ -1144,6 +1144,14 @@ html body .toast-wrapper {
       border-radius: 10px;
     }
 
+    .toast-progress {
+      height: 2px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: utils.$col-primary;
+    }
+
     .toast-title {
       font-weight: 600;
       font-size: 1.25rem;

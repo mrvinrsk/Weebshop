@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<button onclick="toast({ debug: true, unsafe: true, autoClose: { enabled: false }, closeButton: true , content: 'Wie komme ich eigentlich immer darauf, dass es eine gute Idee wäre meine JS-Dinger so überkomplex zu programmieren?...'});">Toast!</button>
+<button onclick="toast({ debug: true, unsafe: true, autoClose: { enabled: true, showProgress: false, delay: 3000, autoAdjust: { enabled: false } }, closeButton: true , content: 'Wie komme ich eigentlich immer darauf, dass es eine gute Idee wäre meine JS-Dinger so überkomplex zu programmieren?...'});">Toast!</button>
 
 </body>
 </html>

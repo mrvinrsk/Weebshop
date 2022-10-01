@@ -11,3 +11,23 @@ $(function () {
         }
     }
 })
+
+
+function add_article(id) {
+    toast({
+        title: 'Zum Korb hinzugefügt',
+        message: 'Artikel wurde zum Korb hinzugefügt',
+        buttons: [
+            {
+                text: 'Warenkorb',
+                onClick: function () {
+                    window.location.href = 'cart.php';
+                }
+            }
+        ],
+        autoClose: {
+            enabled: true,
+            delay: 5000,
+        }
+    });
+}

@@ -43,6 +43,7 @@ const toast_defaults = {
     autoClose: {
         enabled: true,
         delay: 3000,
+        showProgress: true,
         autoAdjust: {
             enabled: true,
             onlyWhenDelayTooShort: true,
@@ -176,13 +177,44 @@ function toast(options = toast_defaults) {
     toast.appendChild(buttons);
 
     // if autoClose is enabled, close the toast after the delay
+    let leftTime = options.autoClose.delay;
+    let running = true;
+    let progressIntervalDuration = 10;
+
     if (options.autoClose.enabled) {
-        toast_timeout = setTimeout(() => {
+        let progressInterval = setInterval(() => {
+            if (running) {
+                if (options.autoClose.showProgress) {
+                    // get the toast's progress bar or create it if it doesn't exist
+                    let progress = toast.querySelector('.toast-progress') || document.createElement('div');
+                    progress.classList.add('toast-progress');
+
+                    // set the progress bar's width to the time left
+                    progress.style.width = `${leftTime / options.autoClose.delay * 100}%`;
+
+                    // add the progress bar to the toast if it doesn't exist
+                    if (!toast.querySelector('.toast-progress')) {
+                        toast.appendChild(progress);
+                    }
+                }
+
+                if (leftTime <= 0 || !toast) {
+                    clearInterval(progressInterval);
+                    toast.remove();
+                }
+
+                console.debug("Running progress bar. Left time: " + leftTime + "ms.");
+
+                leftTime -= progressIntervalDuration;
+            }
+        }, progressIntervalDuration);
+
+        /*toast_timeout = setTimeout(() => {
             wrapper.removeChild(toast);
             if (options.onClose) {
                 options.onClose();
             }
-        }, options.autoClose.delay);
+        }, options.autoClose.delay);*/
     }
 
     // Add close button if the following conditions are met:
@@ -206,7 +238,8 @@ function toast(options = toast_defaults) {
 
     toast.addEventListener('mouseenter', () => {
         if (options.autoClose.enabled) {
-            clearTimeout(toast_timeout);
+            running = false;
+            leftTime = options.autoClose.delay;
         }
 
         if (options.onMouseEnter) {
@@ -215,12 +248,7 @@ function toast(options = toast_defaults) {
     });
     toast.addEventListener('mouseleave', () => {
         if (options.autoClose.enabled) {
-            toast_timeout = setTimeout(() => {
-                wrapper.removeChild(toast);
-                if (options.onClose) {
-                    options.onClose();
-                }
-            }, options.autoClose.delay);
+            running = true;
         }
 
         if (options.onMouseLeave) {
