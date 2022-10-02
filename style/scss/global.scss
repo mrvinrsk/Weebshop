@@ -14,6 +14,7 @@
   url('../../fonts/poppins-v20-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
   url('../../fonts/poppins-v20-latin-300.svg#Poppins') format('svg'); /* Legacy iOS */
 }
+
 /* poppins-regular - latin */
 @font-face {
   font-family: 'Poppins';
@@ -27,6 +28,7 @@
   url('../../fonts/poppins-v20-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
   url('../../fonts/poppins-v20-latin-regular.svg#Poppins') format('svg'); /* Legacy iOS */
 }
+
 /* poppins-600 - latin */
 @font-face {
   font-family: 'Poppins';
@@ -40,6 +42,7 @@
   url('../../fonts/poppins-v20-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
   url('../../fonts/poppins-v20-latin-600.svg#Poppins') format('svg'); /* Legacy iOS */
 }
+
 /* poppins-800 - latin */
 @font-face {
   font-family: 'Poppins';
@@ -189,7 +192,7 @@ img {
 @mixin button() {
   position: relative;
   border-radius: 7px;
-  padding: .625em 1.55em;
+  padding: .55em 1.4em;
   border: none;
   text-decoration: none;
   z-index: 3;
@@ -198,38 +201,37 @@ img {
   text-align: center;
   cursor: pointer;
   transition-duration: .25s;
+
+  @media screen and (min-width: utils.$bp-tablet) {
+    padding: .625em 1.55em;
+    border-radius: 10px;
+  }
 }
 
 .button {
   @include button();
-  background: linear-gradient(to bottom right, utils.pastellize(utils.$col-primary, 20), utils.pastellize(utils.$col-secondary, 10));
+  background: utils.$col-primary;
   color: #343434;
 
   &.danger {
-    background: #c51c1c;
-    color: #b4b4b4;
+    background: #d91717;
+    color: utils.$col-gray-lightest;
   }
 
-  @include utils.hover() {
+  &:hover {
     cursor: pointer;
-    color: #EEE;
-    box-shadow: 0 5px 15px rgba(0 0 0 / 10%);
-
-    &::after {
-      opacity: 1;
-    }
+    color: utils.$col-gray-lightest;
+    box-shadow: map-get(utils.$boxShadows, 'md');
   }
 }
 
 .button-secondary {
   @include button();
-  background-color: transparent;
-  border: 1px solid utils.$col-primary;
-  color: utils.$col-primary;
+  background-color: utils.$col-gray-lighter;
+  color: #343434;
 
-  @include utils.hover() {
-    border: 1px solid utils.pastellize(utils.$col-primary, 20);
-    color: utils.pastellize(utils.$col-primary, 20);
+  &:hover {
+    background-color: darken(utils.$col-gray-lighter, 10%);
   }
 }
 
@@ -279,7 +281,7 @@ img {
   }
 
   &.hoverable {
-    @include utils.hover() {
+    &:hover {
       border-bottom: 1px solid utils.$col-primary;
     }
   }
@@ -406,7 +408,7 @@ button {
   font-weight: 800;
   overflow: hidden;
 
-  @include utils.hover() {
+  &:hover {
     color: #EEE;
   }
 
