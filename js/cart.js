@@ -14,7 +14,7 @@ $(function () {
 
 
 function add_article(id) {
-    toast({
+    untoasted({
         title: 'Zum Korb hinzugefügt',
         content: 'Artikel wurde zum Korb hinzugefügt',
         buttons: [

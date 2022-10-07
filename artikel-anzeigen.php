@@ -15,6 +15,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>WeebShop</title>
 
+    <link rel="stylesheet" href="node_modules/untoasted/css/minified/toasted.min.css">
     <link rel="stylesheet" href="style/css/global.min.css">
     <link rel="stylesheet" href="style/css/home.min.css">
     <link rel="stylesheet" href="style/css/artikel-anzeigen.min.css">
@@ -23,7 +24,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/anime.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/toast.js"></script>
+    <script src='node_modules/untoasted/js/minified/toasted.min.js'></script>
     <script src="js/cart.js"></script>
     <script src="js/rating.js"></script>
 

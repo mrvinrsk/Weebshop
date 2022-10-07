@@ -103,8 +103,8 @@
   color: utils.$col-text;
 }
 
-body {
-  background-color: #f1f1f1;
+html, body {
+  background-color: utils.$col-background;
 }
 
 main {
@@ -212,6 +212,7 @@ img {
   @include button();
   background: utils.$col-primary;
   color: #343434;
+  box-shadow: map-get(utils.$boxShadows, 'sm');
 
   &.danger {
     background: #d91717;
@@ -221,7 +222,7 @@ img {
   &:hover {
     cursor: pointer;
     color: utils.$col-gray-lightest;
-    box-shadow: map-get(utils.$boxShadows, 'md');
+    box-shadow: map-get(utils.$boxShadows, 'lg');
   }
 }
 
@@ -367,7 +368,7 @@ $inputGroupRadius: 10px;
     flex-shrink: 0;
     flex-grow: 0;
     background: utils.$col-primary;
-    color: utils.$col-white;
+    color: utils.$col-white-element;
   }
 }
 
@@ -379,7 +380,7 @@ $inputGroupRadius: 10px;
   }
 }
 
-input, button {
+input {
   font-size: 1.1rem;
   padding: 1em 1.25em;
   background-color: #EEE;
@@ -395,46 +396,6 @@ input, button {
 
   @media screen and (min-width: utils.$bp-desktop) {
     padding: 1.5em 2em;
-  }
-}
-
-button {
-  position: relative;
-  border: none;
-  background: utils.pastellize(utils.$col-primary, 25);
-  color: #343434;
-  cursor: pointer;
-  padding-inline: 1.25em;
-  font-weight: 800;
-  overflow: hidden;
-
-  &:hover {
-    color: #EEE;
-  }
-
-  @media screen and (min-width: utils.$bp-tablet) {
-    padding-inline: 1.85em;
-
-    &::before {
-      position: absolute;
-      content: '';
-      width: 150%;
-      height: 100%;
-      background: linear-gradient(to bottom right, utils.pastellize(utils.$col-primary, 20), utils.pastellize(utils.$col-secondary, 10));
-      top: 0;
-      transform: skewX(-10deg);
-      left: -155%;
-      z-index: -1;
-      transition-duration: .5s;
-    }
-
-    &:hover::before {
-      left: -7.5%;
-    }
-  }
-
-  @media screen and (min-width: utils.$bp-desktop) {
-    padding-inline: 2.25em;
   }
 }
 
@@ -484,10 +445,11 @@ textarea {
 .article {
   position: relative;
   color: utils.$col-text;
-  background: utils.$col-white;
+  background: utils.$col-white-element;
   padding: .75rem;
   border-radius: 20px;
   overflow: hidden;
+  box-shadow: map-get(utils.$boxShadows, 'sm');
   z-index: 3;
 
   transition-duration: .25s;
@@ -523,11 +485,10 @@ textarea {
   @media screen and (hover: hover) {
     &:hover {
       transform: translateY(-5px) !important;
-      box-shadow: map-get(utils.$boxShadows, 'sm');
+      box-shadow: map-get(utils.$boxShadows, 'lg') !important;
 
       @media screen and (min-width: utils.$bp-desktop) {
         transform: translateY(-10px) !important;
-        box-shadow: map-get(utils.$boxShadows, 'lg') !important;
       }
 
       &::after {
@@ -948,7 +909,7 @@ nav {
   #links {
     padding-block: 1.25rem;
     display: block;
-    background-color: utils.$col-white;
+    background-color: utils.$col-white-element;
   }
 
   &.scrolled #links ul #logo-li img {
@@ -1118,95 +1079,73 @@ html body input.lkke {
   }
 }
 
-html body .toast-wrapper {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  min-width: 100%;
-  max-width: 100%;
-  z-index: 999;
 
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
+.toast {
+  position: relative;
+  width: 100%;
+  background-color: utils.$col-white-element;
+  box-shadow: map-get(utils.$boxShadows, 'md');
+  border-radius: 0;
+  padding: 1rem;
   transition-duration: .25s;
 
   @media screen and (min-width: utils.$bp-tablet) {
+    padding: 1.75rem;
+    border-radius: 10px;
+  }
+
+  .toast-progress {
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: utils.$col-primary;
+  }
+
+  .toast-title {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: utils.$col-primary;
+  }
+
+  .toast-content {
+    font-size: 1rem;
+    color: utils.$col-gray-darkest;
+  }
+
+  .toast-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: .5rem;
+    margin-top: 1rem;
+  }
+
+  .toast-button {
+    @include button();
+    @extend .button;
+
+    &:first-child {
+      @extend .button;
+    }
+
+    &:nth-child(2) {
+      @extend .button-secondary;
+    }
+
+    &:nth-child(n+3) {
+      @extend .button-tertiary;
+    }
+  }
+
+  .toast-close {
+    position: absolute;
+    top: 0;
     right: 1rem;
-    bottom: 1rem;
-    min-width: 400px;
-    max-width: 400px;
-  }
-
-  @media screen and (min-width: utils.$bp-desktop) {
-    right: 1.75rem;
-    bottom: 1.75rem;
-    min-width: 450px;
-    max-width: 750px;
-    resize: horizontal;
-  }
-
-
-  .toast {
-    position: relative;
-    width: 100%;
-    background-color: utils.$col-gray-lightest;
-    box-shadow: map-get(utils.$boxShadows, 'lg');
-    border-radius: 0;
-    padding: 1rem;
-    transition-duration: .25s;
-
-    @media screen and (min-width: utils.$bp-tablet) {
-      padding: 1.75rem;
-      border-radius: 10px;
-    }
-
-    .toast-progress {
-      height: 2px;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      background: utils.$col-primary;
-    }
-
-    .toast-title {
-      font-weight: 600;
-      font-size: 1.25rem;
-      color: utils.$col-primary;
-    }
-
-    .toast-content {
-      font-size: 1rem;
-      color: utils.$col-gray-darkest;
-    }
-
-    .toast-buttons {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      gap: .5rem;
-      margin-top: 1rem;
-
-      .toast-button {
-        padding: .5em 1em !important;
-        border: none !important;
-        border-radius: 5px !important;
-        background-color: utils.$col-primary !important;
-        color: utils.$col-white !important;
-        font-weight: 600 !important;
-        cursor: pointer;
-      }
-    }
-
-    .toast-close {
-      position: absolute;
-      top: 0;
-      right: 1rem;
-      border: none;
-      background-color: transparent;
-      color: utils.$col-secondary;
-      font-size: 2.25rem;
-      cursor: pointer;
-    }
+    border: none;
+    background-color: transparent;
+    color: utils.$col-secondary;
+    font-size: 2.25rem;
+    cursor: pointer;
   }
 }
