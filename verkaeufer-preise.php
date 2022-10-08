@@ -303,22 +303,6 @@ $sum = number_format(random_float(1.00, 20000.00), 2, ",", ".");
                     <td><span>Ab 4%</span></td>
                 </tr>
 
-                <tr>
-                    <td>
-                        <div class="benefit tooltip"><p>ztuitutoiut</p>
-                            <div class="tooltip-content">
-                                <h4>toitiuotiut</h4>
-                                <p>
-                                    oiutiutoituituitoiut
-                                </p>
-                            </div>
-                        </div>
-                    </td>
-                    <td><span>9%</span></td>
-                    <td><span>5%</span></td>
-                    <td><span>Ab 33%</span></td>
-                </tr>
-
                 </tbody>
             </table>
         </div>
