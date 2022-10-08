@@ -154,8 +154,8 @@ $sum = number_format(random_float(1.00, 20000.00), 2, ",", ".");
                     <!--<p>Perfekt für all diejenigen, die ab und zu mal ein paar Artikel verscherbeln wollen.</p>-->
 
                     <div class="list">
-                        <div class="list-item">Vorteil 1</div>
-                        <div class="list-item">Vorteil 2</div>
+                        <div class="list-item">Geringe Servicegebühren</div>
+                        <div class="list-item">bis zu 3 Artikel gleichzeitig</div>
                         <div class="list-item">Vorteil 3</div>
                     </div>
 
@@ -224,16 +224,20 @@ $sum = number_format(random_float(1.00, 20000.00), 2, ",", ".");
                         <span class="name">Starter</span>
                         <h3>Kostenlos</h3>
                         <span class="renewal">für immer</span>
+
+                        <p>Perfekt für all diejenigen, die ab und zu mal ein paar Artikel verscherbeln wollen.</p>
                     </th>
                     <th>
                         <span class="name">Profi</span>
                         <h3>10€</h3>
                         <span class="renewal">pro Monat</span>
+                        <p>Für alle, die Stammkunden im Shop sind und den ein oder anderen Vorteil genießen möchten.</p>
                     </th>
                     <th>
                         <span class="name">Unternehmen</span>
                         <h3>Ab 50€</h3>
                         <span class="renewal">pro Monat</span>
+                        <p>Für Unternehmen ab fünf Mitarbeitern – bietet den größten Funktionsumfang und die meisten Statistiken zum genauen Kalkulieren.</p>
                     </th>
                 </tr>
                 </thead>
@@ -299,12 +303,28 @@ $sum = number_format(random_float(1.00, 20000.00), 2, ",", ".");
                     <td><span>Ab 4%</span></td>
                 </tr>
 
+                <tr>
+                    <td>
+                        <div class="benefit tooltip"><p>ztuitutoiut</p>
+                            <div class="tooltip-content">
+                                <h4>toitiuotiut</h4>
+                                <p>
+                                    oiutiutoituituitoiut
+                                </p>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span>9%</span></td>
+                    <td><span>5%</span></td>
+                    <td><span>Ab 33%</span></td>
+                </tr>
+
                 </tbody>
             </table>
         </div>
 
         <div class="mobile">
-
+            <noscript>Dein Browser unterstützt kein JavaScript.</noscript>
         </div>
 
         <div class="legend">

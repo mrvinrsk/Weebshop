@@ -92,7 +92,8 @@
 
   .stat {
     position: relative;
-    background-color: utils.$col-gray-lightest;
+    background-color: utils.$col-white-element;
+    box-shadow: map-get(utils.$boxShadows, 'sm');
     padding: 1rem;
     border-radius: 15px;
     overflow: hidden;

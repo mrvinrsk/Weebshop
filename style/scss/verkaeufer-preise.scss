@@ -7,7 +7,7 @@
 
   @media screen and (min-width: utils.$bp-tablet) {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 
   @media screen and (min-width: utils.$bp-desktop) {
@@ -147,6 +147,9 @@
     display: none;
     @media screen and (min-width: utils.$bp-desktop) {
       display: block;
+      background: utils.$col-white-element;
+      padding: 1rem;
+      border-radius: 10px;
     }
 
     table {
@@ -158,6 +161,10 @@
       }
 
       $radius: 10px;
+
+      td:first-child {
+        width: 25%;
+      }
 
       tr td {
         &:first-child {
@@ -188,6 +195,12 @@
 
       th {
         text-align: left;
+
+        p {
+          font-weight: 400;
+          margin-top: .75rem;
+          margin-bottom: 1rem;
+        }
       }
 
       th, td {

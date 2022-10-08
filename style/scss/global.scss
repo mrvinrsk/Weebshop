@@ -322,7 +322,7 @@ img {
     touch-action: none;
     pointer-events: none;
     min-width: 400px;
-    background: utils.$col-white-element;
+    background: utils.$col-white-element-higher;
     border-radius: 10px;
     box-shadow: map-get(utils.$boxShadows, 'xl');
     padding: 1.5rem;
@@ -862,7 +862,7 @@ nav img {
 nav {
   display: flex;
   flex-direction: column;
-  box-shadow: 0 5px 15px rgba(0 0 0 / 5%);
+  box-shadow: map-get(utils.$boxShadows, 'lg');
   transition-duration: .25s;
 
   > * {
@@ -870,11 +870,12 @@ nav {
   }
 
   #links {
-    padding-block: 1.25rem;
+    padding-block: .75rem;
 
     > ul {
       width: utils.$width;
       margin-inline: auto;
+      margin-block: 0 !important;
 
       > * {
         transition-duration: 0.25s;
@@ -990,10 +991,10 @@ nav {
   }
 
   &.scrolled #links ul #logo-li img {
-    height: 50px;
+    height: 35px;
 
     @media only screen and (min-width: utils.$bp-tablet) {
-      height: 65px;
+      height: 50px;
     }
   }
 
@@ -1034,7 +1035,7 @@ nav {
 
         #logo-li {
           img {
-            height: 95px;
+            height: 75px;
             width: auto;
           }
         }
@@ -1160,7 +1161,7 @@ html body input.lkke {
 .toast {
   position: relative;
   width: 100%;
-  background-color: utils.$col-white-element;
+  background-color: utils.$col-white-element-higher;
   box-shadow: map-get(utils.$boxShadows, 'md');
   border-radius: 0;
   padding: 1rem;
