@@ -101,11 +101,6 @@ $results = number_format(rand(10, 10000), 0, ",", ".");
 
 <main>
     <section class="heading">
-        <a href="./index.php" class="head-link icon-text large fc-primary no-underline hoverable">
-            <span class="icon">chevron_left</span>
-            <span>Zurück</span>
-        </a>
-
         <form class="input-group" action="#" method="GET">
             <input type="text" name="search" id="search" placeholder="Suchen..." value="<?php echo(isset($_GET['search']) ? $_GET['search'] : ''); ?>"/>
             <button>Suchen</button>

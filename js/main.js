@@ -84,17 +84,56 @@ $(function () {
         var target = this.hash,
             $target = $(target);
 
-        $("html, body")
-            .stop()
-            .animate(
-                {
-                    scrollTop: $target.offset().top - 150
-                },
-                1200,
-                "swing"
-            );
+        let extra = document.querySelector(target).dataset.offset || 150;
+        if(window.innerWidth < 768) {
+            extra = document.querySelector(target).dataset.offsetMobile || extra;
+        }
+
+        if ($target.offset()) {
+            $("html, body")
+                .stop()
+                .animate(
+                    {
+                        scrollTop: $target.offset().top - extra
+                    },
+                    1200,
+                    "swing"
+                );
+        } else {
+            untoasted({
+                title: 'Nicht verfügbar',
+                content: 'Keine Ahnung wo du hin wolltest, aber ins Nichts kann ich dich nicht schicken, sorry.'
+            });
+        }
     });
     /* Smooth scrolling end */
+
+    const url = window.location.pathname;
+    const noBack = ['index', 'buy-success'];
+    let filename = url.split('/').pop();
+    filename = filename.substring(0, filename.lastIndexOf('.'));
+    if (filename === '') filename = 'index';
+
+    if (!noBack.includes(filename)) {
+        const first = document.querySelector('section').querySelector(':first-child');
+
+        const back = document.createElement('a');
+        back.onclick = function () {
+            history.back();
+
+            setTimeout(() => {
+                if (window.location.pathname === url) {
+                    window.location.href = 'index.php';
+                }
+            }, 100);
+        }
+        back.classList.add('icon-text', 'large', 'fc-primary', 'no-underline', 'hoverable', 'back');
+        back.innerHTML = '<span class="icon">chevron_left</span><span>Zurück</span>';
+
+        first.parentNode.insertBefore(back, first);
+    } else {
+        console.log("Auf dieser Seite gibt es keinen Back-Button.");
+    }
 
     document.querySelectorAll('.parallax').forEach(parallax => {
         parallax.style.backgroundImage = `url(${parallax.dataset.image})`;

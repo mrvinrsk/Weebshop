@@ -1,4 +1,13 @@
 <footer>
+    <div class="footer-links">
+        <div>
+            <h4>Links</h4>
+            <ul>
+                <li><a href="verkaeufer-preise.php">Verkäufer</a></li>
+            </ul>
+        </div>
+    </div>
+
     <div>
         <div>
             <img loading="lazy" src="./images/mrv.svg" alt="Logo">

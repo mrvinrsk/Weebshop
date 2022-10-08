@@ -12,13 +12,15 @@ $sum = number_format(random_float(1.00, 20000.00), 2, ",", ".");
     <title>WeebShop</title>
 
     <link rel="stylesheet" href="style/css/global.min.css">
-    <link rel="stylesheet" href="style/css/buy-success.min.css">
+    <link rel="stylesheet" href="style/css/verkaeufer-preise.min.css">
 
     <script src="js/jquery-3.6.1.min.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/anime.min.js"></script>
+    <script src="node_modules/untoasted/js/minified/toasted.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/rating.js"></script>
+    <script src="js/verkaeufer-preise.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
 </head>
@@ -66,8 +68,10 @@ $sum = number_format(random_float(1.00, 20000.00), 2, ",", ".");
                                 }
                             </style>
                         </defs>
-                        <path class="facebook-circle" d="M1024,512C1024,229.23,794.77,0,512,0S0,229.23,0,512c0,255.55,187.23,467.37,432,505.78v-357.78h-130v-148h130v-112.8c0-128.32,76.44-199.2,193.39-199.2,56.02,0,114.61,10,114.61,10v126h-64.56c-63.6,0-83.44,39.47-83.44,79.96v96.04h142l-22.7,148h-119.3v357.78c244.77-38.41,432-250.22,432-505.78Z"/>
-                        <path class="facebook-f" d="M711.3,660l22.7-148h-142v-96.04c0-40.49,19.84-79.96,83.44-79.96h64.56v-126s-58.59-10-114.61-10c-116.95,0-193.39,70.88-193.39,199.2v112.8h-130v148h130v357.78c26.07,4.09,52.78,6.22,80,6.22s53.93-2.13,80-6.22v-357.78h119.3Z"/>
+                        <path class="facebook-circle"
+                              d="M1024,512C1024,229.23,794.77,0,512,0S0,229.23,0,512c0,255.55,187.23,467.37,432,505.78v-357.78h-130v-148h130v-112.8c0-128.32,76.44-199.2,193.39-199.2,56.02,0,114.61,10,114.61,10v126h-64.56c-63.6,0-83.44,39.47-83.44,79.96v96.04h142l-22.7,148h-119.3v357.78c244.77-38.41,432-250.22,432-505.78Z"/>
+                        <path class="facebook-f"
+                              d="M711.3,660l22.7-148h-142v-96.04c0-40.49,19.84-79.96,83.44-79.96h64.56v-126s-58.59-10-114.61-10c-116.95,0-193.39,70.88-193.39,199.2v112.8h-130v148h130v357.78c26.07,4.09,52.78,6.22,80,6.22s53.93-2.13,80-6.22v-357.78h119.3Z"/>
                     </svg>
                 </a>
                 <a href="" target="_blank">
@@ -79,7 +83,8 @@ $sum = number_format(random_float(1.00, 20000.00), 2, ",", ".");
                                 }
                             </style>
                         </defs>
-                        <path class="b" d="M0,294.66c45.88,4.18,86.43-6.85,123.41-34.68-23.61-1.18-42.92-9.78-58.66-25.98-8.81-9.07-15.26-19.63-19.36-32.25,12.43,1.71,24.38,1.75,36.93-1.56-43.29-10.42-67.06-47.86-66.18-82.97,11.57,5.61,23.39,9.63,36.75,9.83C12.04,97.29,8.99,47.56,28.02,15.58c45.27,53.34,102.56,82.79,172.72,87.48-2.65-14.7-2.4-28.72,1.45-42.73C213.21,20.35,255.36-6.13,296.27,1.23c17.39,3.13,32.45,10.57,44.99,22.99,1.86,1.84,3.43,2.09,5.95,1.52,16.03-3.62,31.25-9.27,45.61-17.25,.98-.55,1.87-1.53,3.63-1.05-6.46,18.9-18.18,33.45-35.77,44.71,16.55-1.55,31.25-6.43,45.98-11.49-5.27,8.93-11.83,16.55-18.88,23.76-5.86,6-12.15,11.54-18.97,16.45-1.75,1.26-2.51,2.61-2.45,4.95,1.48,52.25-13.03,99.93-41.82,143.29-25.67,38.67-59.92,67.25-102.86,85.13-23.1,9.62-47.25,15.02-72.17,17.03-29.98,2.43-59.48-.29-88.38-8.69-21.36-6.21-41.47-15.25-61.13-27.91Z"/>
+                        <path class="b"
+                              d="M0,294.66c45.88,4.18,86.43-6.85,123.41-34.68-23.61-1.18-42.92-9.78-58.66-25.98-8.81-9.07-15.26-19.63-19.36-32.25,12.43,1.71,24.38,1.75,36.93-1.56-43.29-10.42-67.06-47.86-66.18-82.97,11.57,5.61,23.39,9.63,36.75,9.83C12.04,97.29,8.99,47.56,28.02,15.58c45.27,53.34,102.56,82.79,172.72,87.48-2.65-14.7-2.4-28.72,1.45-42.73C213.21,20.35,255.36-6.13,296.27,1.23c17.39,3.13,32.45,10.57,44.99,22.99,1.86,1.84,3.43,2.09,5.95,1.52,16.03-3.62,31.25-9.27,45.61-17.25,.98-.55,1.87-1.53,3.63-1.05-6.46,18.9-18.18,33.45-35.77,44.71,16.55-1.55,31.25-6.43,45.98-11.49-5.27,8.93-11.83,16.55-18.88,23.76-5.86,6-12.15,11.54-18.97,16.45-1.75,1.26-2.51,2.61-2.45,4.95,1.48,52.25-13.03,99.93-41.82,143.29-25.67,38.67-59.92,67.25-102.86,85.13-23.1,9.62-47.25,15.02-72.17,17.03-29.98,2.43-59.48-.29-88.38-8.69-21.36-6.21-41.47-15.25-61.13-27.91Z"/>
                     </svg>
                 </a>
             </div>
@@ -95,32 +100,226 @@ $sum = number_format(random_float(1.00, 20000.00), 2, ",", ".");
             <li><a href="#">Link #4</a></li>
             <li id="hamburger">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path fill="#343434" d="M3,8H21a1,1,0,0,0,0-2H3A1,1,0,0,0,3,8Zm18,8H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Zm0-5H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Z"/>
+                    <path fill="#343434"
+                          d="M3,8H21a1,1,0,0,0,0-2H3A1,1,0,0,0,3,8Zm18,8H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Zm0-5H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Z"/>
                 </svg>
             </li>
         </ul>
     </div>
 </nav>
 
-<main class="small-space ignore-animation">
+<main class="ignore-animation">
     <section id="head">
-        <a href="./index.php" class="head-link icon-text large fc-primary no-underline hoverable">
-            <span class="icon">chevron_left</span>
-            <span>Zur Startseite</span>
-        </a>
-        <img class="head-illustration" src="./images/undraw-delivery.svg" alt="Bestellung erfolgreich"/>
+        <h2>BRRRRRR-Shop für Verkäufer</h2>
+        <p>
+            Du hast als Anbieter mehrere Möglichkeiten deine Artikel im BRRRRRR-Shop zu verkaufen, wir bieten dir ein
+            kostenloses Angebot zum Verkaufen, wenn dir das nicht reichen sollte, hast du aber trotzdem jederzeit die
+            Möglichkeit auf einen der höheren Abonnements mit mehr Schnickschnack zu upgraden. Mehr Informationen dazu
+            <a href="#plans">weiter unten</a>.
+        </p>
+    </section>
+
+    <section>
+        <h2>Wieso BRRRRRR-Shop?</h2>
+        <p>
+            Wir bieten dir für den Verkauf deiner Artikel viele Vorteile<sup>1</sup> gegenüber unserer Konkurrenz,
+            welche diese Frage überflüssig machen sollten. Zu diesen Vorteilen zählen u.A.:
+        </p>
+
+        <div class="list">
+            <div class="list-item">Statistiken für Verkäufe</div>
+            <div class="list-item">Hervorhebung von besonderen Angeboten</div>
+            <div class="list-item">Wir klauen dir nur niedrige Servicegebühren</div>
+            <div class="list-item">Wir haben eine coole Domain, was dich und deine Artikel automatisch auch cool macht
+                😎
+            </div>
+        </div>
+
+        <div class="footnotes">
+            <span><sup>1</sup>Einige Vorteile sind u.U. nur mit einem kostenpflichtigen Abonnement verfügbar.</span>
+        </div>
+    </section>
+
+    <section id="plans" class="plans" data-offset="300" data-offset-mobile="225">
+        <h2>Angebote</h2>
+
+        <div>
+            <div class="plan">
+                <span class="name">Starter</span>
+
+                <div class="information">
+                    <h3>Kostenlos</h3>
+                    <span class="renewal">für immer</span>
+
+                    <!--<p>Perfekt für all diejenigen, die ab und zu mal ein paar Artikel verscherbeln wollen.</p>-->
+
+                    <div class="list">
+                        <div class="list-item">Vorteil 1</div>
+                        <div class="list-item">Vorteil 2</div>
+                        <div class="list-item">Vorteil 3</div>
+                    </div>
+
+                    <div class="buttons">
+                        <a class="button">Auswählen</a>
+                        <a class="button-tertiary" href="#compare">Vergleichen</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="plan featured">
+                <span class="name">Profi</span>
+
+                <div class="information">
+                    <h3>10€</h3>
+                    <span class="renewal">pro Monat</span>
+
+                    <!--<p>Für alle, die Stammkunden im Shop sind und den ein oder anderen Vorteil genießen möchten.</p>-->
+
+                    <div class="list">
+                        <div class="list-item">Vorteil 1</div>
+                        <div class="list-item">Vorteil 2</div>
+                        <div class="list-item">Vorteil 3</div>
+                    </div>
+
+                    <div class="buttons">
+                        <a class="button">Auswählen</a>
+                        <a class="button-tertiary" href="#compare">Vergleichen</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="plan">
+                <span class="name">Unternehmen</span>
+
+                <div class="information">
+                    <h3>Ab 50€</h3>
+                    <span class="renewal">pro Monat</span>
+
+                    <!--<p>Für Unternehmen ab fünf Mitarbeitern – bietet den größten Funktionsumfang und die meisten Statistiken zum genauen Kalkulieren.</p>-->
+
+                    <div class="list">
+                        <div class="list-item">Vorteil 1</div>
+                        <div class="list-item">Vorteil 2</div>
+                        <div class="list-item">Vorteil 3</div>
+                    </div>
+
+                    <div class="buttons">
+                        <a class="button">Auswählen</a>
+                        <a class="button-tertiary" href="#compare">Vergleichen</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="compare" class="compare" data-offset="200" data-offset-mobile="225">
+        <h2>Vergleichen</h2>
+
+        <div class="desktop">
+            <table>
+                <thead>
+                <tr class="header">
+                    <th></th>
+                    <th>
+                        <span class="name">Starter</span>
+                        <h3>Kostenlos</h3>
+                        <span class="renewal">für immer</span>
+                    </th>
+                    <th>
+                        <span class="name">Profi</span>
+                        <h3>10€</h3>
+                        <span class="renewal">pro Monat</span>
+                    </th>
+                    <th>
+                        <span class="name">Unternehmen</span>
+                        <h3>Ab 50€</h3>
+                        <span class="renewal">pro Monat</span>
+                    </th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>
+                        <div class="benefit tooltip"><p>Maximale Artikel</p>
+                            <div class="tooltip-content">
+                                <h4>Maximale Artikel</h4>
+                                <p>
+                                    Die maximale Anzahl an Artikeln, welche gleichzeitig zum Verkauf angeboten werden
+                                    können.
+                                </p>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span>3</span></td>
+                    <td><span>Unlimitiert</span></td>
+                    <td><span>Unlimitiert</span></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="benefit"><p>Statistiken</p></div>
+                    </td>
+                    <td><span class="icon"></span></td>
+                    <td><span class="icon">remove</span></td>
+                    <td><span class="icon">done</span></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="benefit tooltip"><p>Artikel hervorheben</p>
+                            <div class="tooltip-content">
+                                <h4>Artikel hervorheben</h4>
+                                <p>
+                                    Hervorgehobene Artikel werden auf deiner Verkäufer-Seite als erstes, und farblich
+                                    angezeigt.
+                                </p>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="icon"></span></td>
+                    <td><span class="icon">remove</span></td>
+                    <td><span class="icon">done</span></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="benefit tooltip"><p>Servicegebühren</p>
+                            <div class="tooltip-content">
+                                <h4>Servicegebühren</h4>
+                                <p>
+                                    Die Servicegebühren berechnen wir für die bereitstellung unserer Dienste, sie werden
+                                    pro Verkauf, basierend auf einem festen Prozentsatz, berechnet.
+                                </p>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span>10%</span></td>
+                    <td><span>7%</span></td>
+                    <td><span>Ab 4%</span></td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mobile">
+
+        </div>
+
+        <div class="legend">
+            <h4>Legende:</h4>
+
+            <div>
+                <p class="icon-text"><span class="icon">done</span><span>Enthalten</span></p>
+                <p class="icon-text"><span class="icon">remove</span><span>Teilweise enthalten</span></p>
+            </div>
+        </div>
     </section>
 </main>
 
 
 <?php include_once("./elements/footer.php"); ?>
-
-<script>
-    $(function () {
-        loadPlaceholders();
-        confetti(document.querySelector('.head-illustration'));
-    });
-</script>
 
 </body>
 </html>

@@ -113,11 +113,6 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
 
 <main>
     <section id="offer">
-        <a href="./index.php" class="icon-text large fc-primary no-underline hoverable">
-            <span class="icon">chevron_left</span>
-            <span>Zurück</span>
-        </a>
-
         <div class="article-head">
             <div class="article-main-image">
                 <img src="https://loremflickr.com/640/360" alt="Bild"/>

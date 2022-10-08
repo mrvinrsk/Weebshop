@@ -77,7 +77,7 @@ function untoasted(options = toast_defaults) {
         }
     }
 
-    console.log("DEBUG: Creating toast with options: ", options);
+    debug.push("Creating toast with options: ", options);
 
     // get, if it exists, otherwise create the toast-wrapper element
     const wrapper = document.querySelector('.toasted-wrapper') || document.createElement('div');
@@ -112,6 +112,10 @@ function untoasted(options = toast_defaults) {
         const btn = document.createElement('button');
         btn.classList.add('toast-button');
         btn.innerText = button.text;
+        button.classes.split(' ').forEach(clazz => {
+            btn.classList.add(clazz);
+        });
+
         if (button.onClick) {
             btn.addEventListener('click', button.onClick);
         }
