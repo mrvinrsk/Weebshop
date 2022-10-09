@@ -1,4 +1,59 @@
 <footer>
+    <script>
+        function updateText() {
+            let button = document.querySelector('.switch-mode');
+            let mode = getMode(localStorage.getItem('mode'));
+
+            switch(mode) {
+                case 'LIGHT':
+                    button.textContent = "Dark";
+                    break;
+
+                case 'DARK':
+                    button.textContent = "Light";
+                    break;
+            }
+        }
+
+        function press() {
+            let mode = getMode(localStorage.getItem('mode'));
+            console.log("Du hast gedrückt und aktuell (zum Zeitpunkt des Klickens):", mode);
+
+            let nextMode = null;
+
+            switch(mode) {
+                case 'LIGHT':
+                    console.log('Nächstes wäre Dark');
+                    nextMode = Modes.DARK;
+                    break;
+
+                case 'DARK':
+                    console.log('Nächstes wäre Light');
+                    nextMode = Modes.LIGHT;
+                    break;
+
+                default:
+                    console.log("Default!!");
+                    nextMode = Modes.LIGHT;
+                    break;
+            }
+
+            console.log('Next', nextMode);
+
+            localStorage.setItem('mode', nextMode);
+            updateText();
+            updateMode();
+        }
+
+        $(function() {
+            updateText();
+
+            document.querySelector('.switch-mode').addEventListener('click', () => {
+                console.log('Gedrückt...');
+                press();
+            });
+        });
+    </script>
     <div class="footer-links">
         <div>
             <h4>Links</h4>
@@ -6,6 +61,8 @@
                 <li><a href="verkaeufer-preise.php">Verkäufer</a></li>
             </ul>
         </div>
+
+        <a class="switch-mode button"></a>
     </div>
 
     <div>

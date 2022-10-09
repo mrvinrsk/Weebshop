@@ -85,7 +85,7 @@ $(function () {
             $target = $(target);
 
         let extra = document.querySelector(target).dataset.offset || 150;
-        if(window.innerWidth < 768) {
+        if (window.innerWidth < 768) {
             extra = document.querySelector(target).dataset.offsetMobile || extra;
         }
 
@@ -350,10 +350,43 @@ function buy(article) {
     });
 }
 
+const Modes = {
+    LIGHT: 'light',
+    DARK: 'dark'
+};
+
+function getMode(m) {
+    for (let mode in Modes) {
+        if (mode.toLowerCase() === m.toLowerCase()) return mode;
+    }
+    return null;
+}
+
+function updateMode() {
+    let mode = getMode(localStorage.getItem('mode')) || Modes.LIGHT;
+    if (!localStorage.getItem('mode')) localStorage.setItem('mode', mode);
+
+    switch (mode) {
+        case 'DARK':
+            console.log('Du nutzt den Darkmode.');
+            document.body.classList.add('dark');
+            break;
+
+        case 'LIGHT':
+            document.body.classList.remove('dark');
+            break;
+
+        default:
+            break;
+    }
+}
+
 $(function () {
     document.querySelectorAll('.icon, .material-symbols-outlined').forEach(icon => {
         icon.ariaHidden = 'true';
     });
+
+    updateMode();
 
     // document.querySelector('section').innerHTML = '<a class="icon-text large fc-primary no-underline hoverable" onclick="window.history.back();" style="cursor: pointer;"><span class="icon">chevron_left</span><span>Zurück</span></a>' + document.querySelector('section').innerHTML;
 });

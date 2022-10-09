@@ -24,7 +24,7 @@ $sum = number_format(random_float(1.00, 20000.00), 2, ",", ".");
 
     <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
 </head>
-<body class="dark">
+<body>
 
 <div id="mobile-nav">
     <div id="mobile-links">
