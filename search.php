@@ -102,7 +102,7 @@ $results = number_format(rand(10, 10000), 0, ",", ".");
 <main>
     <section class="heading">
         <form class="input-group" action="#" method="GET">
-            <input type="text" name="search" id="search" placeholder="Suchen..." value="<?php echo(isset($_GET['search']) ? $_GET['search'] : ''); ?>"/>
+            <input type="text" name="search" id="search" placeholder="Artikel oder Verkäufer suchen..." value="<?php echo(isset($_GET['search']) ? $_GET['search'] : ''); ?>"/>
             <button>Suchen</button>
         </form>
 

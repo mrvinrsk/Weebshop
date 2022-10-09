@@ -1,23 +1,44 @@
 $bp-tablet: 620px;
 $bp-desktop: 1080px;
 
-$col-primary: #e84412;
-$col-secondary: #ea830f;
-$col-gray-lightest: #e8e8e8;
-$col-gray-lighter: #e1e1e1;
-$col-gray: #bbbbbb;
-$col-gray-darker: #868686;
-$col-gray-darkest: #424242;
-$col-text: #2c2c2c;
+:root {
+  --col-primary: #e07317;
+  --col-secondary: #d54418;
+  --col-gray-lightest: #e8e8e8;
+  --col-gray-lighter: #e1e1e1;
+  --col-gray: #bbbbbb;
+  --col-gray-darker: #868686;
+  --col-gray-darkest: #424242;
+  --col-text: #2c2c2c;
 
-$col-background: #e8e8e8;
-$col-white-element: #f0f0f0;
-$col-white-element-higher: #f5f5f5;
+  --col-background: #e8e8e8;
+  --col-background-darker: #dadada;
+  --col-white-element: #f0f0f0;
+  --col-white-element-higher: #f5f5f5;
 
-$col-stars: #d79507;
-$col-stars-hovered: #ecbe0b;
+  --col-stars: #b38e3e;
+  --col-stars-hovered: #e6a822;
+}
 
-$gradient-primary-secondary: linear-gradient(to bottom right, pastellize($col-primary, 5), pastellize($col-secondary, 5));
+body.dark {
+  --col-background: #1a1a1a;
+  --col-background-darker: #141414;
+  --col-text: #dadada;
+
+  --col-white-element: #212121;
+  --col-white-element-higher: #525252;
+
+  --col-gray: #3b3b3b;
+  --col-gray-lighter: #424242;
+  --col-gray-lightest: #4d4d4d;
+  --col-gray-darker: #919191;
+  --col-gray-darkest: #dedede;
+
+  --col-primary: #d17b34;
+  --col-secondary: #cf6c4e;
+}
+
+$gradient-primary-secondary: linear-gradient(to bottom right, var(--col-primary), var(--col-secondary));
 
 $width: min(90%, 65rem);
 
@@ -35,8 +56,8 @@ $boxShadows: (
 }
 
 
-$colors: ('primary': $col-primary, 'secondary': $col-secondary, 'gray': $col-gray);
-@each $name, $hex in $colors {
+$colors: ('primary': var(--col-primary), 'secondary': var(--col-secondary), 'gray': var(--col-gray));
+@each $name, $hex in --colors {
   .fc-#{$name} {
     color: $hex;
   }
@@ -44,10 +65,6 @@ $colors: ('primary': $col-primary, 'secondary': $col-secondary, 'gray': $col-gra
   .bg-#{$name} {
     background-color: $hex;
   }
-}
-
-@function pastellize($color, $amount) {
-  @return desaturate(lighten($color, $amount), $amount/2);
 }
 
 @mixin hover() {

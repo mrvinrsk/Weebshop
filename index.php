@@ -20,7 +20,7 @@ include_once "php/methods.php";
     <script src="js/main.js"></script>
     <script src="js/confetti_buttons.js"></script>
 </head>
-<body>
+<body class="dark">
 
 <div id="mobile-nav">
     <div id="mobile-links">
@@ -103,7 +103,7 @@ include_once "php/methods.php";
 <main>
     <section>
         <form class="input-group searchbar" action="search.php" method="GET">
-            <input type="text" name="search" id="search" placeholder="Suchen..."/>
+            <input type="text" name="search" id="search" placeholder="Artikel oder Verkäufer suchen..."/>
             <button>Suchen</button>
         </form>
 

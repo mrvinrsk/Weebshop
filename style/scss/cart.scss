@@ -69,7 +69,7 @@
     text-align: center;
     padding: 1rem;
     border-radius: 10px;
-    border: 2px dashed utils.$col-gray;
+    border: 2px dashed var(--col-gray);
 
     @media screen and (min-width: utils.$bp-tablet) {
       padding: 1.5rem;
@@ -78,7 +78,7 @@
     span.icon {
       font-size: 3.5rem;
       margin-bottom: 1rem;
-      color: utils.$col-gray-darker;
+      color: var(--col-gray-darker);
     }
 
 

@@ -99,13 +99,14 @@
   }
 }*/
 
-:root {
+body {
   font-family: 'Poppins', sans-serif;
-  color: utils.$col-text;
+  color: var(--col-text);
+  transition-duration: .25s;
 }
 
 html, body {
-  background-color: utils.$col-background;
+  background-color: var(--col-background);
 }
 
 main {
@@ -149,23 +150,7 @@ main {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: utils.$col-primary;
-}
-
-.special-heading {
-  position: relative;
-  z-index: 3;
-
-  &::after {
-    position: absolute;
-    content: '';
-    width: 95%;
-    height: 80%;
-    top: 27.5%;
-    left: 9.25%;
-    z-index: -1;
-    background: transparentize(utils.$col-primary, .7);
-  }
+  color: var(--col-primary);
 }
 
 .row {
@@ -211,29 +196,29 @@ img {
 
 .button {
   @include button();
-  background: utils.$col-primary;
+  background: var(--col-primary);
   color: #343434;
   box-shadow: map-get(utils.$boxShadows, 'sm');
 
   &.danger {
     background: #d91717;
-    color: utils.$col-gray-lightest;
+    color: var(--col-gray)-lightest;
   }
 
   &:hover {
     cursor: pointer;
-    color: utils.$col-gray-lightest;
+    color: var(--col-gray)-lightest;
     box-shadow: map-get(utils.$boxShadows, 'lg');
   }
 }
 
 .button-secondary {
   @include button();
-  background-color: utils.$col-gray-lighter;
+  background-color: var(--col-gray-lighter);
   color: #343434;
 
   &:hover {
-    background-color: darken(utils.$col-gray-lighter, 10%);
+    background-color: var(--col-gray);
   }
 }
 
@@ -241,7 +226,7 @@ img {
   display: flex !important;
   align-items: center;
   background-color: transparent;
-  color: utils.$col-primary;
+  color: var(--col-primary);
   text-decoration: none;
   font-weight: 600;
   cursor: pointer;
@@ -284,7 +269,7 @@ img {
 
   &.hoverable {
     &:hover {
-      border-bottom: 1px solid utils.$col-primary;
+      border-bottom: 1px solid var(--col-primary);
     }
   }
 
@@ -314,7 +299,7 @@ img {
 .tooltip {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dashed utils.$col-gray-darkest;
+  border-bottom: 1px dashed var(--col-gray)-darkest;
 
   .tooltip-content {
     opacity: 0;
@@ -322,7 +307,7 @@ img {
     touch-action: none;
     pointer-events: none;
     min-width: 400px;
-    background: utils.$col-white-element-higher;
+    background: var(--col-white-element-higher);
     border-radius: 10px;
     box-shadow: map-get(utils.$boxShadows, 'xl');
     padding: 1.5rem;
@@ -388,7 +373,7 @@ $inputGroupRadius: 10px;
   }
 
   > input {
-    border-color: utils.$col-primary;
+    border-color: var(--col-primary);
     border-style: solid;
     border-right: none;
     transition-duration: .25s;
@@ -398,7 +383,7 @@ $inputGroupRadius: 10px;
     border-left-width: 1px;
 
     &:focus {
-      border-color: utils.$col-primary;
+      border-color: var(--col-primary);
       border-top-width: 2px;
       border-bottom-width: 2px;
       border-left-width: 2px;
@@ -414,8 +399,11 @@ $inputGroupRadius: 10px;
   button {
     flex-shrink: 0;
     flex-grow: 0;
-    background: utils.$col-primary;
-    color: utils.$col-white-element;
+    background: var(--col-primary);
+    color: var(--col-white-element);
+    border: none;
+
+    padding: .5rem 2rem;
   }
 }
 
@@ -430,7 +418,8 @@ $inputGroupRadius: 10px;
 input {
   font-size: 1.1rem;
   padding: 1em 1.25em;
-  background-color: #EEE;
+  background-color: var(--col-background);
+  color: var(--col-text);
   outline: none;
   transition-duration: .25s;
 
@@ -482,17 +471,17 @@ textarea {
 }
 
 .stars {
-  color: utils.$col-stars;
+  color: var(--col-stars);
 }
 
 .rating-count {
-  color: utils.pastellize(utils.$col-primary, 15);
+  color: var(--col-primary);
 }
 
 .article {
   position: relative;
-  color: utils.$col-text;
-  background: utils.$col-white-element;
+  color: var(--col-text);
+  background: var(--col-white-element);
   padding: .75rem;
   border-radius: 20px;
   overflow: hidden;
@@ -519,7 +508,7 @@ textarea {
   &::after {
     position: absolute;
     content: '';
-    background: linear-gradient(to bottom right, utils.pastellize(utils.$col-primary, 20), utils.pastellize(utils.$col-secondary, 10));
+    background: linear-gradient(to bottom right, var(--col-primary), var(--col-secondary));
     width: 100%;
     height: 100%;
     top: 0;
@@ -543,19 +532,19 @@ textarea {
       }
 
       h3 {
-        color: darken(utils.$col-primary, 20);
+        color: var(--col-white-element);
       }
 
       .stars {
-        color: utils.$col-stars-hovered;
+        color: var(--col-stars-hovered);
       }
 
       .rating-count {
-        color: utils.pastellize(darken(utils.$col-primary, 20), 15);
+        color: var(--col-gray-lighter);
       }
 
       p {
-        color: #EEE;
+        color: var(--col-gray-lighter);
       }
     }
 
@@ -571,6 +560,7 @@ textarea {
     text-decoration: none;
     display: flex;
     flex-direction: row;
+    color: var(--col-primary);
     gap: 1.25rem;
 
     img {
@@ -604,7 +594,7 @@ textarea {
 
   .price {
     display: none;
-    color: utils.$col-text;
+    color: var(--col-text);
 
     @media screen and (min-width: utils.$bp-tablet) {
       display: block;
@@ -612,8 +602,12 @@ textarea {
   }
 }
 
+a {
+  color: var(--col-secondary);
+}
+
 .gradient-section {
-  background: linear-gradient(to bottom right, transparentize(utils.pastellize(utils.$col-primary, 35), .5), transparentize(utils.pastellize(utils.$col-secondary, 10), .5));
+  background: linear-gradient(to bottom right, var(--col-primary), var(--col-secondary));
   padding: 1.5rem;
   border-radius: 15px;
 
@@ -642,7 +636,7 @@ textarea {
   padding: .5em;
   border-radius: 10px;
   color: #EEE;
-  background: linear-gradient(to bottom right, utils.pastellize(utils.$col-primary, 20), utils.pastellize(utils.$col-secondary, 10));
+  background: linear-gradient(to bottom right, var(--col-primary), var(--col-secondary));
   box-shadow: 0 3px 10px rgba(0 0 0 / 10%);
   cursor: pointer;
   right: -90%;
@@ -661,7 +655,7 @@ footer {
   margin-top: 3.75rem;
   padding-top: 2.25rem;
   padding-bottom: 3.5rem;
-  background: darken(utils.$col-background, 10);
+  background: var(--col-background-darker);
 
   @media screen and (min-width: utils.$bp-tablet) {
     margin-top: 5rem;
@@ -680,7 +674,7 @@ footer {
     flex-direction: column-reverse;
     justify-content: space-between;
     gap: 3rem;
-    color: utils.$col-gray-darker;
+    color: var(--col-gray-darker);
 
     @media screen and (min-width: utils.$bp-tablet) {
       gap: 5rem;
@@ -727,7 +721,7 @@ footer {
 
       a {
         text-decoration: none;
-        color: utils.$col-gray-darkest;
+        color: var(--col-gray-darkest);
       }
     }
   }
@@ -781,7 +775,7 @@ nav img {
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: utils.pastellize(utils.$col-primary, 20);
+    background-color: var(--col-primary);
     color: #EEE;
     font-size: 1.25rem;
     z-index: 600;
@@ -799,7 +793,7 @@ nav img {
       right: 0;
       top: 0;
       font-size: 30px;
-      color: utils.$col-primary;
+      color: var(--col-primary);
       font-weight: 600;
       cursor: pointer;
     }
@@ -930,7 +924,7 @@ nav {
   }
 
   #header-banner {
-    background-color: utils.$col-primary;
+    background-color: var(--col-primary);
     padding-block: 0.75rem;
 
     > div {
@@ -987,7 +981,7 @@ nav {
   #links {
     padding-block: 1.25rem;
     display: block;
-    background-color: utils.$col-white-element;
+    background-color: var(--col-white-element);
   }
 
   &.scrolled #links ul #logo-li img {
@@ -1139,7 +1133,7 @@ html body input.lkke {
       border-radius: 5px;
 
       &:nth-child(even) {
-        background-color: lighten(utils.$col-gray, 15%);
+        background-color: var(--col-gray-lighter);
       }
 
       td {
@@ -1161,7 +1155,7 @@ html body input.lkke {
 .toast {
   position: relative;
   width: 100%;
-  background-color: utils.$col-white-element-higher;
+  background-color: var(--col-white-element-higher);
   box-shadow: map-get(utils.$boxShadows, 'md');
   border-radius: 0;
   padding: 1rem;
@@ -1179,7 +1173,7 @@ html body input.lkke {
     left: unset;
     right: 0;
     transform-origin: right;
-    background: utils.$col-primary;
+    background: var(--col-primary);
     bottom: unset;
     top: 0;
   }
@@ -1187,12 +1181,12 @@ html body input.lkke {
   .toast-title {
     font-weight: 600;
     font-size: 1.25rem;
-    color: utils.$col-primary;
+    color: var(--col-primary);
   }
 
   .toast-content {
     font-size: 1rem;
-    color: utils.$col-gray-darkest;
+    color: var(--col-gray)-darkest;
   }
 
   .toast-buttons {
@@ -1226,7 +1220,7 @@ html body input.lkke {
     right: 1rem;
     border: none;
     background-color: transparent;
-    color: utils.$col-secondary;
+    color: var(--col-secondary);
     font-size: 2.25rem;
     cursor: pointer;
   }
@@ -1242,7 +1236,7 @@ ul {
 
 p, span, a {
   sup {
-    color: utils.$col-gray-darker;
+    color: var(--col-gray-darker);
     font-size: 70%;
     margin: 0 .05rem 0 .125rem;
 
@@ -1258,7 +1252,7 @@ p, span, a {
 
 .footnotes {
   margin-top: 2rem;
-  color: utils.$col-gray-darker;
+  color: var(--col-gray-darker);
 
   @media screen and (min-width: utils.$bp-tablet) {
     margin-top: 2.5rem;
@@ -1286,7 +1280,7 @@ $list-spacing: 1rem;
       left: -#{$list-spacing};
       width: 10px;
       height: 3px;
-      background-color: utils.$col-primary;
+      background-color: var(--col-secondary);
     }
   }
 

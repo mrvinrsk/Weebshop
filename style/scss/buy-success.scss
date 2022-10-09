@@ -24,7 +24,7 @@
     border-radius: 10px;
 
     &:nth-child(odd) {
-      background-color: utils.$col-gray-lightest;
+      background-color: var(--col-gray-lightest);
     }
   }
 }

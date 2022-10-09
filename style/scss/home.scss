@@ -14,7 +14,7 @@
 .grid-item {
   position: relative;
   border-radius: 5px;
-  background-color: utils.$col-gray;
+  background-color: var(--col-gray);
   box-shadow: 0 3px 5px rgba(0 0 0 / 15%);
   transition-duration: .25s;
   cursor: default;
@@ -92,7 +92,7 @@
 
   .stat {
     position: relative;
-    background-color: utils.$col-white-element;
+    background-color: var(--col-white-element);
     box-shadow: map-get(utils.$boxShadows, 'sm');
     padding: 1rem;
     border-radius: 15px;
@@ -116,14 +116,14 @@
 
     .icon {
       position: absolute;
-      color: utils.pastellize(utils.$col-primary, 15%);
+      color: var(--col-primary);
       font-size: 5rem;
       bottom: -1rem;
       right: -1.25rem;
       transition-duration: .25s;
     }
 
-    @include utils.hover() {
+    &:hover {
       .icon {
         bottom: -.5rem;
         right: -.5rem;
