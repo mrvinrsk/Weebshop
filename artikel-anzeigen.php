@@ -115,7 +115,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
     <section id="offer">
         <div class="article-head">
             <div class="article-main-image">
-                <img src="https://loremflickr.com/640/360" alt="Bild"/>
+                <img src="https://fakeimg.pl/650x300/bf431d/2c2c2c/?retina=1&text=Artikelbild (groß)" alt="Bild"/>
             </div>
 
             <div class="article-main-text">
@@ -172,29 +172,6 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
         </div>
     </section>
 
-    <section id="also-bought">
-        <h2>Ähnliche Artikel</h2>
-
-        <div class="article-grid">
-            <?php for ($i = 0; $i < 3; $i++) { ?>
-                <div class="article">
-                    <a href="artikel-anzeigen.php">
-                        <img loading="lazy" src="https://loremflickr.com/300/300?random=<?php echo rand(1, 99999); ?>" alt="Bild"/>
-
-                        <div class="article-information">
-                            <div class="text-group">
-                                <h3>Lorem ipsum.</h3>
-                                <span class="stars"><?php echo getStarString(random_float(1.0, 5.0), rand(1, 10000), true); ?></span>
-                            </div>
-                            <p class="price"><?php echo number_format(random_float(1.0, 10000), 2, ",", ".") . "€"; ?></p>
-                        </div>
-                    </a>
-                </div>
-            <?php } ?>
-        </div>
-
-    </section>
-
     <section id="ratings">
         <h2>Bewertungen</h2>
 
@@ -214,7 +191,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
 
                     <div class="rating">
                         <div class="profile">
-                            <img loading="lazy" src="https://fakeimg.pl/200/" alt="Profilbild"/>
+                            <img src="https://thispersondoesnotexist.com/image" loading="lazy" alt="Profilbild"/>
                         </div>
 
                         <div>
@@ -242,6 +219,29 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
                 <a class="button">Kommentieren</a>
             </div>
         </div>
+    </section>
+
+    <section id="also-bought">
+        <h2>Ähnliche Artikel</h2>
+
+        <div class="article-grid">
+            <?php for ($i = 0; $i < 3; $i++) { ?>
+                <div class="article">
+                    <a href="artikel-anzeigen.php">
+                        <img loading="lazy" src="https://fakeimg.pl/350x350/bf431d/2c2c2c/?retina=1&text=Artikelbild" alt="Bild"/>
+
+                        <div class="article-information">
+                            <div class="text-group">
+                                <h3>Lorem ipsum.</h3>
+                                <span class="stars"><?php echo getStarString(random_float(1.0, 5.0), rand(1, 10000), true); ?></span>
+                            </div>
+                            <p class="price"><?php echo number_format(random_float(1.0, 10000), 2, ",", ".") . "€"; ?></p>
+                        </div>
+                    </a>
+                </div>
+            <?php } ?>
+        </div>
+
     </section>
 </main>
 

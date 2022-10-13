@@ -15,7 +15,7 @@ server.on('request', async (request, response) => {
     let fullPath;
 
     if (url === '/') {
-        fullPath = path.resolve('./src/js/test/html/index.html');
+        fullPath = path.resolve('./src/js/test/html/index.php');
     } else if (url.startsWith('/')) {
         fullPath = path.resolve(`.${url}`);
     } else {

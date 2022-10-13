@@ -98,6 +98,7 @@
     text-align: center;
     font-size: 3rem;
     margin-bottom: 1.5rem;
+    color: var(--col-secondary);
   }
 
   a {
@@ -127,12 +128,11 @@
 
   @media screen and (min-width: calc(#{utils.$bp-tablet} - 100)) {
     grid-template-columns: 250px 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   @media screen and (min-width: utils.$bp-desktop) {
     grid-template-columns: 350px 1fr;
-    gap: 3rem;
   }
 
   .all-time {
@@ -294,7 +294,7 @@
       }
 
       &.selected {
-        color: var(--col-primary);
+        color: var(--col-secondary);
         transform: scale(1.1) rotate(5deg) !important;
         display: inline-block;
       }

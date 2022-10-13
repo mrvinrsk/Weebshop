@@ -87,9 +87,9 @@ $results = number_format(rand(10, 10000), 0, ",", ".");
         <ul>
             <li><a href="#">Link #1</a></li>
             <li><a href="#">Link #2</a></li>
-            <li id="logo-li"><a href="#header"><img loading="lazy" src="images/logo.svg" alt="Logo"/></a></li>
+            <li id="logo-li"><a href="index.php"><img loading="lazy" src="images/logo.svg" alt="Logo"/></a></li>
             <li><a href="#">Link #3</a></li>
-            <li><a href="#">Link #4</a></li>
+            <li><a href="cart.php">Warenkorb</a></li>
             <li id="hamburger">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path fill="#343434" d="M3,8H21a1,1,0,0,0,0-2H3A1,1,0,0,0,3,8Zm18,8H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Zm0-5H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Z"/>
@@ -102,7 +102,7 @@ $results = number_format(rand(10, 10000), 0, ",", ".");
 <main>
     <section class="heading">
         <form class="input-group" action="#" method="GET">
-            <input type="text" name="search" id="search" placeholder="Artikel oder Verkäufer suchen..." value="<?php echo(isset($_GET['search']) ? $_GET['search'] : ''); ?>"/>
+            <input type="text" name="search" id="search" placeholder="Artikel oder Verkäufer..." value="<?php echo(isset($_GET['search']) ? $_GET['search'] : ''); ?>"/>
             <button>Suchen</button>
         </form>
 

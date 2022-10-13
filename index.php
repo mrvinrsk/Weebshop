@@ -93,7 +93,7 @@ include_once "php/methods.php";
             <li><a href="#">Link #2</a></li>
             <li id="logo-li"><a href="#header"><img loading="lazy" src="images/logo.svg" alt="Logo"/></a></li>
             <li><a href="#">Link #3</a></li>
-            <li><a href="#">Link #4</a></li>
+            <li><a href="cart.php">Warenkorb</a></li>
             <li id="hamburger">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path fill="#343434"
@@ -140,7 +140,7 @@ include_once "php/methods.php";
 
                 <div class="article">
                     <a href="artikel-anzeigen.php">
-                        <img src="https://loremflickr.com/175/175?random=<?php echo rand(1, 99999); ?>" alt="Bild"/>
+                        <img src="https://fakeimg.pl/350x350/bf431d/2c2c2c/?retina=1&text=Artikelbild" alt="Bild"/>
 
                         <div class="article-information">
                             <div class="text-group">

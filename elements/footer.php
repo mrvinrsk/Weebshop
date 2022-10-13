@@ -17,28 +17,22 @@
 
         function press() {
             let mode = getMode(localStorage.getItem('mode'));
-            console.log("Du hast gedrückt und aktuell (zum Zeitpunkt des Klickens):", mode);
 
             let nextMode = null;
 
             switch(mode.toLowerCase()) {
                 case 'light':
-                    console.log('Nächstes wäre Dark');
                     nextMode = Modes.DARK;
                     break;
 
                 case 'dark':
-                    console.log('Nächstes wäre Light');
                     nextMode = Modes.LIGHT;
                     break;
 
                 default:
-                    console.log("Default!!");
                     nextMode = Modes.LIGHT;
                     break;
             }
-
-            console.log('Next', nextMode);
 
             localStorage.setItem('mode', nextMode);
             updateText();
@@ -49,7 +43,6 @@
             updateText();
 
             document.querySelector('.switch-mode').addEventListener('click', () => {
-                console.log('Gedrückt...');
                 press();
             });
         });
@@ -67,7 +60,7 @@
 
     <div>
         <div>
-            <img loading="lazy" src="./images/mrv.svg" alt="Logo">
+            <img id="footer-logo" loading="lazy" src="./images/mrv.svg" alt="Logo">
         </div>
 
         <div>

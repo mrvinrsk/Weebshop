@@ -131,8 +131,6 @@ $(function () {
         back.innerHTML = '<span class="icon">chevron_left</span><span>Zurück</span>';
 
         first.parentNode.insertBefore(back, first);
-    } else {
-        console.log("Auf dieser Seite gibt es keinen Back-Button.");
     }
 
     document.querySelectorAll('.parallax').forEach(parallax => {
@@ -375,17 +373,31 @@ function updateMode() {
 
     switch (mode.toLowerCase()) {
         case 'dark':
-            console.log('Du nutzt den Darkmode.');
-            document.body.classList.add('dark');
+            document.documentElement.classList.add('dark');
             break;
 
         case 'light':
-            document.body.classList.remove('dark');
+            document.documentElement.classList.remove('dark');
             break;
 
         default:
             break;
     }
+
+    const fl = document.getElementById('footer-logo');
+
+    if (fl) {
+        if (getCurrentMode() === 'dark') {
+            fl.src = fl.src.replace('mrv.svg', 'mrv-darkmode.svg');
+        } else {
+            fl.src = fl.src.replace('mrv-darkmode.svg', 'mrv.svg');
+        }
+    }
+}
+
+function getCurrentMode() {
+    if (localStorage.getItem('mode')) return localStorage.getItem('mode').toLowerCase();
+    return Modes.LIGHT.toLowerCase();
 }
 
 $(function () {
