@@ -21,13 +21,13 @@
 
             let nextMode = null;
 
-            switch(mode) {
-                case 'LIGHT':
+            switch(mode.toLowerCase()) {
+                case 'light':
                     console.log('Nächstes wäre Dark');
                     nextMode = Modes.DARK;
                     break;
 
-                case 'DARK':
+                case 'dark':
                     console.log('Nächstes wäre Light');
                     nextMode = Modes.LIGHT;
                     break;

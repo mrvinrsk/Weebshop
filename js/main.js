@@ -324,7 +324,8 @@ function confetti(element = document.querySelector('main')) {
         speed: party.variation.range(250, 500),
         size: party.variation.skew(1.35, 0.8),
         rotation: () => party.random.randomUnitVector().scale(180),
-        shapes: ["square", "rectangle"]
+        shapes: ["square", "rectangle"],
+        debug: true
     });
 }
 
@@ -356,23 +357,29 @@ const Modes = {
 };
 
 function getMode(m) {
+    if (m == null) m = Modes.LIGHT;
+
     for (let mode in Modes) {
         if (mode.toLowerCase() === m.toLowerCase()) return mode;
     }
-    return null;
+    return Modes.LIGHT;
 }
 
 function updateMode() {
-    let mode = getMode(localStorage.getItem('mode')) || Modes.LIGHT;
+    let mode = Modes.LIGHT;
+    if (localStorage.getItem('mode')) {
+        mode = getMode(localStorage.getItem('mode'));
+    }
+
     if (!localStorage.getItem('mode')) localStorage.setItem('mode', mode);
 
-    switch (mode) {
-        case 'DARK':
+    switch (mode.toLowerCase()) {
+        case 'dark':
             console.log('Du nutzt den Darkmode.');
             document.body.classList.add('dark');
             break;
 
-        case 'LIGHT':
+        case 'light':
             document.body.classList.remove('dark');
             break;
 

@@ -17,7 +17,7 @@
 
     border-radius: 15px;
     box-shadow: 0 5px 5px rgba(0 0 0 / 5%);
-    background: #FFF;
+    background: var(--col-white-element);
     padding: .85rem;
 
     @media screen and (min-width: utils.$bp-tablet) {

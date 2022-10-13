@@ -2,6 +2,10 @@ function remove_article(id) {
     if (document.querySelector('.cart-item.cart-' + id) != null) {
         document.querySelector('.cart-item.cart-' + id).remove();
     }
+
+    if (document.querySelector('.card-item') == null) {
+        document.querySelector('.no-items').classList.remove('hidden');
+    }
 }
 
 $(function () {
