@@ -64,6 +64,18 @@ function loadPlaceholders(path_to_root = "./") {
                         text = mfirst_name + " " + mlast_name;
                         break;
 
+                    case "mail":
+                        let namesx = json.names;
+                        let nameListx = namesx.first_names.male.concat(namesx.first_names.female);
+                        let mailps = json.mail_providers;
+                        let mailp = getRandomFromList(mailps);
+
+                        let first_namex = getRandomFromList(nameListx).toLowerCase();
+                        let last_namex = getRandomFromList(namesx.last_names).toLowerCase();
+                        let name = first_namex + "." + last_namex;
+                        text = name + "@" + mailp;
+                        break;
+
                     default:
                         text = "ERR_NO_PLACEHOLDER_MODE";
                         break;

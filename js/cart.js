@@ -3,7 +3,8 @@ function remove_article(id) {
         document.querySelector('.cart-item.cart-' + id).remove();
     }
 
-    if (document.querySelector('.card-item') == null) {
+    if (document.querySelectorAll('.card-item').length === 0) {
+        console.log();
         document.querySelector('.no-items').classList.remove('hidden');
     }
 }

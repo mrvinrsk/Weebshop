@@ -140,7 +140,7 @@ include_once "php/methods.php";
 
                 <div class="article">
                     <a href="artikel-anzeigen.php">
-                        <img src="https://fakeimg.pl/350x350/bf431d/2c2c2c/?retina=1&text=Artikelbild" alt="Bild"/>
+                        <img src="https://fakeimg.pl/350x350/888888/2c2c2c/?retina=1&text=Artikelbild" alt="Bild"/>
 
                         <div class="article-information">
                             <div class="text-group">

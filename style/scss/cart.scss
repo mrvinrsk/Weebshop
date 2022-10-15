@@ -1,12 +1,61 @@
 @use "utils";
 
-.cart-items {
-  display: flex;
-  flex-direction: column;
-  gap: .85rem;
+.no-items {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 2px dashed var(--col-gray);
 
   @media screen and (min-width: utils.$bp-tablet) {
-    gap: 1.25rem;
+    padding: 1.5rem;
+  }
+
+  span.icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--col-gray-darker);
+  }
+
+
+  p {
+    @media screen and (min-width: utils.$bp-tablet) {
+      width: 75%;
+      margin-inline: auto;
+    }
+    @media screen and (min-width: utils.$bp-desktop) {
+      width: 50%;
+    }
+  }
+
+  &.hidden {
+    display: none;
+  }
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  @media screen and (min-width: utils.$bp-desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2.5rem;
+  }
+
+  .cart-items {
+    width: 100%;
+  }
+}
+
+.cart-item-list {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+
+  @media screen and (min-width: utils.$bp-tablet) {
+    gap: .5rem;
   }
 
   .cart-item {
@@ -20,15 +69,20 @@
     background: var(--col-white-element);
     padding: .85rem;
 
-    @media screen and (min-width: utils.$bp-tablet) {
+    @media screen and (min-width: utils.$bp-desktop) {
       padding: 1.25rem;
       flex-direction: row;
+    }
+
+    .article-text {
+      width: 100%;
     }
 
     .article-information {
       display: flex;
       flex-direction: column;
       gap: .75rem;
+      width: 100%;
 
       @media screen and (min-width: utils.$bp-tablet) {
         gap: 1.25rem;
@@ -45,15 +99,17 @@
         aspect-ratio: 1/1;
 
         @media screen and (min-width: utils.$bp-tablet) {
-          max-height: 200px;
-          max-width: 200px;
+          max-height: 175px;
+          max-width: 175px;
         }
       }
     }
 
     .cart-item-actions {
       display: flex;
-      align-items: flex-end;
+      width: 100%;
+      justify-content: flex-end;
+      margin-top: 1.5rem;
 
       > * {
         width: 100%;
@@ -64,36 +120,81 @@
       }
     }
   }
+}
 
-  .no-items {
-    text-align: center;
-    padding: 1rem;
+.summary {
+  @media screen and (min-width: utils.$bp-desktop) {
+    position: sticky;
+    top: 10rem;
+  }
+
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+
+  > div {
     border-radius: 10px;
-    border: 2px dashed var(--col-gray);
+    box-shadow: map-get(utils.$boxShadows, 'md');
+    background: var(--col-white-element);
+    min-width: 400px;
+    text-align: center;
+    padding: 1rem 2rem;
 
     @media screen and (min-width: utils.$bp-tablet) {
-      padding: 1.5rem;
+      padding: 2rem 3rem;
     }
 
-    span.icon {
-      font-size: 3.5rem;
-      margin-bottom: 1rem;
-      color: var(--col-gray-darker);
-    }
+    &:nth-child(n+2) {
+      padding: .75rem 2rem;
 
-
-    p {
       @media screen and (min-width: utils.$bp-tablet) {
-        width: 75%;
-        margin-inline: auto;
-      }
-      @media screen and (min-width: utils.$bp-desktop) {
-        width: 50%;
+        padding: 1rem 3rem;
       }
     }
+  }
 
-    &.hidden {
-      display: none;
+  span {
+    text-transform: uppercase;
+    color: var(--col-gray-darker);
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 1.75rem;
+  }
+
+  .infos {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+
+      span {
+        font-size: .9rem;
+      }
+
+      /*@media screen and (min-width: utils.$bp-tablet) {
+        flex-direction: row;
+        gap: 2rem;
+        justify-content: space-between;
+      }*/
+
+      p {
+        color: var(--col-secondary);
+        font-size: 1.175rem;
+      }
+
+      > * {
+        width: 100%;
+      }
     }
+  }
+
+  > .button {
+    margin-top: .75rem;
   }
 }

@@ -1,10 +1,10 @@
 $bp-tablet: 620px;
-$bp-desktop: 1080px;
+$bp-desktop: 1200px;
 
 :root {
-  --col-primary: #39991f;
-  --col-secondary: #1c8c61;
-  --col-tertiary: #e84412;
+  --col-primary: #40bf1d;
+  --col-secondary: #179967;
+  --col-tertiary: #d94c21;
   --col-gray-lightest: #e8e8e8;
   --col-gray-lighter: #e1e1e1;
   --col-gray: #bbbbbb;
@@ -41,14 +41,14 @@ html.dark {
   --col-gray-darker: #919191;
   --col-gray-darkest: #dedede;
 
-  --col-primary: #3f9926;
-  --col-secondary: #32a679;
-  --col-tertiary: #bf431d;
+  --col-primary: #4b9936;
+  --col-secondary: #2d8060;
+  --col-tertiary: #bf5130;
 }
 
 $gradient-primary-secondary: linear-gradient(to bottom right, var(--col-primary), var(--col-secondary));
 
-$width: min(90%, 65rem);
+$width: min(85%, 75rem);
 
 $boxShadows: (
         'sm': 0 3px 5px rgba(0 0 0 / 10%),

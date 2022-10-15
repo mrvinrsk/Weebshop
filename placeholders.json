@@ -1,4 +1,13 @@
 {
+  "mail_providers": [
+    "aol.com",
+    "outlook.com",
+    "outlook.de",
+    "gmx.de",
+    "hotmail.com",
+    "gmail.com",
+    "web.de"
+  ],
   "names": {
     "first_names": {
       "male": [
