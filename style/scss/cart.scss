@@ -34,7 +34,7 @@
 
 .cart {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: 1.5rem;
 
   @media screen and (min-width: utils.$bp-desktop) {
@@ -52,25 +52,24 @@
 .cart-item-list {
   display: flex;
   flex-direction: column;
-  gap: .25rem;
-
-  @media screen and (min-width: utils.$bp-tablet) {
-    gap: .5rem;
-  }
+  box-shadow: map-get(utils.$boxShadows, 'sm');
+  background: var(--col-white-element);
+  border-radius: 15px;
+  overflow: hidden;
 
   .cart-item {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     justify-content: space-between;
+    padding-block: .85rem;
+    padding-inline: .85rem;
 
-    border-radius: 15px;
-    box-shadow: 0 5px 5px rgba(0 0 0 / 5%);
-    background: var(--col-white-element);
-    padding: .85rem;
+    &:nth-child(even) {
+      background: var(--col-white-element-higher);
+    }
 
     @media screen and (min-width: utils.$bp-desktop) {
-      padding: 1.25rem;
       flex-direction: row;
     }
 
@@ -128,27 +127,49 @@
     top: 10rem;
   }
 
+  input {
+    color: var(--col-tertiary);
+  }
+
   display: flex;
   flex-direction: column;
   gap: .5rem;
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    margin-top: 1.25rem;
+
+    .coupon {
+      margin-top: .5rem;
+    }
+
+    .sflex {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: space-between;
+    }
+  }
 
   > div {
     border-radius: 10px;
     box-shadow: map-get(utils.$boxShadows, 'md');
     background: var(--col-white-element);
-    min-width: 400px;
     text-align: center;
-    padding: 1rem 2rem;
+    width: 100%;
+    padding: .75rem 1.25rem;
 
     @media screen and (min-width: utils.$bp-tablet) {
-      padding: 2rem 3rem;
+      padding: 2rem 1.75rem;
+      min-width: 350px;
     }
 
     &:nth-child(n+2) {
-      padding: .75rem 2rem;
+      padding-block: .75rem;
 
       @media screen and (min-width: utils.$bp-tablet) {
-        padding: 1rem 3rem;
+        padding-block: 1rem;
       }
     }
   }
@@ -172,6 +193,7 @@
       display: flex;
       flex-direction: column;
       text-align: left;
+      gap: .25em;
 
       span {
         font-size: .9rem;

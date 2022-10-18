@@ -17,6 +17,7 @@ include_once "php/methods.php";
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/anime.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="node_modules/untoasted/js/minified/toasted.min.js"></script>
     <script src="js/cart.js"></script>
 </head>
 <body>
@@ -120,7 +121,7 @@ include_once "php/methods.php";
                 <div class="cart-item-list">
                     <?php
                     $total = 0;
-                    for ($i = 0; $i < rand(5, 15); $i++) {
+                    for ($i = 0; $i < rand(3, 7); $i++) {
                         $price = random_float(0.5, 100.0);
                         $amount = rand(1, 50);
                         $priceWAmount = $price * $amount;
@@ -135,9 +136,8 @@ include_once "php/methods.php";
                                 <img loading="lazy"
                                      src="https://fakeimg.pl/350x350/888888/2c2c2c/?retina=1&text=Artikelbild">
                                 <div class="article-text">
-                                    <h2><a href="./artikel-anzeigen.php" class="button-tertiary not-flex">Artikel von
-                                            <span
-                                                    data-placeholder="name"></span></a></h2>
+                                    <h2><a href="./artikel-anzeigen.php" class="button-tertiary not-flex">Ein Produkt</a>
+                                    </h2>
                                     <p>Hinzugefügt am <span class="add-date">22.09.2022</span></p>
                                     <p><strong><?php echo number_format($amount, 0, ',', '.'); ?>x</strong> im Warenkorb
                                     </p>
@@ -159,11 +159,36 @@ include_once "php/methods.php";
 
             </div>
 
+            <?php
+            $tax = 19;
+            // add tax to total
+            $taxAmount = round($total * ($tax / 100), 2);
+            $totalWTax = $total + $taxAmount;
+            ?>
 
             <div class="summary">
                 <div>
                     <span>Total</span>
-                    <h3><?php echo number_format($total, 2, ',', '.') . "€"; ?></h3>
+                    <h3><?php echo number_format($totalWTax, 2, ',', '.') . "€"; ?></h3>
+
+                    <div class="details">
+                        <div class="sflex">
+                            <strong>Summe</strong>
+                            <p><?php echo number_format($total, 2, ',', '.') . "€"; ?></p>
+                        </div>
+
+                        <div class="sflex">
+                            <strong>Steuern (<?php echo $tax . "%" ?>)</strong>
+                            <p><?php echo number_format($taxAmount, 2, ',', '.') . "€"; ?></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="infos">
+                    <div class="info">
+                        <span>Rabattcode</span>
+                        <input class="inline" id="coupon" type="text" pattern="[a-zA-Z0-9]{6}">
+                    </div>
                 </div>
 
                 <div class="infos">
@@ -173,7 +198,7 @@ include_once "php/methods.php";
                     </div>
                 </div>
 
-                <a class="button">Kaufen</a>
+                <a class="button">Zum Bezahlen</a>
             </div>
         </div>
     </section>
