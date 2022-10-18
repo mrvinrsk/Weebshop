@@ -50,7 +50,7 @@ function addCoupon(code) {
 
     let container = document.querySelector('.coupon') || document.createElement('div');
     container.classList.add('sflex', 'coupon');
-    container.innerHTML = "<strong>Gutschein (" + code + ")</strong><p>-0,00€</p>";
+    container.innerHTML = "<strong>Gucci-Schein (" + code + ")</strong><p>-0,00€</p>";
 
     if(document.querySelector('.coupon') == null) {
         document.querySelector('.details').appendChild(container);

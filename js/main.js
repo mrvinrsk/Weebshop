@@ -421,3 +421,11 @@ $(function () {
 
     // document.querySelector('section').innerHTML = '<a class="icon-text large fc-primary no-underline hoverable" onclick="window.history.back();" style="cursor: pointer;"><span class="icon">chevron_left</span><span>Zurück</span></a>' + document.querySelector('section').innerHTML;
 });
+
+function removeClassesStartingWith(selector, prefix) {
+    document.querySelectorAll(selector).forEach(el => {
+        const classes = el.className.split(" ").filter(c => !c.startsWith(prefix));
+        el.className = classes.join(" ").trim();
+    });
+}
+

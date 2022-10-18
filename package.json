@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "chart.js": "^3.9.1",
+    "cleave.js": "^1.6.0",
     "untoasted": "^1.0.3"
   }
 }

@@ -191,7 +191,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
 
                     <div class="rating">
                         <div class="profile">
-                            <img src="https://fakeimg.pl/650x300/888888/2c2c2c/?retina=1&text=Profilbild" loading="lazy" alt="Profilbild"/>
+                            <img src="https://fakeimg.pl/650x300/888888/2c2c2c/?retina=1&text=Profilbild" loading="lazy" alt="Profilbild">
                         </div>
 
                         <div>
@@ -228,7 +228,7 @@ $priceNormal = number_format($priceNormal, 2, ",", ".");
             <?php for ($i = 0; $i < 3; $i++) { ?>
                 <div class="article">
                     <a href="artikel-anzeigen.php">
-                        <img loading="lazy" src="https://fakeimg.pl/350x350/888888/2c2c2c/?retina=1&text=Artikelbild" alt="Bild"/>
+                        <img loading="lazy" src="https://fakeimg.pl/350x350/888888/2c2c2c/?retina=1&text=Artikelbild" alt="Bild">
 
                         <div class="article-information">
                             <div class="text-group">
