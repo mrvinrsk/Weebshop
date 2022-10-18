@@ -111,8 +111,11 @@ include_once "php/methods.php";
 
         <div class="user-settings-wrapper">
             <div class="fixedinfo">
+                <div class="profile">
                 <img src="https://fakeimg.pl/200x200/888888/2c2c2c/?retina=1&text=Profilbild" loading="lazy"
                      alt="Profilbild" class="profilepicture">
+                <strong data-placeholder="firstname"></strong>
+                </div>
 
                 <div class="settings-navigation">
                     <div class="subnav">

@@ -13,18 +13,29 @@
 
   .fixedinfo {
     background: var(--col-white-element-higher);
+    box-shadow: map-get(utils.$boxShadows, 'lg');
 
     @media screen and (min-width: utils.$bp-desktop) {
       width: 30%;
     }
 
-    .profilepicture {
-      width: 74px;
-      height: 74px;
+    .profile {
       display: flex;
-      border-radius: 10px;
-      margin-inline: auto;
+      flex-direction: column;
+      gap: .5rem;
       margin-bottom: 2rem;
+
+      strong {
+        text-align: center;
+      }
+
+      .profilepicture {
+        width: 74px;
+        height: 74px;
+        display: flex;
+        border-radius: 10px;
+        margin-inline: auto;
+      }
     }
 
     .settings-navigation {
@@ -53,7 +64,7 @@
         }
 
         &.danger {
-          color: var(--col-u-danger);
+          color: var(--col-u-danger-dark);
 
           @include utils.hover {
             background: var(--col-white-element);
@@ -62,8 +73,8 @@
           }
 
           &.active {
-            background: var(--col-u-danger-dark);
-            color: var(--col-white-element);
+            background: var(--col-u-danger);
+            color: var(--col-text);
           }
         }
 
@@ -78,7 +89,33 @@
 
   .settings-wrapper {
     background: var(--col-white-element);
+    box-shadow: map-get(utils.$boxShadows, 'sm');
     width: 100%;
+
+    .flex {
+      display: flex;
+      flex-direction: column;
+      gap: .25rem;
+
+      @media screen and (min-width: utils.$bp-tablet) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      &.force-row {
+        flex-direction: row;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      &.force-column {
+        flex-direction: column;
+        gap: .25rem;
+        align-items: flex-start;
+      }
+    }
 
     input {
       width: 100%;
@@ -104,8 +141,9 @@
     border-radius: 15px;
   }
 
-  .s-nothing {
+  .s-nothing, .s-404 {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
@@ -119,5 +157,16 @@
     .icon {
       font-size: 3rem;
     }
+  }
+}
+
+.emoji {
+  font-size: 2.5rem;
+  margin-top: 1.25rem;
+}
+
+.user {
+  h1,h2,h3,h4,h5,h6 {
+    margin: 0;
   }
 }
