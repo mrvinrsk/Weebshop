@@ -9,7 +9,7 @@ function loadPlaceholders(path_to_root = "./") {
                 return list[Math.floor(Math.random() * list.length)];
             }
 
-            document.querySelectorAll('[data-placeholder]').forEach(element => {
+            document.querySelectorAll('[data-placeholder]:not([data-placeholder-given])').forEach(element => {
                 let text = "";
 
                 switch (element.dataset.placeholder.toLowerCase()) {
@@ -76,12 +76,18 @@ function loadPlaceholders(path_to_root = "./") {
                         text = name + "@" + mailp;
                         break;
 
+                    case "phone":
+                        let phones = json.phone;
+                        text = getRandomFromList(phones);
+                        break;
+
                     default:
                         text = "ERR_NO_PLACEHOLDER_MODE";
                         break;
                 }
 
                 element.textContent = text;
+                element.dataset.placeholderGiven = true;
             });
         }
     });

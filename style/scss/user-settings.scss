@@ -114,7 +114,7 @@
 
       &.force-column {
         flex-direction: column;
-        gap: .25rem;
+        gap: 0;
         align-items: flex-start;
       }
     }
@@ -131,7 +131,7 @@
       }
 
 
-      default::before {
+      .default::before {
         content: "- Standard:";
         margin-right: .5rem;
       }
@@ -172,6 +172,10 @@
 }
 
 .user {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
   h1, h2, h3, h4, h5, h6 {
     margin: 0;
   }
