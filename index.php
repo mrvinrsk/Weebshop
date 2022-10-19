@@ -112,19 +112,19 @@ include_once "php/methods.php";
         </form>
 
         <div class="stats">
-            <div class="stat">
+            <div class="stat hover-gradient">
                 <span class="description">Artikel</span>
                 <p><?php echo number_format(rand(100, 10000), 0, ',', '.'); ?></p>
                 <span class="icon">shopping_bag</span>
             </div>
 
-            <div class="stat">
+            <div class="stat hover-gradient">
                 <span class="description">Aktive Nutzer</span>
                 <p><?php echo number_format(rand(50, 7500), 0, ',', '.'); ?></p>
                 <span class="icon">group</span>
             </div>
 
-            <div class="stat">
+            <div class="stat hover-gradient">
                 <span class="description">Bestellungen</span>
                 <p><?php echo number_format(rand(100, 1500), 0, ',', '.'); ?></p>
                 <span class="icon">payments</span>

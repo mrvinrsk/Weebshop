@@ -419,6 +419,22 @@ $(function () {
 
     updateMode();
 
+    document.querySelectorAll('.hover-gradient').forEach(hg => {
+        hg.addEventListener('mousemove', (e) => {
+            let rect = hg.getBoundingClientRect();
+            let x = e.clientX - rect.left; //x position within the element.
+            let y = e.clientY - rect.top;  //y position within the element.
+            console.log("Left? : " + x + " ; Top? : " + y + ".");
+
+            hg.classList.add('hovered');
+            hg.style.setProperty('--hovergradient-x', x + 'px');
+            hg.style.setProperty('--hovergradient-y', y + 'px');
+        });
+        hg.addEventListener('mouseleave', () => {
+            hg.classList.remove('hovered');
+        });
+    });
+
     // document.querySelector('section').innerHTML = '<a class="icon-text large fc-primary no-underline hoverable" onclick="window.history.back();" style="cursor: pointer;"><span class="icon">chevron_left</span><span>Zurück</span></a>' + document.querySelector('section').innerHTML;
 });
 

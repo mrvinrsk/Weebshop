@@ -45,7 +45,6 @@
 }
 
 
-
 /* fallback */
 @font-face {
   font-family: 'Material Symbols Outlined';
@@ -235,15 +234,14 @@ img {
       transition-duration: .25s;
     }
 
-    @include utils.hover {
+    &:hover {
       &::before {
-        transform: scale3d(1.1, 1.3, 1);
-        animation: danger 2s infinite;
+        outline-offset: 3px;
       }
     }
   }
 
-  @include utils.hover {
+  &:hover {
     cursor: pointer;
     color: var(--col-text);
     box-shadow: map-get(utils.$boxShadows, 'lg');
@@ -276,7 +274,7 @@ html .button-tertiary {
   cursor: pointer;
   transition-duration: .25s;
 
-  @include utils.hover {
+  &:hover {
     color: var(--col-primary);
   }
 
@@ -357,7 +355,7 @@ html .button-tertiary {
 .tooltip {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dashed var(--col-gray)-darkest;
+  border-bottom: 1px dashed var(--col-gray) -darkest;
 
   .tooltip-content {
     opacity: 0;
@@ -696,7 +694,7 @@ a {
     padding: 3rem;
   }
 
-  h1,h2,h3,h4,h5,h6 {
+  h1, h2, h3, h4, h5, h6 {
     color: var(--col-white-element);
   }
 }
