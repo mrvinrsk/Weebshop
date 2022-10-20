@@ -111,8 +111,34 @@ include_once "php/methods.php";
 
         <div class="all-stats">
             <div class="stat">
+                <h3>Verkäufe (1 Woche)</h3>
+                <canvas id="salesWeek"></canvas>
+            </div>
+
+            <div class="stat">
                 <h3>Verkäufe (30 Tage)</h3>
                 <canvas id="sales30"></canvas>
+            </div>
+
+            <div class="stat">
+                <h3>Zusammenfassung</h3>
+
+                <div class="fl">
+                    <div>
+                        <h4>Aufrufe</h4>
+                        <p id="views"><?php echo number_format(rand(0, 200000), 0, ',', '.'); ?></p>
+                    </div>
+
+                    <div>
+                        <h4>Verkäufe</h4>
+                        <p id="views"><?php echo number_format(rand(0, 150000), 0, ',', '.'); ?></p>
+                    </div>
+
+                    <div>
+                        <h4>Umsätze</h4>
+                        <p id="views" class="small"><?php echo number_format(random_float(9, 99999999), 2, ',', '.') . "€"; ?></p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

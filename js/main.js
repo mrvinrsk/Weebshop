@@ -93,6 +93,36 @@ function loadPlaceholders(path_to_root = "./") {
     });
 }
 
+function getCalenderWeek() {
+    let currentDate = new Date();
+    let startDate = new Date(currentDate.getFullYear(), 0, 1);
+    let days = Math.floor((currentDate - startDate) / (24 * 60 * 60 * 1000));
+    return Math.ceil(days / 7);
+}
+
+function randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function getCurrentWeekdayName(offset = 0) {
+    let date = new Date();
+    date.setDate(date.getDate() + offset);
+
+    let weekday = [
+        "Montag",
+        "Dienstag",
+        "Mittwoch",
+        "Donnerstag",
+        "Freitag",
+        "Samstag",
+        "Sonntag"
+    ];
+
+    if (date.getDay() - 1 < 0) return weekday[6];
+    if(date.getDay() - 1 > 6) return weekday[0];
+    return weekday[date.getDay() - 1];
+}
+
 $(function () {
     /* Smooth scrolling */
     // Smooth scroll

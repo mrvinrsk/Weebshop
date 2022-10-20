@@ -3,15 +3,85 @@
 .all-stats {
   display: grid;
   grid-template-columns: 1fr;
+  gap: .75rem;
 
-  @media screen and (min-width: utils.$bp-tablet) {
+  @media screen and (min-width: utils.$bp-desktop) {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
   }
 
   .stat {
+    background: var(--col-white-element);
+    padding: .75rem;
+    border-radius: 15px;
+
+    @media screen and (min-width: utils.$bp-tablet) {
+      padding: 1rem;
+    }
+
+    @media screen and (min-width: utils.$bp-tablet) {
+      padding: 1.5rem;
+    }
+
     canvas {
-      width: 100%;
-      height: 100%;
+      width: 100% !important;
+      height: unset !important;
+    }
+
+    @media screen and (min-width: utils.$bp-desktop) {
+      &:nth-child(3) {
+        grid-column: span 2;
+      }
+    }
+
+    .fl {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: .5rem;
+
+      @media screen and (min-width: utils.$bp-tablet) {
+        gap: 1.25rem;
+        grid-template-columns: repeat(auto-fit, 225px);
+      }
+
+      div {
+        position: relative;
+        border-radius: 10px;
+        background: var(--col-white-element-higher);
+        padding: 1rem;
+        overflow: hidden;
+
+        h4 {
+          color: var(--col-gray-darker);
+          padding-bottom: .75rem;
+        }
+
+        p {
+          position: absolute;
+          font-size: 2.15rem;
+          font-weight: 700;
+          color: var(--col-tertiary);
+          right: -.1em;
+          bottom: -.3em;
+
+          &.small {
+            font-size: 1.25rem;
+
+            @media screen and (min-width: utils.$bp-tablet) {
+              font-size: 1.5em;
+            }
+
+            @media screen and (min-width: utils.$bp-desktop) {
+              font-size: 1.75em;
+            }
+          }
+
+          @media screen and (min-width: utils.$bp-tablet) {
+            right: -.05em;
+            bottom: -.25em;
+          }
+        }
+      }
     }
   }
 }

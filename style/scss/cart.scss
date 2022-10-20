@@ -124,11 +124,15 @@
 .summary {
   @media screen and (min-width: utils.$bp-desktop) {
     position: sticky;
-    top: 10rem;
+    top: 12.5rem;
+  }
+
+  h3 {
+    color: var(--col-secondary);
   }
 
   input {
-    color: var(--col-tertiary);
+    color: var(--col-secondary);
   }
 
   display: flex;

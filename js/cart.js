@@ -16,12 +16,14 @@ $(function () {
         }
     }
 
-    document.querySelector('input#coupon').addEventListener('keyup', function (e) {
-        // Enter
-        if (e.keyCode === 13) {
-            addCoupon(this.value);
-        }
-    });
+    if (document.querySelector('input#coupon') != null) {
+        document.querySelector('input#coupon').addEventListener('keyup', function (e) {
+            // Enter
+            if (e.keyCode === 13) {
+                addCoupon(this.value);
+            }
+        });
+    }
 })
 
 
@@ -32,6 +34,7 @@ function add_article(id) {
         buttons: [
             {
                 text: 'Zum Warenkorb',
+                classes: 'button tertiary',
                 onClick: function () {
                     window.location.href = 'cart.php';
                 }
