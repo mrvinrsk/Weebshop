@@ -224,3 +224,37 @@
     margin-top: .75rem;
   }
 }
+
+.up {
+  @media screen and (max-width: utils.$bp-desktop - 1) {
+    bottom: 7.5rem;
+  }
+}
+
+.summary-mobile {
+  position: sticky;
+  z-index: 999;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 15px;
+  background: var(--col-white-element-higher);
+  box-shadow: map-get(utils.$boxShadows, 'xl');
+  transition-duration: .25s;
+  padding-block: 1.5rem;
+
+  > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+
+    width: utils.$width;
+    margin-inline: auto;
+  }
+
+  @media screen and (min-width: utils.$bp-desktop) {
+    display: none;
+  }
+}

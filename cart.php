@@ -136,7 +136,8 @@ include_once "php/methods.php";
                                 <img loading="lazy"
                                      src="https://fakeimg.pl/350x350/888888/2c2c2c/?retina=1&text=Artikelbild">
                                 <div class="article-text">
-                                    <h2><a href="./artikel-anzeigen.php" class="button-tertiary not-flex">Ein Produkt</a>
+                                    <h2><a href="./artikel-anzeigen.php" class="button-tertiary not-flex">Ein
+                                            Produkt</a>
                                     </h2>
                                     <p>Hinzugefügt am <span class="add-date">22.09.2022</span></p>
                                     <p><strong><?php echo number_format($amount, 0, ',', '.'); ?>x</strong> im Warenkorb
@@ -202,7 +203,19 @@ include_once "php/methods.php";
             </div>
         </div>
     </section>
+
+    <div class="summary-mobile">
+        <div>
+            <div>
+                <span>Total</span>
+                <h3><?php echo number_format($totalWTax, 2, ',', '.') . "€"; ?></h3>
+            </div>
+
+            <a class="button">Zum Bezahlen</a>
+        </div>
+    </div>
 </main>
+
 
 <script>
     loadPlaceholders();
