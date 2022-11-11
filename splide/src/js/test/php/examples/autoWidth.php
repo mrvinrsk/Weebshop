@@ -6,6 +6,7 @@ $settings = get_settings();
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<base href="/Steven/Weebshop/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Auto Width</title>

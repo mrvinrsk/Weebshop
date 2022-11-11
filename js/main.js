@@ -119,7 +119,7 @@ function getCurrentWeekdayName(offset = 0) {
     ];
 
     if (date.getDay() - 1 < 0) return weekday[6];
-    if(date.getDay() - 1 > 6) return weekday[0];
+    if (date.getDay() - 1 > 6) return weekday[0];
     return weekday[date.getDay() - 1];
 }
 
@@ -340,6 +340,11 @@ $(function () {
                 });
             }
         });
+    });
+
+    document.querySelector('.article-stats-banner').addEventListener('click', () => {
+        let id = document.querySelector('.article-stats-banner').dataset.id;
+        window.location = `./article/${id}/stats`;
     });
 });
 
